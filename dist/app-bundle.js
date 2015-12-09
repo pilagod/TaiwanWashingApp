@@ -20552,7 +20552,7 @@ webpackJsonp([0],[
 	      var prefixDiv = direction ? _react2.default.createElement('div', { className: 'prefix' }) : null;
 	      var postfixDiv = direction ? null : _react2.default.createElement('div', { className: 'postfix' });
 
-	      var imageSrc = '../img/detail0' + this.props.index + '.png';
+	      var imageSrc = 'img/detail0' + this.props.index + '.png';
 	      var imageClassNames = (0, _classnames2.default)('detail-item-image', {
 	        'show-left': this.state.status === 1 && direction,
 	        'show-right': this.state.status === 2 && !direction
@@ -22227,7 +22227,7 @@ webpackJsonp([0],[
 	          _react2.default.createElement(
 	            "div",
 	            { className: "col-8" },
-	            _react2.default.createElement("img", { src: "../img/link.png" })
+	            _react2.default.createElement("img", { src: "img/link.png" })
 	          ),
 	          _react2.default.createElement(
 	            "div",

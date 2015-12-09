@@ -6,7 +6,7 @@ export default class Link extends Component {
       <div id="link">
         <div className="container">
           <div className="col-8">
-            <img src="../img/link.png"></img>
+            <img src="img/link.png"></img>
           </div>
           <div className="col-4">
             <div>
