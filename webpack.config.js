@@ -2,12 +2,13 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './js/App.jsx',
+    app1: './js/App.jsx',
+    app2: './js/App2.jsx',
     vendor: ['jquery']
   },
   output: {
     path: './dist',
-    filename: 'app-bundle.js',
+    filename: '[name]-bundle.js',
     publicPath: '/dist/'
   },
   plugins: [
