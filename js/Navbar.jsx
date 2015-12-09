@@ -21,6 +21,19 @@ export default class Navbar extends Component {
         })
       }.bind(this)
     })
+
+    let $document = $(document)
+    let $navbarDiv = $('#navbar > div')
+    let navbarDivOffsetTop = $navbarDiv.offset().top
+
+    window.onscroll = () => {
+      console.log($document.scrollTop());
+      if ($document.scrollTop() >= navbarDivOffsetTop && !$navbarDiv.hasClass('fixed')) {
+        $navbarDiv.addClass('fixed')
+      } else if ($document.scrollTop() < navbarDivOffsetTop && $navbarDiv.hasClass('fixed')) {
+        $navbarDiv.removeClass('fixed')
+      }
+    }
   }
 
   render() {
@@ -60,10 +73,11 @@ export default class Navbar extends Component {
       $('#menu').addClass('hide');
       $('#navbar > div').removeClass('active');
       setTimeout(() => {
+        $('#navbar > div').removeClass('animation')
         this.setState({active: false})
       }, 500);
     } else {
-      $('#navbar > div').addClass('active');
+      $('#navbar > div').addClass('animation active');
       this.setState({active: true})
     }
   }

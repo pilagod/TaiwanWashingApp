@@ -14655,7 +14655,7 @@
 	 *
 	 * @providesModule shallowEqual
 	 * @typechecks
-	 *
+	 * 
 	 */
 
 	'use strict';
@@ -19743,6 +19743,19 @@
 	          });
 	        }).bind(this)
 	      });
+
+	      var $document = $(document);
+	      var $navbarDiv = $('#navbar > div');
+	      var navbarDivOffsetTop = $navbarDiv.offset().top;
+
+	      window.onscroll = function () {
+	        console.log($document.scrollTop());
+	        if ($document.scrollTop() >= navbarDivOffsetTop && !$navbarDiv.hasClass('fixed')) {
+	          $navbarDiv.addClass('fixed');
+	        } else if ($document.scrollTop() < navbarDivOffsetTop && $navbarDiv.hasClass('fixed')) {
+	          $navbarDiv.removeClass('fixed');
+	        }
+	      };
 	    }
 	  }, {
 	    key: 'render',
@@ -19803,10 +19816,11 @@
 	        $('#menu').addClass('hide');
 	        $('#navbar > div').removeClass('active');
 	        setTimeout(function () {
+	          $('#navbar > div').removeClass('animation');
 	          _this2.setState({ active: false });
 	        }, 500);
 	      } else {
-	        $('#navbar > div').addClass('active');
+	        $('#navbar > div').addClass('animation active');
 	        this.setState({ active: true });
 	      }
 	    }
@@ -19852,7 +19866,7 @@
 
 
 	// module
-	exports.push([module.id, "/*************************/\n/*      Navbar Css       */\n/*************************/\n\n/**\n *  Navbar\n */\n#navbar {\n  position: absolute;\n  z-index: 99;\n  top: 200px;\n  left: 0;\n  width: 100px;\n  height: 120px;\n  color: white;\n  background-color: rgba(47, 114, 110, 0.8);\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n#navbar > .full-container {\n  cursor: pointer;\n  padding-left: 15px;\n  height: 100%;\n}\n\n#navbar > .full-container > span {\n  width: 54px;\n}\n\n#navbar > .full-container i {\n  display: block;\n  opacity: 1;\n  width: 100%;\n  height: 2px;\n  background-color: white;\n  border-radius: 2px;\n\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#navbar > .full-container i:nth-child(2) {\n  margin: 10px 0px;\n}\n\n#navbar > .full-container.active i:nth-child(1) {\n  opacity: 1;\n  -webkit-transform: rotate(45deg) translate(9px, 9px);\n  -moz-transform: rotate(45deg) translate(9px, 9px);\n  -ms-transform: rotate(45deg) translate(9px, 9px);\n  -o-transform: rotate(45deg) translate(9px, 9px);\n  transform: rotate(45deg) translate(9px, 9px);\n}\n\n#navbar > .full-container.active i:nth-child(2) {\n  opacity: 0;\n}\n\n#navbar > .full-container.active i:nth-child(3) {\n  opacity: 1;\n  -webkit-transform: rotate(-45deg) translate(9px, -9px);\n  -moz-transform: rotate(-45deg) translate(9px, -9px);\n  -ms-transform: rotate(-45deg) translate(9px, -9px);\n  -o-transform: rotate(-45deg) translate(9px, -9px);\n  transform: rotate(-45deg) translate(9px, -9px);\n}\n\n\n/**\n *  Menu\n */\n#menu {\n  position: fixed;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding-top: 100px;\n  padding-left: 240px;\n  background-color: rgba(46, 113, 108, 0.9);\n\n  animation-name: show;\n  animation-duration: 0.5s;\n  animation-timing-function: ease-in-out;\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#menu ul {\n  display: inline-block;\n}\n\n#menu.hide {\n  opacity: 0;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n\n/*************************/\n/*      Animations       */\n/*************************/\n\n/* show animation */\n@-webkit-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-moz-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-ms-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-o-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n/*************/\n", ""]);
+	exports.push([module.id, "/*************************/\n/*      Navbar Css       */\n/*************************/\n\n/**\n *  Navbar\n */\n#navbar {\n  color: white;\n}\n\n#navbar > .full-container {\n  position: absolute;\n  z-index: 2;\n  cursor: pointer;\n  top: 200px;\n  left: 0;\n  width: 100px;\n  height: 120px;\n  padding-left: 15px;\n  background-color: rgba(47, 114, 110, 0.8);\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n#navbar > .full-container.animation {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#navbar > .full-container.fixed {\n  position: fixed;\n  top: 0;\n}\n\n#navbar > .full-container.active {\n  position: fixed;\n  top: 50%;\n  background-color: transparent;\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);\n\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n\n#navbar > .full-container.active:hover {\n  background-color: rgba(98, 183, 173, 0.8);\n}\n\n#navbar > .full-container > span {\n  width: 54px;\n}\n\n#navbar > .full-container i {\n  display: block;\n  opacity: 1;\n  width: 100%;\n  height: 2px;\n  background-color: white;\n  border-radius: 2px;\n\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#navbar > .full-container i:nth-child(2) {\n  margin: 10px 0px;\n}\n\n#navbar > .full-container.active i:nth-child(1) {\n  opacity: 1;\n  -webkit-transform: rotate(45deg) translate(9px, 9px);\n  -moz-transform: rotate(45deg) translate(9px, 9px);\n  -ms-transform: rotate(45deg) translate(9px, 9px);\n  -o-transform: rotate(45deg) translate(9px, 9px);\n  transform: rotate(45deg) translate(9px, 9px);\n}\n\n#navbar > .full-container.active i:nth-child(2) {\n  opacity: 0;\n}\n\n#navbar > .full-container.active i:nth-child(3) {\n  opacity: 1;\n  -webkit-transform: rotate(-45deg) translate(9px, -9px);\n  -moz-transform: rotate(-45deg) translate(9px, -9px);\n  -ms-transform: rotate(-45deg) translate(9px, -9px);\n  -o-transform: rotate(-45deg) translate(9px, -9px);\n  transform: rotate(-45deg) translate(9px, -9px);\n}\n\n\n/**\n *  Menu\n */\n#menu {\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding-top: 100px;\n  padding-left: 240px;\n  background-color: rgba(46, 113, 108, 0.9);\n\n  animation-name: show;\n  animation-duration: 0.5s;\n  animation-timing-function: ease-in-out;\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#menu ul {\n  display: inline-block;\n}\n\n#menu.hide {\n  opacity: 0;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n\n/*************************/\n/*      Animations       */\n/*************************/\n\n/* show animation */\n@-webkit-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-moz-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-ms-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-o-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n/*************/\n", ""]);
 
 	// exports
 
@@ -20429,7 +20443,7 @@
 /* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = './' + __webpack_require__.p + "7c635ec87c036f52b4e9ad3a0533d8ee.png";
+	module.exports = __webpack_require__.p + "7c635ec87c036f52b4e9ad3a0533d8ee.png";
 
 /***/ },
 /* 171 */,
@@ -20626,7 +20640,7 @@
 /* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = './' + __webpack_require__.p + "54c9521ab027253ee68def469d4faaf3.png";
+	module.exports = __webpack_require__.p + "54c9521ab027253ee68def469d4faaf3.png";
 
 /***/ },
 /* 178 */
@@ -21805,7 +21819,7 @@
 /* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = './' + __webpack_require__.p + "fc14306fc2c7b95a288450c86807d6f7.png";
+	module.exports = __webpack_require__.p + "fc14306fc2c7b95a288450c86807d6f7.png";
 
 /***/ },
 /* 197 */
@@ -21914,7 +21928,7 @@
 /* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = './' + __webpack_require__.p + "36fa63f6886bb287e3db70f81d1153da.png";
+	module.exports = __webpack_require__.p + "36fa63f6886bb287e3db70f81d1153da.png";
 
 /***/ },
 /* 201 */

@@ -6,21 +6,50 @@
  *  Navbar
  */
 #navbar {
+  color: white;
+}
+
+#navbar > .full-container {
   position: absolute;
-  z-index: 99;
+  z-index: 2;
+  cursor: pointer;
   top: 200px;
   left: 0;
   width: 100px;
   height: 120px;
-  color: white;
+  padding-left: 15px;
   background-color: rgba(47, 114, 110, 0.8);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
-#navbar > .full-container {
-  cursor: pointer;
-  padding-left: 15px;
-  height: 100%;
+#navbar > .full-container.animation {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#navbar > .full-container.fixed {
+  position: fixed;
+  top: 0;
+}
+
+#navbar > .full-container.active {
+  position: fixed;
+  top: 50%;
+  background-color: transparent;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#navbar > .full-container.active:hover {
+  background-color: rgba(98, 183, 173, 0.8);
 }
 
 #navbar > .full-container > span {
@@ -74,7 +103,7 @@
  */
 #menu {
   position: fixed;
-  z-index: -1;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
