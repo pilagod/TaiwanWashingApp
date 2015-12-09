@@ -1,6 +1,6 @@
 #bottomApp {
   color: white;
-  background-image: url('/img/bottomApp.png');
+  background-image: url('../img/bottomApp.png');
   background-repeat: no-repeat;
   background-size: cover;
 }

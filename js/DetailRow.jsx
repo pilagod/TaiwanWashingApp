@@ -16,7 +16,7 @@ export default class DetailRow extends Component {
     let prefixDiv = direction ? <div className="prefix"></div> : null
     let postfixDiv = direction ? null : <div className="postfix"></div>
 
-    let imageSrc = '../img/detail0' + this.props.index + '.png'
+    let imageSrc = 'img/detail0' + this.props.index + '.png'
     let imageClassNames = classNames('detail-item-image', {
       'show-left': this.state.status === 1 && direction,
       'show-right': this.state.status === 2 && !direction

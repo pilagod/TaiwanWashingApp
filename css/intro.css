@@ -29,7 +29,7 @@
 #intro .content::after {
   position: absolute;
   display: block;
-  content: url('/img/device.png');
+  content: url('../img/device.png');
   top: -60px;
   right: -120px;
 
