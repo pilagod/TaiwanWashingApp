@@ -27,7 +27,6 @@ export default class Navbar extends Component {
     let navbarDivOffsetTop = $navbarDiv.offset().top
 
     window.onscroll = () => {
-      console.log($document.scrollTop());
       if ($document.scrollTop() >= navbarDivOffsetTop && !$navbarDiv.hasClass('fixed')) {
         $navbarDiv.addClass('fixed')
       } else if ($document.scrollTop() < navbarDivOffsetTop && $navbarDiv.hasClass('fixed')) {

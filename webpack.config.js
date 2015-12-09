@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: './dist',
     filename: '[name]-bundle.js',
-    publicPath: './dist'
+    publicPath: '/TaiwanWashingApp/dist'
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js")

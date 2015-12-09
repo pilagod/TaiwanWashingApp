@@ -88,7 +88,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "./dist";
+/******/ 	__webpack_require__.p = "/TaiwanWashingApp/dist";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -19749,7 +19749,6 @@
 	      var navbarDivOffsetTop = $navbarDiv.offset().top;
 
 	      window.onscroll = function () {
-	        console.log($document.scrollTop());
 	        if ($document.scrollTop() >= navbarDivOffsetTop && !$navbarDiv.hasClass('fixed')) {
 	          $navbarDiv.addClass('fixed');
 	        } else if ($document.scrollTop() < navbarDivOffsetTop && $navbarDiv.hasClass('fixed')) {
