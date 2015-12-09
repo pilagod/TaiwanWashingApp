@@ -8,7 +8,7 @@ export default class Intro extends Component {
         <div className="full-container top-intro">
           <div className="container flex flex-vertical-center">
             <div className="flex-align-right">
-              <img src="../img/facebook.svg"></img>
+              <img src="img/facebook.svg"></img>
             </div>
           </div>
         </div>

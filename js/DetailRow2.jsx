@@ -4,7 +4,7 @@ import classNames from 'classnames'
 export default class DetailRow2 extends Component {
 
   render() {
-    let imageSrc = '../img/detail0' + this.props.index + '.png'
+    let imageSrc = 'img/detail0' + this.props.index + '.png'
     let actionPreviousClass = classNames('detail-action-previous', {
       'show': this.props.index !== 1
     })

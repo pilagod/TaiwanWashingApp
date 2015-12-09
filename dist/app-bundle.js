@@ -20189,7 +20189,7 @@ webpackJsonp([0],[
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'image-container' },
-	            _react2.default.createElement('img', { src: '../img/banner.png' })
+	            _react2.default.createElement('img', { src: 'img/banner.png' })
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -20311,7 +20311,7 @@ webpackJsonp([0],[
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'flex-align-right' },
-	              _react2.default.createElement('img', { src: '../img/facebook.svg' })
+	              _react2.default.createElement('img', { src: 'img/facebook.svg' })
 	            )
 	          )
 	        ),
@@ -20729,7 +20729,7 @@ webpackJsonp([0],[
 	  _createClass(DetailRow2, [{
 	    key: 'render',
 	    value: function render() {
-	      var imageSrc = '../img/detail0' + this.props.index + '.png';
+	      var imageSrc = 'img/detail0' + this.props.index + '.png';
 	      var actionPreviousClass = (0, _classnames2.default)('detail-action-previous', {
 	        'show': this.props.index !== 1
 	      });
@@ -20966,7 +20966,7 @@ webpackJsonp([0],[
 	              _react2.default.createElement(
 	                'div',
 	                { className: 'service-image' },
-	                _react2.default.createElement(_reactInlinesvg2.default, { src: '../img/service01.svg' })
+	                _react2.default.createElement(_reactInlinesvg2.default, { src: 'img/service01.svg' })
 	              ),
 	              _react2.default.createElement(
 	                'div',
@@ -21018,7 +21018,7 @@ webpackJsonp([0],[
 	              _react2.default.createElement(
 	                'div',
 	                { className: 'service-image' },
-	                _react2.default.createElement(_reactInlinesvg2.default, { src: '../img/service02.svg' })
+	                _react2.default.createElement(_reactInlinesvg2.default, { src: 'img/service02.svg' })
 	              ),
 	              _react2.default.createElement(
 	                'div',

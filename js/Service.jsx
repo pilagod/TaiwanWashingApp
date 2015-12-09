@@ -15,7 +15,7 @@ export default class Service extends Component {
           <div className="left-block">
             <div className="col-4">
               <div className="service-image">
-                <Isvg src='../img/service01.svg'></Isvg>
+                <Isvg src='img/service01.svg'></Isvg>
               </div>
               <div className="service-title">
                 <h2>
@@ -39,7 +39,7 @@ export default class Service extends Component {
           <div className="right-block">
             <div className="col-4">
               <div className="service-image">
-                <Isvg src='../img/service02.svg'></Isvg>
+                <Isvg src='img/service02.svg'></Isvg>
               </div>
               <div className="service-title">
                 <h2>
