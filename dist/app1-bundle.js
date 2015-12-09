@@ -548,106 +548,149 @@ webpackJsonp([0],{
 	          'div',
 	          { className: 'full-container' },
 	          _react2.default.createElement(
-	            'div',
-	            { className: 'left-block' },
+	            'a',
+	            { href: 'http://www.tww.com.tw/je/', target: '_blank' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'col-4' },
+	              { className: 'left-block' },
 	              _react2.default.createElement(
 	                'div',
-	                { className: 'service-image' },
-	                _react2.default.createElement(_reactInlinesvg2.default, { src: 'img/service01.svg' })
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'service-title' },
+	                { className: 'col-4' },
 	                _react2.default.createElement(
-	                  'h2',
-	                  null,
-	                  _react2.default.createElement(
-	                    'span',
-	                    null,
-	                    '超商洗衣'
-	                  ),
-	                  _react2.default.createElement('br', null),
-	                  _react2.default.createElement(
-	                    'span',
-	                    { className: 'subtitle' },
-	                    '24小時送洗'
-	                  )
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'service-content' },
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  '服務據點：',
-	                  _react2.default.createElement('br', null),
-	                  '全台灣全家 / OK / 萊爾富便利商店'
+	                  'div',
+	                  { className: 'service-image' },
+	                  _react2.default.createElement(_reactInlinesvg2.default, { src: 'img/service01.svg' })
 	                ),
 	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  '送洗品項：',
-	                  _react2.default.createElement('br', null),
-	                  '人身穿著類（不含皮衣皮草）',
-	                  _react2.default.createElement('br', null),
-	                  '床寢類'
+	                  'div',
+	                  { className: 'service-title' },
+	                  _react2.default.createElement(
+	                    'h2',
+	                    null,
+	                    _react2.default.createElement(
+	                      'span',
+	                      null,
+	                      '超商洗衣'
+	                    ),
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement(
+	                      'span',
+	                      { className: 'subtitle' },
+	                      '24小時送洗'
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'service-content' },
+	                  _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    '服務據點：',
+	                    _react2.default.createElement('br', null),
+	                    '全台灣全家 / OK / 萊爾富便利商店'
+	                  ),
+	                  _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    '送洗品項：',
+	                    _react2.default.createElement('br', null),
+	                    '人身穿著類（不含皮衣皮草）',
+	                    _react2.default.createElement('br', null),
+	                    '床寢類'
+	                  )
 	                )
 	              )
 	            )
 	          ),
 	          _react2.default.createElement(
-	            'div',
-	            { className: 'right-block' },
+	            'a',
+	            { href: 'http://ews.tww.com.tw', target: '_blank' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'col-4' },
+	              { className: 'right-block' },
 	              _react2.default.createElement(
 	                'div',
-	                { className: 'service-image' },
-	                _react2.default.createElement(_reactInlinesvg2.default, { src: 'img/service02.svg' })
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'service-title' },
+	                { className: 'col-4' },
 	                _react2.default.createElement(
-	                  'h2',
-	                  null,
+	                  'div',
+	                  { className: 'service-image' },
+	                  _react2.default.createElement(_reactInlinesvg2.default, { src: 'img/service02.svg' }),
 	                  _react2.default.createElement(
-	                    'span',
-	                    null,
-	                    '到府收送'
-	                  ),
-	                  _react2.default.createElement('br', null),
-	                  _react2.default.createElement(
-	                    'span',
-	                    { className: 'subtitle' },
-	                    '09:00a.m. - 09:00p.m.'
+	                    'div',
+	                    { className: 'service-location' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'full-container' },
+	                      _react2.default.createElement(
+	                        'span',
+	                        null,
+	                        '服務'
+	                      ),
+	                      _react2.default.createElement('br', null),
+	                      _react2.default.createElement(
+	                        'span',
+	                        null,
+	                        '範圍'
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'service-location-content' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          null,
+	                          '到府收送服務範圍：',
+	                          _react2.default.createElement('br', null),
+	                          '台北市｜大安區、文山區、中山區、內湖區、萬華區',
+	                          _react2.default.createElement('br', null),
+	                          '新北市｜新店區、五股區、淡水區、中和區、樹林區、蘆洲區、新莊區',
+	                          _react2.default.createElement('br', null),
+	                          '桃園市｜龜山區、八德區、平鎮區',
+	                          _react2.default.createElement('br', null)
+	                        )
+	                      )
+	                    )
 	                  )
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'service-content' },
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  '人身穿著：',
-	                  _react2.default.createElement('br', null),
-	                  '穿著織物類 / 床寢織物類 / ',
-	                  _react2.default.createElement('br', null),
-	                  '禮服類 / 其他類 ',
-	                  _react2.default.createElement('br', null)
 	                ),
 	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  '精品洗滌：',
-	                  _react2.default.createElement('br', null),
-	                  '包包 / 皮衣 / 鞋子'
+	                  'div',
+	                  { className: 'service-title' },
+	                  _react2.default.createElement(
+	                    'h2',
+	                    null,
+	                    _react2.default.createElement(
+	                      'span',
+	                      null,
+	                      '到府收送'
+	                    ),
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement(
+	                      'span',
+	                      { className: 'subtitle' },
+	                      '09:00a.m. - 09:00p.m.'
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'service-content' },
+	                  _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    '人身穿著：',
+	                    _react2.default.createElement('br', null),
+	                    '穿著織物類 / 床寢織物類 / ',
+	                    _react2.default.createElement('br', null),
+	                    '禮服類 / 其他類 ',
+	                    _react2.default.createElement('br', null)
+	                  ),
+	                  _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    '精品洗滌：',
+	                    _react2.default.createElement('br', null),
+	                    '包包 / 皮衣 / 鞋子'
+	                  )
 	                )
 	              )
 	            )
@@ -1669,7 +1712,7 @@ webpackJsonp([0],{
 
 
 	// module
-	exports.push([module.id, "#serviceDetail {\n  background-image: url(" + __webpack_require__(195) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n#serviceDetail header h1 {\n  color: rgba(74, 74, 74, 1);\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#service {\n  padding-top: 20px;\n  padding-bottom: 60px;\n}\n\n#service .left-block,\n#service .right-block {\n  position: relative;\n  display: inline-block;\n  width: 50%;\n  height: 100%;\n  padding: 40px;\n  color: rgba(74, 74, 74, 1);\n  vertical-align:top;\n  background-color: rgba(203, 233, 228, 0.8);\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block:hover,\n#service .right-block:hover {\n  color: white;\n  background-color: rgba(105, 186, 177, 0.9);\n}\n\n#service .left-block .subtitle,\n#service .right-block .subtitle {\n  color: gray;\n}\n\n#service .left-block:hover .subtitle,\n#service .right-block:hover .subtitle {\n  color: lightgray;\n}\n\n#service .left-block {\n  text-align: right;\n}\n\n#service .right-block {\n  text-align: left;\n}\n\n#service .left-block div,\n#service .right-block div {\n  margin: 0 auto;\n  text-align: center;\n}\n\n#service .left-block:hover svg path,\n#service .right-block:hover svg path {\n  stroke: white !important;\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block:hover path:not(:first-of-type),\n#service .right-block:hover path:not(:first-of-type) {\n  fill: white !important;\n}\n\n#service .left-block .service-image {\n  padding-top: 4px;\n}\n\n#service .service-image {\n  height: 150px;\n}\n\n#service .service-content {\n  height: 180px;\n}\n\n#service > footer {\n  margin-top: 60px;\n  text-align: right;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #service .left-block,\n  #service .right-block {\n    display: block;\n    width: 100%;\n    margin: 20px 0px;\n    padding: 20px 0px;\n    text-align: center;\n  }\n\n  #service .service-content {\n    height: 120px;\n  }\n\n  #service > footer {\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
+	exports.push([module.id, "#serviceDetail {\n  background-image: url(" + __webpack_require__(195) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n#serviceDetail header h1 {\n  color: rgba(74, 74, 74, 1);\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#service {\n  padding-top: 20px;\n  padding-bottom: 60px;\n}\n\n#service .left-block,\n#service .right-block {\n  position: relative;\n  display: inline-block;\n  width: 50%;\n  height: 100%;\n  padding: 40px;\n  color: rgba(74, 74, 74, 1);\n  vertical-align:top;\n  background-color: rgba(203, 233, 228, 0.8);\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block .subtitle,\n#service .right-block .subtitle {\n  color: gray;\n}\n\n#service .left-block:hover,\n#service .right-block:hover {\n  color: white;\n  background-color: rgba(105, 186, 177, 0.9);\n}\n\n#service .left-block:hover .subtitle,\n#service .right-block:hover .subtitle {\n  color: lightgray;\n}\n\n#service .left-block {\n  text-align: right;\n}\n\n#service .right-block {\n  text-align: left;\n}\n\n#service .left-block div,\n#service .right-block div {\n  margin: 0 auto;\n  text-align: center;\n}\n\n#service .left-block:hover svg path,\n#service .right-block:hover svg path {\n  stroke: white !important;\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block:hover path:not(:first-of-type),\n#service .right-block:hover path:not(:first-of-type) {\n  fill: white !important;\n}\n\n#service .left-block .service-image {\n  padding-top: 4px;\n}\n\n#service .service-image {\n  position: relative;\n  height: 150px;\n}\n\n#service .service-image > .service-location {\n  position: absolute;\n  bottom: 0;\n  right: 30px;\n  padding: 5px;\n  color: rgba(58, 128, 123, 1);\n  line-height: 1;\n  border: 2px solid rgba(58, 128, 123, 1);\n  border-radius: 5px;\n}\n\n#service .service-image > .service-location .service-location-content {\n  position: absolute;\n  visibility: hidden;\n  opacity: 0;\n  top: 60px;\n  left: -160px;\n  width: 320px;\n  padding: 5px 10px;\n  text-align: left;\n  line-height: 1.4;\n  color: white;\n  background-color: rgba(105, 186, 177, 0.9);\n\n  -webkit-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n}\n\n#service .service-image > .service-location:hover .service-location-content {\n  visibility: visible;\n  opacity: 1;\n}\n\n\n#service .service-image > .service-location .service-location-content::before {\n  position: absolute;\n  display: block;\n  content: '';\n  top: -20px;\n  right: 130px;\n  width: 0;\n\theight: 0;\n\tborder-left: 10px solid transparent;\n\tborder-right: 10px solid transparent;\n\tborder-bottom: 20px solid rgba(105, 186, 177, 0.9);\n}\n\n\n#service .service-content {\n  height: 180px;\n}\n\n#service > footer {\n  margin-top: 60px;\n  text-align: right;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #service .service-image > .service-location {\n    right: 0px;\n  }\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #service .left-block,\n  #service .right-block {\n    display: block;\n    width: 100%;\n    margin: 20px 0px;\n    padding: 20px 0px;\n    text-align: center;\n  }\n\n  #service .service-content {\n    height: 120px;\n  }\n\n  #service > footer {\n    text-align: center;\n  }\n\n  #service .service-image > .service-location {\n    right: 120px;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
 
 	// exports
 

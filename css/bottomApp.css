@@ -149,7 +149,17 @@
 
 /* 768px - 959px */
 @media only screen and (max-width: 959px) {
-
+  /**
+   *  Link
+   */
+  #link .container > div:nth-child(1) iframe {
+    width: 492px;
+    height: 276.75px;
+  }
+  #link .container > div:nth-child(1) .left-block,
+  #link .container > div:nth-child(1) .right-block {
+    height: 276.75px;
+  }
 }
 
 /* 480px - 767px */

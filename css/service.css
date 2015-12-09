@@ -32,15 +32,15 @@
   transition: all 0.4s ease-in-out;
 }
 
+#service .left-block .subtitle,
+#service .right-block .subtitle {
+  color: gray;
+}
+
 #service .left-block:hover,
 #service .right-block:hover {
   color: white;
   background-color: rgba(105, 186, 177, 0.9);
-}
-
-#service .left-block .subtitle,
-#service .right-block .subtitle {
-  color: gray;
 }
 
 #service .left-block:hover .subtitle,
@@ -83,8 +83,60 @@
 }
 
 #service .service-image {
+  position: relative;
   height: 150px;
 }
+
+#service .service-image > .service-location {
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+  padding: 5px;
+  color: rgba(58, 128, 123, 1);
+  line-height: 1;
+  border: 2px solid rgba(58, 128, 123, 1);
+  border-radius: 5px;
+}
+
+#service .service-image > .service-location .service-location-content {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  top: 60px;
+  left: -160px;
+  width: 320px;
+  padding: 5px 10px;
+  text-align: left;
+  line-height: 1.4;
+  color: white;
+  background-color: rgba(105, 186, 177, 0.9);
+
+  -webkit-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+#service .service-image > .service-location:hover .service-location-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+#service .service-image > .service-location .service-location-content::before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: -20px;
+  right: 130px;
+  width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 20px solid rgba(105, 186, 177, 0.9);
+}
+
 
 #service .service-content {
   height: 180px;
@@ -101,6 +153,9 @@
 
 /* 768px - 959px */
 @media only screen and (max-width: 959px) {
+  #service .service-image > .service-location {
+    right: 0px;
+  }
 
 }
 
@@ -121,6 +176,10 @@
 
   #service > footer {
     text-align: center;
+  }
+
+  #service .service-image > .service-location {
+    right: 120px;
   }
 }
 
