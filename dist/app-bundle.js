@@ -20470,7 +20470,7 @@ webpackJsonp([0],[
 	    value: function render() {
 	      var detailListLength = this.state.detailList.length;
 	      var detailRows = this.state.detailList.map(function (item, index) {
-	        return _react2.default.createElement(_DetailRow2.default, { key: index, index: index + 1, item: item, length: detailListLength });
+	        return _react2.default.createElement(_DetailRow4.default, { key: index, index: index + 1, item: item, length: detailListLength });
 	      });
 	      return _react2.default.createElement(
 	        'section',
@@ -20478,7 +20478,20 @@ webpackJsonp([0],[
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'container' },
-	          detailRows
+	          _react2.default.createElement(
+	            'header',
+	            { className: 'col-12' },
+	            _react2.default.createElement(
+	              'h1',
+	              null,
+	              '服務特色'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'detail-items' },
+	            detailRows
+	          )
 	        )
 	      );
 	    }
@@ -20486,13 +20499,6 @@ webpackJsonp([0],[
 
 	  return Detail;
 	})(_react.Component);
-
-	// <header className="col-12">
-	//   <h1>服務特色</h1>
-	// </header>
-	// <div className="detail-items">
-	//   {detailRows}
-	// </div>
 
 	exports.default = Detail;
 
