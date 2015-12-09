@@ -1,0 +1,135 @@
+#service {
+  padding-top: 20px;
+  padding-bottom: 60px;
+  background-image: url('../img/service.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*
+#service > header {
+  margin: 40px auto;
+}
+
+#service > header > h1 {
+  margin-top: 0px;
+}*/
+
+#service .left-block,
+#service .right-block {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  padding: 40px;
+  vertical-align:top;
+  background-color: rgba(203, 233, 228, 0.8);
+
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#service .left-block:hover,
+#service .right-block:hover {
+  color: white;
+  background-color: rgba(105, 186, 177, 0.9);
+}
+
+#service .left-block .subtitle,
+#service .right-block .subtitle {
+  color: gray;
+}
+
+#service .left-block:hover .subtitle,
+#service .right-block:hover .subtitle {
+  color: lightgray;
+}
+
+#service .left-block {
+  text-align: right;
+}
+
+#service .right-block {
+  text-align: left;
+}
+
+#service .left-block div,
+#service .right-block div {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#service .left-block:hover svg path,
+#service .right-block:hover svg path {
+  stroke: white;
+
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#service .left-block:hover path#Fill-2___-1349331951,
+#service .left-block:hover path#Fill-4___-1349331951,
+#service .left-block:hover path#Fill-5___-1349331951,
+#service .left-block:hover path#Fill-6___-1349331951 {
+  fill: white;
+}
+
+#service .right-block:hover path#Fill-2___-1348408430 {
+  fill: white;
+}
+
+#service .left-block .service-image {
+  padding-top: 4px;
+}
+
+#service .service-image {
+  height: 150px;
+}
+
+#service .service-content {
+  height: 180px;
+}
+
+#service > footer {
+  margin-top: 60px;
+  text-align: right;
+}
+
+/*************************/
+/*      Responsive       */
+/*************************/
+
+/* 768px - 959px */
+@media only screen and (max-width: 959px) {
+
+}
+
+/* 480px - 767px */
+@media only screen and (max-width: 767px) {
+  #service .left-block,
+  #service .right-block {
+    display: block;
+    width: 100%;
+    margin: 20px 0px;
+    padding: 20px 0px;
+    text-align: center;
+  }
+
+  #service .service-content {
+    height: 120px;
+  }
+
+  #service > footer {
+    text-align: center;
+  }
+}
+
+/* 320px - 479px */
+@media only screen and (max-width: 479px) {
+
+}

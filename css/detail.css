@@ -1,0 +1,241 @@
+#detail {
+  overflow: hidden;
+  height: 500px;
+  background-image: url('../img/detail.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/**
+ *  Version1
+ */
+/*.detail-table {
+  position: relative;
+  display: table;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.detail-row {
+  position: relative;
+  display: table-row;
+  width: 100%;
+  color: white;
+}
+
+.detail-row > div {
+  position: relative;
+  z-index: 1;
+  display: table-cell;
+  width: 33.3%;
+  height: 260px;
+  padding: 0px 30px;
+  vertical-align: middle;
+}
+
+.detail-item-title {
+  background-color: rgba(58, 128, 123, 1);
+}
+
+.detail-item-content {
+  background-color: rgba(105, 186, 177, 1);
+}
+
+.detail-item-image {
+  position: absolute;
+  display: block;
+  z-index: 0;
+  top: 0;
+  left: 33.3%;
+  width: 33.3%;
+  height: 260px;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+
+  -webkit-transition: left 0.5s ease-in-out;
+  -moz-transition: left 0.5s ease-in-out;
+  -ms-transition: left 0.5s ease-in-out;
+  -o-transition: left 0.5s ease-in-out;
+  transition: left 0.5s ease-in-out;
+}
+
+.detail-item-image > img {
+  max-width: 100%;
+  width: auto;
+  max-height: 100%;
+  height: auto;
+}
+
+.detail-item-image.show-left {
+  left: 0%;
+}
+
+.detail-item-image.show-right {
+  left: 66.6%;
+}*/
+
+/**
+ *  Version2
+ */
+#detail .detail-items {
+  position: relative;
+}
+
+#detail .detail-item {
+  position: absolute;
+  display: table;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#detail .detail-item-row {
+  display: table-row;
+  height: 230px;
+}
+
+#detail .detail-item-row > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#detail .detail-item-image {
+  width: 20%;
+  text-align: center;
+  background-color: white;
+}
+
+#detail .detail-item-image img {
+  max-width: 100%;
+  width: auto;
+  max-height: 100%;
+  height: auto;
+}
+
+#detail .detail-item-title {
+  width: 25%;
+  text-align: center;
+  background-color: rgba(58, 128, 123, 0.8);
+}
+
+#detail .detail-item-content {
+  width: 40%;
+  padding: 0px 40px;
+  background-color: rgba(58, 128, 123, 0.8);
+}
+
+#detail .detail-item-end {
+  width: 15%;
+  background-color: rgba(58, 128, 123, 0.8);
+}
+
+#detail .detail-action {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+#detail .detail-action > span {
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+#detail .detail-action .detail-action-previous,
+#detail .detail-action .detail-action-next {
+  display: none;
+}
+
+#detail .detail-action .detail-action-previous.show,
+#detail .detail-action .detail-action-next.show {
+  display: inline-block;
+}
+
+#detail .pull-left {
+  left: -120%;
+}
+
+#detail .pull-right {
+  left: 120%;
+}
+
+
+/*************************/
+/*      Responsive       */
+/*************************/
+
+/* 768px - 959px */
+@media only screen and (max-width: 959px) {
+  .detail-table {
+    margin-bottom: 10px;
+  }
+  .detail-row > div {
+    width: 50%;
+  }
+  .detail-row > div.prefix,
+  .detail-row > div.postfix {
+    display: none;
+  }
+  .detail-item-image {
+    display: none;
+  }
+}
+
+/* 480px - 767px */
+@media only screen and (max-width: 767px) {
+  #detail {
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  #detail .detail-item {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 10px auto;
+  }
+
+  #detail .detail-item-row {
+    height: auto;
+  }
+
+  #detail .detail-action {
+    display: none;
+  }
+
+  #detail .pull-left,
+  #detail .pull-right {
+    left: auto;
+  }
+
+  #detail .detail-item-image {
+    width: 30%
+  }
+
+  #detail .detail-item-title {
+    width: 30%;
+  }
+
+  #detail .detail-item-content {
+    width: 40%;
+    padding: 0px 15px;
+  }
+
+  #detail .detail-item-end {
+    width: 0%;
+  }
+}
+
+/* 320px - 479px */
+@media only screen and (max-width: 479px) {
+
+}

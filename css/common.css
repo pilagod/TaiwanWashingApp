@@ -1,0 +1,256 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 20px;
+  min-width: 960px;
+  margin: 0 auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width:100%;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+section:nth-of-type(2) {z-index: 9;}
+section:nth-of-type(3) {z-index: 8;}
+section:nth-of-type(4) {z-index: 7;}
+section:nth-of-type(5) {z-index: 6;}
+
+header {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+header > h1 {
+  margin-top: 0px
+}
+
+/*************************/
+/*        General        */
+/*************************/
+
+.subtitle {
+  font-size: 0.7em;
+}
+
+.button {
+  margin: 10px;
+  padding: 20px 60px;
+  color: white;
+  background-color: rgba(104, 184, 175, 0.95);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+
+  -webkit-transition: background-color 0.4s ease-in-out;
+  -moz-transition: background-color 0.4s ease-in-out;
+  -ms-transition: background-color 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: rgba(70, 157, 151, 1);
+}
+
+.container,
+.full-container {
+  margin: 0 auto;
+}
+
+.full-container {
+  width: 100%;
+  height: 100%;
+}
+/* margin 10px */
+.container {
+  width: 960px;
+  height: 100%;
+}
+
+.col-12, /* full width */
+.col-9, /* 3/4 width */
+.col-8, /* 2/3 width */
+.col-6, /* half width */
+.col-4, /* 1/3 width */
+.col-3 /* 1/4 width */
+{
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* First and Last */
+.first {
+  margin-left:0;
+}
+
+.last {
+  margin-right:0;
+}
+
+.col-12 {width:940px;}
+.col-9 {width:700px;}
+.col-8 {width:620px;}
+.col-7 {width:520px;}
+.col-6 {width:460px;}
+.col-4 {width:300px;}
+.col-3 {width:220px;}
+.col-2 {width:140px;}
+
+
+/**
+ *  Flex Box
+ */
+
+.flex {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;
+}
+
+.inline-flex {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+
+/* align */
+.flex-align-left {
+  margin-right: auto;
+}
+
+.flex-align-right {
+  margin-left: auto;
+}
+
+.flex-align-center {
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+/* vertical align */
+.flex-vertical-top {
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+.flex-vertical-bottom {
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+.flex-vertical-center {
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* direction */
+.flex-direction-row {
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.flex-direction-column {
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+/*************************/
+/*      Responsive       */
+/*************************/
+
+/* 768px - 959px */
+@media only screen and (max-width: 959px) {
+  body {
+    font-size: 18px;
+    min-width: 768px;
+  }
+
+  .container {
+    width: 768px;
+  }
+
+  /* Resize the columns */
+  .col-12 {width:748px;}
+  .col-9 {width:556px;}
+  .col-8 {width:492px;}
+  .col-6 {width:364px;}
+  .col-4 {width:236px;}
+  .col-3 {width:172px;}
+}
+
+/* 480px - 767px */
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+    min-width: 480px;
+  }
+
+  .container {
+    width: 480px;
+  }
+
+  /* 225px default */
+  /* Resize the columns */
+  .col-12 {width:460px;}
+  .col-9 {width:460px;}
+  .col-8 {width:460px;}
+  .col-6 {width:460px;}
+  .col-4 {width:460px;}
+  .col-3 {width:460px;}
+
+  .col-12, /* full width */
+  .col-9, /* 3/4 width */
+  .col-8, /* 2/3 width */
+  .col-6, /* half width */
+  .col-4, /* 1/3 width */
+  .col-3 /* 1/4 width */
+  {
+    display: block;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+/* 320px - 479px */
+@media only screen and (max-width: 479px) {
+  body {
+    font-size: 12px;
+    min-width: 320px;
+  }
+
+  .container {
+    width: 320px;
+  }
+
+  /* Resize the columns */
+  .col-12 {width:300px;}
+  .col-9 {width:300px;}
+  .col-8 {width:300px;}
+  .col-6 {width:300px;}
+  .col-4 {width:300px;}
+  .col-3 {width:300px;}
+}

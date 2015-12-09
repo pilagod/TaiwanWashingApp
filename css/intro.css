@@ -1,0 +1,80 @@
+#intro {
+  padding-bottom: 120px;
+  color: white;
+  background-color: rgba(41, 163, 144, 0.25);
+}
+
+#intro .top-intro {
+  position: relative;
+  height: 80px;
+  background-color: rgba(98, 183, 173, 1);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+#intro .top-intro img {
+  width: 50px;
+  height: 50px;
+}
+
+#intro .middle-intro {
+  padding-top: 40px;
+  padding-bottom: 80px;
+  background-color: rgba(98, 183, 173, 1);
+}
+
+#intro .content {
+  text-align: center;
+}
+
+#intro .content::after {
+  position: absolute;
+  display: block;
+  content: url('../img/device.png');
+  top: -60px;
+  right: -120px;
+
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  -ms-transform: scale(0.75);
+  -o-transform: scale(0.75);
+  transform: scale(0.75);
+}
+
+#intro .content > div {
+  margin-top: 20px;
+}
+
+#intro .content .button {
+  margin: 0px 20px;
+  padding: 15px 60px;
+  background-color: rgba(216, 216, 216, 1);
+  border-radius: 5px;
+}
+
+/*************************/
+/*      Responsive       */
+/*************************/
+
+/* 768px - 959px */
+@media only screen and (max-width: 959px) {
+}
+
+/* 480px - 767px */
+@media only screen and (max-width: 767px) {
+  #intro {
+    padding-bottom: 60px;
+  }
+  #intro .middle-intro {
+    padding-bottom: 0px;
+  }
+  #intro .content::after {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}
+
+/* 320px - 479px */
+@media only screen and (max-width: 479px) {
+
+}
