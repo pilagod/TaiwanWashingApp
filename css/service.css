@@ -63,7 +63,7 @@
 
 #service .left-block:hover svg path,
 #service .right-block:hover svg path {
-  stroke: white;
+  stroke: white !important;
 
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
@@ -72,15 +72,9 @@
   transition: all 0.4s ease-in-out;
 }
 
-#service .left-block:hover path#Fill-2___-1349331951,
-#service .left-block:hover path#Fill-4___-1349331951,
-#service .left-block:hover path#Fill-5___-1349331951,
-#service .left-block:hover path#Fill-6___-1349331951 {
-  fill: white;
-}
-
-#service .right-block:hover path#Fill-2___-1348408430 {
-  fill: white;
+#service .left-block:hover path:not(:first-of-type),
+#service .right-block:hover path:not(:first-of-type) {
+  fill: white !important;
 }
 
 #service .left-block .service-image {
