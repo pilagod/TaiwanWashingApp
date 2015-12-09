@@ -39,9 +39,23 @@ export default class Navbar extends Component {
     let menu;
     if (this.state.active) {
       let menuList = this.state.menuList.map((menuItem, index) => {
+        let linkRegexp = /^#/
+        let hrefTarget, hrefOnClick
+        if (linkRegexp.test(menuItem.url)) {
+          hrefTarget = '_self'
+          hrefOnClick = this.hrefOnClick.bind(this, menuItem.url)
+        } else {
+          hrefTarget = '_blank'
+          hrefOnClick = null
+        }
         return (
-          <li key={index}>
-            <a href={menuItem.url}><h1>0{index+1}. {menuItem.name}</h1></a>
+          <li key={index} onClick={this.menuOnClick.bind(this)}>
+            <a href={menuItem.url} target={hrefTarget} onClick={hrefOnClick}>
+              <h1>
+                <span>0{index+1}.</span>
+                <span className="link-title">{menuItem.name}</span>
+              </h1>
+            </a>
           </li>
         )
       })
@@ -55,7 +69,7 @@ export default class Navbar extends Component {
     }
     return (
       <nav id="navbar">
-        <div className="full-container flex flex-align-center flex-direction-column" onClick={this.menuOnClickHandler.bind(this)}>
+        <div className="full-container flex flex-align-center flex-direction-column" onClick={this.menuOnClick.bind(this)}>
           <span>
             <i></i>
             <i></i>
@@ -67,7 +81,20 @@ export default class Navbar extends Component {
     )
   }
 
-  menuOnClickHandler() {
+  hrefOnClick(hash, e) {
+    e.preventDefault();
+
+    var target = hash,
+        $target = $(target);
+
+    $('html, body').stop().animate({
+        'scrollTop': $target.offset().top
+    }, 900, 'swing', function () {
+        window.location.hash = target;
+    });
+  }
+
+  menuOnClick() {
     if (this.state.active) {
       $('#menu').addClass('hide');
       $('#navbar > div').removeClass('active');

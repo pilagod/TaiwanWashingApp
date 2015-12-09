@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import DetailRow from './DetailRow.jsx'
+import DetailRow2 from './DetailRow2.jsx'
 import Style from '../css/detail2.css'
 
 export default class Detail extends Component {
@@ -24,7 +24,7 @@ export default class Detail extends Component {
     let detailListLength = this.state.detailList.length;
     let detailRows = this.state.detailList.map((item, index) => {
       return (
-        <DetailRow key={index} index={index+1} item={item} length={detailListLength}/>
+        <DetailRow2 key={index} index={index+1} item={item} length={detailListLength}/>
       )
     })
     return (

@@ -98,7 +98,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(206);
+	module.exports = __webpack_require__(203);
 
 
 /***/ },
@@ -19759,22 +19759,42 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
 	      var menu = undefined;
 	      if (this.state.active) {
 	        var menuList = this.state.menuList.map(function (menuItem, index) {
+	          var linkRegexp = /^#/;
+	          var hrefTarget = undefined,
+	              hrefOnClick = undefined;
+	          if (linkRegexp.test(menuItem.url)) {
+	            hrefTarget = '_self';
+	            hrefOnClick = _this2.hrefOnClick.bind(_this2, menuItem.url);
+	          } else {
+	            hrefTarget = '_blank';
+	            hrefOnClick = null;
+	          }
 	          return _react2.default.createElement(
 	            'li',
-	            { key: index },
+	            { key: index, onClick: _this2.menuOnClick.bind(_this2) },
 	            _react2.default.createElement(
 	              'a',
-	              { href: menuItem.url },
+	              { href: menuItem.url, target: hrefTarget, onClick: hrefOnClick },
 	              _react2.default.createElement(
 	                'h1',
 	                null,
-	                '0',
-	                index + 1,
-	                '. ',
-	                menuItem.name
+	                _react2.default.createElement(
+	                  'span',
+	                  null,
+	                  '0',
+	                  index + 1,
+	                  '.'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'link-title' },
+	                  menuItem.name
+	                )
 	              )
 	            )
 	          );
@@ -19794,7 +19814,7 @@
 	        { id: 'navbar' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'full-container flex flex-align-center flex-direction-column', onClick: this.menuOnClickHandler.bind(this) },
+	          { className: 'full-container flex flex-align-center flex-direction-column', onClick: this.menuOnClick.bind(this) },
 	          _react2.default.createElement(
 	            'span',
 	            null,
@@ -19807,16 +19827,30 @@
 	      );
 	    }
 	  }, {
-	    key: 'menuOnClickHandler',
-	    value: function menuOnClickHandler() {
-	      var _this2 = this;
+	    key: 'hrefOnClick',
+	    value: function hrefOnClick(hash, e) {
+	      e.preventDefault();
+
+	      var target = hash,
+	          $target = $(target);
+
+	      $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	      }, 900, 'swing', function () {
+	        window.location.hash = target;
+	      });
+	    }
+	  }, {
+	    key: 'menuOnClick',
+	    value: function menuOnClick() {
+	      var _this3 = this;
 
 	      if (this.state.active) {
 	        $('#menu').addClass('hide');
 	        $('#navbar > div').removeClass('active');
 	        setTimeout(function () {
 	          $('#navbar > div').removeClass('animation');
-	          _this2.setState({ active: false });
+	          _this3.setState({ active: false });
 	        }, 500);
 	      } else {
 	        $('#navbar > div').addClass('animation active');
@@ -19865,7 +19899,7 @@
 
 
 	// module
-	exports.push([module.id, "/*************************/\n/*      Navbar Css       */\n/*************************/\n\n/**\n *  Navbar\n */\n#navbar {\n  color: white;\n}\n\n#navbar > .full-container {\n  position: absolute;\n  z-index: 2;\n  cursor: pointer;\n  top: 200px;\n  left: 0;\n  width: 100px;\n  height: 120px;\n  padding-left: 15px;\n  background-color: rgba(47, 114, 110, 0.8);\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n#navbar > .full-container.animation {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#navbar > .full-container.fixed {\n  position: fixed;\n  top: 0;\n}\n\n#navbar > .full-container.active {\n  position: fixed;\n  top: 50%;\n  background-color: transparent;\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);\n\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n\n#navbar > .full-container.active:hover {\n  background-color: rgba(98, 183, 173, 0.8);\n}\n\n#navbar > .full-container > span {\n  width: 54px;\n}\n\n#navbar > .full-container i {\n  display: block;\n  opacity: 1;\n  width: 100%;\n  height: 2px;\n  background-color: white;\n  border-radius: 2px;\n\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#navbar > .full-container i:nth-child(2) {\n  margin: 10px 0px;\n}\n\n#navbar > .full-container.active i:nth-child(1) {\n  opacity: 1;\n  -webkit-transform: rotate(45deg) translate(9px, 9px);\n  -moz-transform: rotate(45deg) translate(9px, 9px);\n  -ms-transform: rotate(45deg) translate(9px, 9px);\n  -o-transform: rotate(45deg) translate(9px, 9px);\n  transform: rotate(45deg) translate(9px, 9px);\n}\n\n#navbar > .full-container.active i:nth-child(2) {\n  opacity: 0;\n}\n\n#navbar > .full-container.active i:nth-child(3) {\n  opacity: 1;\n  -webkit-transform: rotate(-45deg) translate(9px, -9px);\n  -moz-transform: rotate(-45deg) translate(9px, -9px);\n  -ms-transform: rotate(-45deg) translate(9px, -9px);\n  -o-transform: rotate(-45deg) translate(9px, -9px);\n  transform: rotate(-45deg) translate(9px, -9px);\n}\n\n\n/**\n *  Menu\n */\n#menu {\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding-top: 100px;\n  padding-left: 240px;\n  background-color: rgba(46, 113, 108, 0.9);\n\n  animation-name: show;\n  animation-duration: 0.5s;\n  animation-timing-function: ease-in-out;\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#menu ul {\n  display: inline-block;\n}\n\n#menu.hide {\n  opacity: 0;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n\n/*************************/\n/*      Animations       */\n/*************************/\n\n/* show animation */\n@-webkit-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-moz-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-ms-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-o-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n/*************/\n", ""]);
+	exports.push([module.id, "/*************************/\n/*      Navbar Css       */\n/*************************/\n\n/**\n *  Navbar\n */\n#navbar {\n  color: white;\n}\n\n#navbar > .full-container {\n  position: absolute;\n  z-index: 2;\n  cursor: pointer;\n  top: 200px;\n  left: 0;\n  width: 100px;\n  height: 120px;\n  padding-left: 15px;\n  background-color: rgba(47, 114, 110, 0.8);\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n#navbar > .full-container.fixed {\n  position: fixed !important;\n  top: 0;\n}\n\n#navbar > .full-container.animation {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#navbar > .full-container.active {\n  position: fixed;\n  top: 50%;\n  background-color: transparent;\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);\n\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n\n#navbar > .full-container.active:hover {\n  background-color: rgba(98, 183, 173, 0.8);\n}\n\n#navbar > .full-container > span {\n  width: 54px;\n}\n\n#navbar > .full-container i {\n  display: block;\n  opacity: 1;\n  width: 100%;\n  height: 2px;\n  background-color: white;\n  border-radius: 2px;\n\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#navbar > .full-container i:nth-child(2) {\n  margin: 10px 0px;\n}\n\n#navbar > .full-container.active i:nth-child(1) {\n  opacity: 1;\n  -webkit-transform: rotate(45deg) translate(9px, 9px);\n  -moz-transform: rotate(45deg) translate(9px, 9px);\n  -ms-transform: rotate(45deg) translate(9px, 9px);\n  -o-transform: rotate(45deg) translate(9px, 9px);\n  transform: rotate(45deg) translate(9px, 9px);\n}\n\n#navbar > .full-container.active i:nth-child(2) {\n  opacity: 0;\n}\n\n#navbar > .full-container.active i:nth-child(3) {\n  opacity: 1;\n  -webkit-transform: rotate(-45deg) translate(9px, -9px);\n  -moz-transform: rotate(-45deg) translate(9px, -9px);\n  -ms-transform: rotate(-45deg) translate(9px, -9px);\n  -o-transform: rotate(-45deg) translate(9px, -9px);\n  transform: rotate(-45deg) translate(9px, -9px);\n}\n\n\n/**\n *  Menu\n */\n#menu {\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding-top: 100px;\n  padding-left: 240px;\n  background-color: rgba(46, 113, 108, 0.9);\n\n  animation-name: show;\n  animation-duration: 0.5s;\n  animation-timing-function: ease-in-out;\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#menu ul {\n  display: inline-block;\n}\n\n#menu .link-title {\n  display: inline-block;\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform 0.5s ease-in-out;\n  -ms-transition: transform 0.5s ease-in-out;\n  -o-transition: transform 0.5s ease-in-out;\n  transition: transform 0.5s ease-in-out;\n}\n\n#menu li:hover .link-title {\n  -webkit-transform: translateX(100%);\n  -moz-transform: translateX(100%);\n  -ms-transform: translateX(100%);\n  -o-transform: translateX(100%);\n  transform: translateX(100%);\n}\n\n#menu.hide {\n  opacity: 0;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n\n/*************************/\n/*      Animations       */\n/*************************/\n\n/* show animation */\n@-webkit-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-moz-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-ms-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-o-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n/*************/\n", ""]);
 
 	// exports
 
@@ -20240,12 +20274,17 @@
 	              _react2.default.createElement(
 	                'h1',
 	                null,
-	                'Better, Faster, Easier 更好,更快,更方便'
-	              ),
-	              _react2.default.createElement(
-	                'h1',
-	                null,
-	                '台灣大洗 e 聯盟App'
+	                _react2.default.createElement(
+	                  'span',
+	                  null,
+	                  'Better, Faster, Easier 更好,更快,更方便'
+	                ),
+	                _react2.default.createElement('br', null),
+	                _react2.default.createElement(
+	                  'span',
+	                  null,
+	                  '台灣大洗 e 聯盟App'
+	                )
 	              )
 	            )
 	          )
@@ -20294,7 +20333,7 @@
 
 
 	// module
-	exports.push([module.id, "#banner {\n  color: white;\n  margin-bottom: -10px;\n  overflow: hidden;\n}\n\n#banner img {\n  max-width: 100vw;\n  max-height: 63vw;\n}\n\n#banner .container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n  text-align: right;\n}\n\n#banner .container > div {\n  margin-top: 200px;\n}\n", ""]);
+	exports.push([module.id, "#banner {\n  color: white;\n  margin-bottom: -10px;\n  overflow: hidden;\n}\n\n#banner img {\n  max-width: 100vw;\n  max-height: 63vw;\n}\n\n#banner .container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n  text-align: right;\n}\n\n#banner .container > div {\n  margin-top: 220px;\n  text-shadow: 0px 8px 5px rgba(0, 0, 0, 0.5);\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #banner .container > div {\n    margin-top: 140px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
 
 	// exports
 
@@ -20351,7 +20390,11 @@
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'flex-align-right' },
-	              _react2.default.createElement('img', { src: 'img/facebook.svg' })
+	              _react2.default.createElement(
+	                'a',
+	                { href: 'https://www.facebook.com/taiwanwashing', target: '_blank' },
+	                _react2.default.createElement('img', { src: 'img/facebook.svg', style: { opacity: 0.9 } })
+	              )
 	            )
 	          )
 	        ),
@@ -20363,7 +20406,7 @@
 	            { className: 'container' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'col-9 flex flex-align-center flex-direction-column content' },
+	              { className: 'col-8 flex flex-align-center flex-direction-column content' },
 	              _react2.default.createElement(
 	                'h1',
 	                null,
@@ -20382,9 +20425,17 @@
 	              ),
 	              _react2.default.createElement(
 	                'div',
-	                null,
-	                _react2.default.createElement('span', { className: 'button' }),
-	                _react2.default.createElement('span', { className: 'button' })
+	                { className: 'download' },
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: 'https://play.google.com/store/apps/details?id=com.tww.taiwanwashing', target: '_blank' },
+	                  _react2.default.createElement('img', { src: 'img/google-play.png' })
+	                ),
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: 'https://itunes.apple.com/tw/app/tai-wan-da-xie/id1039606143?mt=8', target: '_blank' },
+	                  _react2.default.createElement('img', { src: 'img/itunes-app.png' })
+	                )
 	              )
 	            )
 	          )
@@ -20433,7 +20484,7 @@
 
 
 	// module
-	exports.push([module.id, "#intro {\n  padding-bottom: 120px;\n  color: white;\n  background-color: rgba(41, 163, 144, 0.25);\n}\n\n#intro .top-intro {\n  position: relative;\n  height: 80px;\n  background-color: rgba(98, 183, 173, 1);\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n#intro .top-intro img {\n  width: 50px;\n  height: 50px;\n}\n\n#intro .middle-intro {\n  padding-top: 40px;\n  padding-bottom: 80px;\n  background-color: rgba(98, 183, 173, 1);\n}\n\n#intro .content {\n  text-align: center;\n}\n\n#intro .content::after {\n  position: absolute;\n  display: block;\n  content: url(" + __webpack_require__(170) + ");\n  top: -60px;\n  right: -120px;\n\n  -webkit-transform: scale(0.75);\n  -moz-transform: scale(0.75);\n  -ms-transform: scale(0.75);\n  -o-transform: scale(0.75);\n  transform: scale(0.75);\n}\n\n#intro .content > div {\n  margin-top: 20px;\n}\n\n#intro .content .button {\n  margin: 0px 20px;\n  padding: 15px 60px;\n  background-color: rgba(216, 216, 216, 1);\n  border-radius: 5px;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #intro {\n    padding-bottom: 60px;\n  }\n  #intro .middle-intro {\n    padding-bottom: 0px;\n  }\n  #intro .content::after {\n    position: relative;\n    top: 0;\n    right: 0;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
+	exports.push([module.id, "#intro {\n  padding-bottom: 120px;\n  color: white;\n  background-color: rgba(41, 163, 144, 0.25);\n}\n\n#intro .top-intro {\n  position: relative;\n  height: 80px;\n  background-color: rgba(98, 183, 173, 1);\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n#intro .top-intro img {\n  width: 50px;\n  height: 50px;\n}\n\n#intro .middle-intro {\n  padding-top: 40px;\n  padding-bottom: 40px;\n  background-color: rgba(98, 183, 173, 1);\n}\n\n#intro .content {\n  text-align: center;\n}\n\n#intro .content::after {\n  position: absolute;\n  display: block;\n  content: url(" + __webpack_require__(170) + ");\n  top: -60px;\n  right: -220px;\n\n  -webkit-transform: scale(0.75);\n  -moz-transform: scale(0.75);\n  -ms-transform: scale(0.75);\n  -o-transform: scale(0.75);\n  transform: scale(0.75);\n}\n\n#intro .download a {\n  position: relative;\n  display: inline-block;\n  width: 180px;\n  margin: 0px 10px;\n}\n\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #intro .content::after {\n    right: -220px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #intro {\n    padding-bottom: 60px;\n  }\n  #intro .middle-intro {\n    padding-bottom: 0px;\n  }\n  #intro .content::after {\n    position: relative;\n    top: 0;\n    right: 0;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
 
 	// exports
 
@@ -20446,1384 +20497,33 @@
 
 /***/ },
 /* 171 */,
-/* 172 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _classnames = __webpack_require__(173);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var DetailRow = (function (_Component) {
-	  _inherits(DetailRow, _Component);
-
-	  function DetailRow(props) {
-	    _classCallCheck(this, DetailRow);
-
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DetailRow).call(this, props));
-
-	    _this.state = {
-	      status: 0 /* 1 for left, 2 for right */
-	    };
-	    return _this;
-	  }
-
-	  _createClass(DetailRow, [{
-	    key: 'render',
-	    value: function render() {
-	      /* true for left, false for right */
-	      var direction = this.props.index % 2 === 0 ? true : false;
-	      var prefixDiv = direction ? _react2.default.createElement('div', { className: 'prefix' }) : null;
-	      var postfixDiv = direction ? null : _react2.default.createElement('div', { className: 'postfix' });
-
-	      var imageSrc = 'img/detail0' + this.props.index + '.png';
-	      var imageClassNames = (0, _classnames2.default)('detail-item-image', {
-	        'show-left': this.state.status === 1 && direction,
-	        'show-right': this.state.status === 2 && !direction
-	      });
-
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'detail-table',
-	          onMouseEnter: this.detailRowOnMouseEnterHandler.bind(this, direction),
-	          onMouseLeave: this.detailRowOnMouseLeaveHandler.bind(this, direction) },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'detail-row' },
-	          prefixDiv,
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'detail-item-title' },
-	            _react2.default.createElement(
-	              'h1',
-	              null,
-	              _react2.default.createElement(
-	                'span',
-	                null,
-	                '0',
-	                this.props.index,
-	                '.'
-	              ),
-	              ' ',
-	              _react2.default.createElement('br', null),
-	              _react2.default.createElement(
-	                'span',
-	                null,
-	                this.props.item.title
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'detail-item-content' },
-	            _react2.default.createElement(
-	              'h3',
-	              null,
-	              this.props.item.content
-	            )
-	          ),
-	          postfixDiv
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: imageClassNames },
-	          _react2.default.createElement('img', { src: imageSrc })
-	        )
-	      );
-	    }
-	  }, {
-	    key: 'detailRowOnMouseEnterHandler',
-	    value: function detailRowOnMouseEnterHandler(direction) {
-	      /* direction: true for left, false for right */
-	      if (direction) {
-	        this.setState({ status: 1 });
-	      } else {
-	        this.setState({ status: 2 });
-	      }
-	    }
-	  }, {
-	    key: 'detailRowOnMouseLeaveHandler',
-	    value: function detailRowOnMouseLeaveHandler(direction) {
-	      /* direction: true for left, false for right */
-	      this.setState({ status: 0 });
-	    }
-	  }]);
-
-	  return DetailRow;
-	})(_react.Component);
-
-	exports.default = DetailRow;
-
-	DetailRow.propTypes = {
-	  index: _react.PropTypes.number.isRequired,
-	  item: _react.PropTypes.object.isRequired
-	};
-
-/***/ },
-/* 173 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2015 Jed Watson.
-	  Licensed under the MIT License (MIT), see
-	  http://jedwatson.github.io/classnames
-	*/
-	/* global define */
-
-	(function () {
-		'use strict';
-
-		var hasOwn = {}.hasOwnProperty;
-
-		function classNames () {
-			var classes = '';
-
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (!arg) continue;
-
-				var argType = typeof arg;
-
-				if (argType === 'string' || argType === 'number') {
-					classes += ' ' + arg;
-				} else if (Array.isArray(arg)) {
-					classes += ' ' + classNames.apply(null, arg);
-				} else if (argType === 'object') {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes += ' ' + key;
-						}
-					}
-				}
-			}
-
-			return classes.substr(1);
-		}
-
-		if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else if (true) {
-			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-				return classNames;
-			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else {
-			window.classNames = classNames;
-		}
-	}());
-
-
-/***/ },
+/* 172 */,
+/* 173 */,
 /* 174 */,
 /* 175 */,
 /* 176 */,
-/* 177 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "54c9521ab027253ee68def469d4faaf3.png";
-
-/***/ },
-/* 178 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactInlinesvg = __webpack_require__(179);
-
-	var _reactInlinesvg2 = _interopRequireDefault(_reactInlinesvg);
-
-	var _service = __webpack_require__(194);
-
-	var _service2 = _interopRequireDefault(_service);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Service = (function (_Component) {
-	  _inherits(Service, _Component);
-
-	  function Service() {
-	    _classCallCheck(this, Service);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Service).apply(this, arguments));
-	  }
-
-	  _createClass(Service, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'section',
-	        { id: 'service' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'container' },
-	          _react2.default.createElement(
-	            'header',
-	            { className: 'col-12' },
-	            _react2.default.createElement(
-	              'h1',
-	              null,
-	              '服務項目'
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'full-container' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'left-block' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'col-4' },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'service-image' },
-	                _react2.default.createElement(_reactInlinesvg2.default, { src: 'img/service01.svg' })
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'service-title' },
-	                _react2.default.createElement(
-	                  'h2',
-	                  null,
-	                  _react2.default.createElement(
-	                    'span',
-	                    null,
-	                    '超商洗衣'
-	                  ),
-	                  _react2.default.createElement('br', null),
-	                  _react2.default.createElement(
-	                    'span',
-	                    { className: 'subtitle' },
-	                    '24小時送洗'
-	                  )
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'service-content' },
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  '服務據點：',
-	                  _react2.default.createElement('br', null),
-	                  '全台灣全家 / OK / 萊爾富便利商店'
-	                ),
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  '送洗品項：',
-	                  _react2.default.createElement('br', null),
-	                  '人身穿著類（不含皮衣皮草）',
-	                  _react2.default.createElement('br', null),
-	                  '床寢類'
-	                )
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'right-block' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'col-4' },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'service-image' },
-	                _react2.default.createElement(_reactInlinesvg2.default, { src: 'img/service02.svg' })
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'service-title' },
-	                _react2.default.createElement(
-	                  'h2',
-	                  null,
-	                  _react2.default.createElement(
-	                    'span',
-	                    null,
-	                    '到府收送'
-	                  ),
-	                  _react2.default.createElement('br', null),
-	                  _react2.default.createElement(
-	                    'span',
-	                    { className: 'subtitle' },
-	                    '09:00a.m. - 09:00p.m.'
-	                  )
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'service-content' },
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  '人身穿著：',
-	                  _react2.default.createElement('br', null),
-	                  '穿著織物類 / 床寢織物類 / ',
-	                  _react2.default.createElement('br', null),
-	                  '禮服類 / 其他類 ',
-	                  _react2.default.createElement('br', null)
-	                ),
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  '精品洗滌：',
-	                  _react2.default.createElement('br', null),
-	                  '包包 / 皮衣 / 鞋子'
-	                )
-	              )
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'footer',
-	          { className: 'container' },
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'button' },
-	            '加入會員'
-	          ),
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'button' },
-	            '線上儲值'
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Service;
-	})(_react.Component);
-
-	exports.default = Service;
-
-/***/ },
-/* 179 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var InlineSVGError, PropTypes, React, Status, configurationError, createError, delay, getHash, http, httpplease, ieXDomain, isSupportedEnvironment, me, once, span, supportsInlineSVG, uniquifyIDs, unsupportedBrowserError,
-	  __slice = [].slice,
-	  __hasProp = {}.hasOwnProperty,
-	  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
-
-	React = __webpack_require__(1);
-
-	once = __webpack_require__(180);
-
-	httpplease = __webpack_require__(182);
-
-	ieXDomain = __webpack_require__(192);
-
-	PropTypes = React.PropTypes;
-
-	span = React.DOM.span;
-
-	http = httpplease.use(ieXDomain);
-
-	Status = {
-	  PENDING: 'pending',
-	  LOADING: 'loading',
-	  LOADED: 'loaded',
-	  FAILED: 'failed',
-	  UNSUPPORTED: 'unsupported'
-	};
-
-	supportsInlineSVG = once(function() {
-	  var div;
-	  if (!document) {
-	    return false;
-	  }
-	  div = document.createElement('div');
-	  div.innerHTML = '<svg />';
-	  return div.firstChild && div.firstChild.namespaceURI === 'http://www.w3.org/2000/svg';
-	});
-
-	delay = function(fn) {
-	  return function() {
-	    var args, newFunc;
-	    args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-	    newFunc = function() {
-	      return fn.apply(null, args);
-	    };
-	    setTimeout(newFunc, 0);
-	  };
-	};
-
-	isSupportedEnvironment = once(function() {
-	  return ((typeof window !== "undefined" && window !== null ? window.XMLHttpRequest : void 0) || (typeof window !== "undefined" && window !== null ? window.XDomainRequest : void 0)) && supportsInlineSVG();
-	});
-
-	uniquifyIDs = (function() {
-	  var idPattern, mkAttributePattern;
-	  mkAttributePattern = function(attr) {
-	    return "(?:(?:\\s|\\:)" + attr + ")";
-	  };
-	  idPattern = RegExp("(?:(" + (mkAttributePattern('id')) + ")=\"([^\"]+)\")|(?:(" + (mkAttributePattern('href')) + "|" + (mkAttributePattern('role')) + "|" + (mkAttributePattern('arcrole')) + ")=\"\\#([^\"]+)\")|(?:=\"url\\(\\#([^\\)]+)\\)\")", "g");
-	  return function(svgText, svgID) {
-	    var uniquifyID;
-	    uniquifyID = function(id) {
-	      return "" + id + "___" + svgID;
-	    };
-	    return svgText.replace(idPattern, function(m, p1, p2, p3, p4, p5) {
-	      if (p2) {
-	        return "" + p1 + "=\"" + (uniquifyID(p2)) + "\"";
-	      } else if (p4) {
-	        return "" + p3 + "=\"#" + (uniquifyID(p4)) + "\"";
-	      } else if (p5) {
-	        return "=\"url(#" + (uniquifyID(p5)) + ")\"";
-	      }
-	    });
-	  };
-	})();
-
-	getHash = function(str) {
-	  var chr, hash, i, _i, _ref;
-	  hash = 0;
-	  if (!str) {
-	    return hash;
-	  }
-	  for (i = _i = 0, _ref = str.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
-	    chr = str.charCodeAt(i);
-	    hash = (hash << 5) - hash + chr;
-	    hash = hash & hash;
-	  }
-	  return hash;
-	};
-
-	InlineSVGError = (function(_super) {
-	  __extends(InlineSVGError, _super);
-
-	  InlineSVGError.prototype.name = 'InlineSVGError';
-
-	  InlineSVGError.prototype.isSupportedBrowser = true;
-
-	  InlineSVGError.prototype.isConfigurationError = false;
-
-	  InlineSVGError.prototype.isUnsupportedBrowserError = false;
-
-	  function InlineSVGError(message) {
-	    this.message = message;
-	  }
-
-	  return InlineSVGError;
-
-	})(Error);
-
-	createError = function(message, attrs) {
-	  var err, k, v;
-	  err = new InlineSVGError(message);
-	  for (k in attrs) {
-	    if (!__hasProp.call(attrs, k)) continue;
-	    v = attrs[k];
-	    err[k] = v;
-	  }
-	  return err;
-	};
-
-	unsupportedBrowserError = function(message) {
-	  if (message == null) {
-	    message = 'Unsupported Browser';
-	  }
-	  return createError(message, {
-	    isSupportedBrowser: false,
-	    isUnsupportedBrowserError: true
-	  });
-	};
-
-	configurationError = function(message) {
-	  return createError(message, {
-	    isConfigurationError: true
-	  });
-	};
-
-	module.exports = me = React.createClass({
-	  statics: {
-	    Status: Status
-	  },
-	  displayName: 'InlineSVG',
-	  propTypes: {
-	    wrapper: PropTypes.func,
-	    src: PropTypes.string.isRequired,
-	    className: PropTypes.string,
-	    preloader: PropTypes.func,
-	    onLoad: PropTypes.func,
-	    onError: PropTypes.func,
-	    supportTest: PropTypes.func,
-	    uniquifyIDs: PropTypes.bool
-	  },
-	  getDefaultProps: function() {
-	    return {
-	      wrapper: span,
-	      supportTest: isSupportedEnvironment,
-	      uniquifyIDs: true
-	    };
-	  },
-	  getInitialState: function() {
-	    return {
-	      status: Status.PENDING
-	    };
-	  },
-	  componentDidMount: function() {
-	    if (this.state.status !== Status.PENDING) {
-	      return;
-	    }
-	    if (this.props.supportTest()) {
-	      if (this.props.src) {
-	        return this.setState({
-	          status: Status.LOADING
-	        }, this.load);
-	      } else {
-	        return delay((function(_this) {
-	          return function() {
-	            return _this.fail(configurationError('Missing source'));
-	          };
-	        })(this))();
-	      }
-	    } else {
-	      return delay((function(_this) {
-	        return function() {
-	          return _this.fail(unsupportedBrowserError());
-	        };
-	      })(this))();
-	    }
-	  },
-	  fail: function(error) {
-	    var status;
-	    status = error.isUnsupportedBrowserError ? Status.UNSUPPORTED : Status.FAILED;
-	    return this.setState({
-	      status: status
-	    }, (function(_this) {
-	      return function() {
-	        var _base;
-	        return typeof (_base = _this.props).onError === "function" ? _base.onError(error) : void 0;
-	      };
-	    })(this));
-	  },
-	  handleLoad: function(err, res) {
-	    if (err) {
-	      return this.fail(err);
-	    }
-	    if (!this.isMounted()) {
-	      return;
-	    }
-	    return this.setState({
-	      loadedText: res.text,
-	      status: Status.LOADED
-	    }, (function(_this) {
-	      return function() {
-	        var _base;
-	        return typeof (_base = _this.props).onLoad === "function" ? _base.onLoad() : void 0;
-	      };
-	    })(this));
-	  },
-	  load: function() {
-	    var m, text;
-	    if (m = this.props.src.match(/data:image\/svg[^,]*?(;base64)?,(.*)/)) {
-	      text = m[1] ? atob(m[2]) : decodeURIComponent(m[2]);
-	      return this.handleLoad(null, {
-	        text: text
-	      });
-	    } else {
-	      return http.get(this.props.src, this.handleLoad);
-	    }
-	  },
-	  getClassName: function() {
-	    var className;
-	    className = "isvg " + this.state.status;
-	    if (this.props.className) {
-	      className += " " + this.props.className;
-	    }
-	    return className;
-	  },
-	  render: function() {
-	    return this.props.wrapper({
-	      className: this.getClassName(),
-	      dangerouslySetInnerHTML: this.state.loadedText ? {
-	        __html: this.processSVG(this.state.loadedText)
-	      } : void 0
-	    }, this.renderContents());
-	  },
-	  processSVG: function(svgText) {
-	    if (this.props.uniquifyIDs) {
-	      return uniquifyIDs(svgText, getHash(this.props.src));
-	    } else {
-	      return svgText;
-	    }
-	  },
-	  renderContents: function() {
-	    switch (this.state.status) {
-	      case Status.UNSUPPORTED:
-	        return this.props.children;
-	      case Status.PENDING:
-	      case Status.LOADING:
-	        if (this.props.preloader) {
-	          return new this.props.preloader;
-	        }
-	    }
-	  }
-	});
-
-
-/***/ },
-/* 180 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var wrappy = __webpack_require__(181)
-	module.exports = wrappy(once)
-
-	once.proto = once(function () {
-	  Object.defineProperty(Function.prototype, 'once', {
-	    value: function () {
-	      return once(this)
-	    },
-	    configurable: true
-	  })
-	})
-
-	function once (fn) {
-	  var f = function () {
-	    if (f.called) return f.value
-	    f.called = true
-	    return f.value = fn.apply(this, arguments)
-	  }
-	  f.called = false
-	  return f
-	}
-
-
-/***/ },
-/* 181 */
-/***/ function(module, exports) {
-
-	// Returns a wrapper function that returns a wrapped callback
-	// The wrapper function should do some stuff, and return a
-	// presumably different callback function.
-	// This makes sure that own properties are retained, so that
-	// decorations and such are not lost along the way.
-	module.exports = wrappy
-	function wrappy (fn, cb) {
-	  if (fn && cb) return wrappy(fn)(cb)
-
-	  if (typeof fn !== 'function')
-	    throw new TypeError('need wrapper function')
-
-	  Object.keys(fn).forEach(function (k) {
-	    wrapper[k] = fn[k]
-	  })
-
-	  return wrapper
-
-	  function wrapper() {
-	    var args = new Array(arguments.length)
-	    for (var i = 0; i < args.length; i++) {
-	      args[i] = arguments[i]
-	    }
-	    var ret = fn.apply(this, args)
-	    var cb = args[args.length-1]
-	    if (typeof ret === 'function' && ret !== cb) {
-	      Object.keys(cb).forEach(function (k) {
-	        ret[k] = cb[k]
-	      })
-	    }
-	    return ret
-	  }
-	}
-
-
-/***/ },
-/* 182 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var
-	  cleanURL = __webpack_require__(183),
-	  XHR = __webpack_require__(184),
-	  delay = __webpack_require__(185),
-	  RequestError = __webpack_require__(186),
-	  Response = __webpack_require__(187),
-	  Request = __webpack_require__(188),
-	  extend = __webpack_require__(190),
-	  once = __webpack_require__(191);
-
-	var i,
-	    createError = RequestError.create;
-
-	function factory(defaults, plugins) {
-	  defaults = defaults || {};
-	  plugins = plugins || [];
-
-	  function http(req, cb) {
-	    var xhr, plugin, done, k, timeoutId, supportsLoadAndErrorEvents;
-
-	    req = new Request(extend(defaults, req));
-
-	    for (i = 0; i < plugins.length; i++) {
-	      plugin = plugins[i];
-	      if (plugin.processRequest) {
-	        plugin.processRequest(req);
-	      }
-	    }
-
-	    // Give the plugins a chance to create the XHR object
-	    for (i = 0; i < plugins.length; i++) {
-	      plugin = plugins[i];
-	      if (plugin.createXHR) {
-	        xhr = plugin.createXHR(req);
-	        break; // First come, first serve
-	      }
-	    }
-	    xhr = xhr || new XHR();
-
-	    req.xhr = xhr;
-
-	    // Use a single completion callback. This can be called with or without
-	    // an error. If no error is passed, the request will be examined to see
-	    // if it was successful.
-	    done = once(delay(function(rawError) {
-	      clearTimeout(timeoutId);
-	      xhr.onload = xhr.onerror = xhr.onabort = xhr.onreadystatechange = xhr.ontimeout = xhr.onprogress = null;
-
-	      var err = getError(req, rawError);
-
-	      var res = err || Response.fromRequest(req);
-	      for (i = 0; i < plugins.length; i++) {
-	        plugin = plugins[i];
-	        if (plugin.processResponse) {
-	          plugin.processResponse(res);
-	        }
-	      }
-
-	      // Invoke callbacks
-	      if (err && req.onerror) req.onerror(err);
-	      if (!err && req.onload) req.onload(res);
-	      if (cb) cb(err, err ? undefined : res);
-
-	    }));
-
-	    supportsLoadAndErrorEvents = ('onload' in xhr) && ('onerror' in xhr);
-	    xhr.onload = function() { done(); };
-	    xhr.onerror = done;
-	    xhr.onabort = function() { done(); };
-
-	    // We'd rather use `onload`, `onerror`, and `onabort` since they're the
-	    // only way to reliably detect successes and failures but, if they
-	    // aren't available, we fall back to using `onreadystatechange`.
-	    xhr.onreadystatechange = function() {
-	      if (xhr.readyState !== 4) return;
-
-	      if (req.aborted) return done();
-
-	      if (!supportsLoadAndErrorEvents) {
-	        // Assume a status of 0 is an error. This could be a false
-	        // positive, but there's no way to tell when using
-	        // `onreadystatechange` ):
-	        // See matthewwithanm/react-inlinesvg#10.
-
-	        // Some browsers don't like you reading XHR properties when the
-	        // XHR has been aborted. In case we've gotten here as a result
-	        // of that (either our calling `about()` in the timeout handler
-	        // or the user calling it directly even though they shouldn't),
-	        // be careful about accessing it.
-	        var status;
-	        try {
-	          status = xhr.status;
-	        } catch (err) {}
-	        var err = status === 0 ? new Error('Internal XHR Error') : null;
-	        return done(err);
-	      }
-	    };
-
-	    // IE sometimes fails if you don't specify every handler.
-	    // See http://social.msdn.microsoft.com/Forums/ie/en-US/30ef3add-767c-4436-b8a9-f1ca19b4812e/ie9-rtm-xdomainrequest-issued-requests-may-abort-if-all-event-handlers-not-specified?forum=iewebdevelopment
-	    xhr.ontimeout = function() { /* noop */ };
-	    xhr.onprogress = function() { /* noop */ };
-
-	    xhr.open(req.method, req.url);
-
-	    if (req.timeout) {
-	      // If we use the normal XHR timeout mechanism (`xhr.timeout` and
-	      // `xhr.ontimeout`), `onreadystatechange` will be triggered before
-	      // `ontimeout`. There's no way to recognize that it was triggered by
-	      // a timeout, and we'd be unable to dispatch the right error.
-	      timeoutId = setTimeout(function() {
-	        req.timedOut = true;
-	        done();
-	        try {
-	          xhr.abort();
-	        } catch (err) {}
-	      }, req.timeout);
-	    }
-
-	    for (k in req.headers) {
-	      if (req.headers.hasOwnProperty(k)) {
-	        xhr.setRequestHeader(k, req.headers[k]);
-	      }
-	    }
-
-	    xhr.send(req.body);
-
-	    return req;
-	  }
-
-	  var method,
-	    methods = ['get', 'post', 'put', 'head', 'patch', 'delete'],
-	    verb = function(method) {
-	      return function(req, cb) {
-	        req = new Request(req);
-	        req.method = method;
-	        return http(req, cb);
-	      };
-	    };
-	  for (i = 0; i < methods.length; i++) {
-	    method = methods[i];
-	    http[method] = verb(method);
-	  }
-
-	  http.plugins = function() {
-	    return plugins;
-	  };
-
-	  http.defaults = function(newValues) {
-	    if (newValues) {
-	      return factory(extend(defaults, newValues), plugins);
-	    }
-	    return defaults;
-	  };
-
-	  http.use = function() {
-	    var newPlugins = Array.prototype.slice.call(arguments, 0);
-	    return factory(defaults, plugins.concat(newPlugins));
-	  };
-
-	  http.bare = function() {
-	    return factory();
-	  };
-
-	  http.Request = Request;
-	  http.Response = Response;
-	  http.RequestError = RequestError;
-
-	  return http;
-	}
-
-	module.exports = factory({}, [cleanURL]);
-
-	/**
-	 * Analyze the request to see if it represents an error. If so, return it! An
-	 * original error object can be passed as a hint.
-	 */
-	function getError(req, err) {
-	  if (req.aborted) return createError('Request aborted', req, {name: 'Abort'});
-
-	  if (req.timedOut) return createError('Request timeout', req, {name: 'Timeout'});
-
-	  var xhr = req.xhr;
-	  var type = Math.floor(xhr.status / 100);
-
-	  var kind;
-	  switch (type) {
-	    case 0:
-	    case 2:
-	      // These don't represent errors unless the function was passed an
-	      // error object explicitly.
-	      if (!err) return;
-	      return createError(err.message, req);
-	    case 4:
-	      // Sometimes 4XX statuses aren't errors.
-	      if (xhr.status === 404 && !req.errorOn404) return;
-	      kind = 'Client';
-	      break;
-	    case 5:
-	      kind = 'Server';
-	      break;
-	    default:
-	      kind = 'HTTP';
-	  }
-	  var msg = kind + ' Error: ' +
-	        'The server returned a status of ' + xhr.status +
-	        ' for the request "' +
-	        req.method.toUpperCase() + ' ' + req.url + '"';
-	  return createError(msg, req);
-	}
-
-
-/***/ },
-/* 183 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	module.exports = {
-	  processRequest: function(req) {
-	    req.url = req.url.replace(/[^%]+/g, function(s) {
-	      return encodeURI(s);
-	    });
-	  }
-	};
-
-
-/***/ },
-/* 184 */
-/***/ function(module, exports) {
-
-	module.exports = window.XMLHttpRequest;
-
-
-/***/ },
-/* 185 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	// Wrap a function in a `setTimeout` call. This is used to guarantee async
-	// behavior, which can avoid unexpected errors.
-
-	module.exports = function(fn) {
-	  return function() {
-	    var
-	      args = Array.prototype.slice.call(arguments, 0),
-	      newFunc = function() {
-	        return fn.apply(null, args);
-	      };
-	    setTimeout(newFunc, 0);
-	  };
-	};
-
-
-/***/ },
-/* 186 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var Response = __webpack_require__(187);
-	var extractResponseProps = __webpack_require__(189);
-	var extend = __webpack_require__(190);
-
-	function RequestError(message, props) {
-	  var err = new Error(message);
-	  err.name = 'RequestError';
-	  this.name = err.name;
-	  this.message = err.message;
-	  if (err.stack) {
-	    this.stack = err.stack;
-	  }
-
-	  this.toString = function() {
-	    return this.message;
-	  };
-
-	  for (var k in props) {
-	    if (props.hasOwnProperty(k)) {
-	      this[k] = props[k];
-	    }
-	  }
-	}
-
-	RequestError.prototype = extend(Error.prototype);
-	RequestError.prototype.constructor = RequestError;
-
-	RequestError.create = function(message, req, props) {
-	  var err = new RequestError(message, props);
-	  Response.call(err, extractResponseProps(req));
-	  return err;
-	};
-
-	module.exports = RequestError;
-
-
-/***/ },
-/* 187 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var Request = __webpack_require__(188);
-	var extractResponseProps = __webpack_require__(189);
-
-	function Response(props) {
-	  this.request = props.request;
-	  this.xhr = props.xhr;
-	  this.headers = props.headers || {};
-	  this.status = props.status || 0;
-	  this.text = props.text;
-	  this.body = props.body;
-	  this.contentType = props.contentType;
-	  this.isHttpError = props.status >= 400;
-	}
-
-	Response.prototype.header = Request.prototype.header;
-
-	Response.fromRequest = function(req) {
-	  return new Response(extractResponseProps(req));
-	};
-
-
-	module.exports = Response;
-
-
-/***/ },
-/* 188 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	function Request(optsOrUrl) {
-	  var opts = typeof optsOrUrl === 'string' ? {url: optsOrUrl} : optsOrUrl || {};
-	  this.method = opts.method ? opts.method.toUpperCase() : 'GET';
-	  this.url = opts.url;
-	  this.headers = opts.headers || {};
-	  this.body = opts.body;
-	  this.timeout = opts.timeout || 0;
-	  this.errorOn404 = opts.errorOn404 != null ? opts.errorOn404 : true;
-	  this.onload = opts.onload;
-	  this.onerror = opts.onerror;
-	}
-
-	Request.prototype.abort = function() {
-	  if (this.aborted) return;
-	  this.aborted = true;
-	  this.xhr.abort();
-	  return this;
-	};
-
-	Request.prototype.header = function(name, value) {
-	  var k;
-	  for (k in this.headers) {
-	    if (this.headers.hasOwnProperty(k)) {
-	      if (name.toLowerCase() === k.toLowerCase()) {
-	        if (arguments.length === 1) {
-	          return this.headers[k];
-	        }
-
-	        delete this.headers[k];
-	        break;
-	      }
-	    }
-	  }
-	  if (value != null) {
-	    this.headers[name] = value;
-	    return value;
-	  }
-	};
-
-
-	module.exports = Request;
-
-
-/***/ },
-/* 189 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var extend = __webpack_require__(190);
-
-	module.exports = function(req) {
-	  var xhr = req.xhr;
-	  var props = {request: req, xhr: xhr};
-
-	  // Try to create the response from the request. If the request was aborted,
-	  // accesssing properties of the XHR may throw an error, so we wrap in a
-	  // try/catch.
-	  try {
-	    var lines, i, m, headers = {};
-	    if (xhr.getAllResponseHeaders) {
-	      lines = xhr.getAllResponseHeaders().split('\n');
-	      for (i = 0; i < lines.length; i++) {
-	        if ((m = lines[i].match(/\s*([^\s]+):\s+([^\s]+)/))) {
-	          headers[m[1]] = m[2];
-	        }
-	      }
-	    }
-
-	    props = extend(props, {
-	      status: xhr.status,
-	      contentType: xhr.contentType || (xhr.getResponseHeader && xhr.getResponseHeader('Content-Type')),
-	      headers: headers,
-	      text: xhr.responseText,
-	      body: xhr.response || xhr.responseText
-	    });
-	  } catch (err) {}
-
-	  return props;
-	};
-
-
-/***/ },
-/* 190 */
-/***/ function(module, exports) {
-
-	module.exports = extend
-
-	function extend() {
-	    var target = {}
-
-	    for (var i = 0; i < arguments.length; i++) {
-	        var source = arguments[i]
-
-	        for (var key in source) {
-	            if (source.hasOwnProperty(key)) {
-	                target[key] = source[key]
-	            }
-	        }
-	    }
-
-	    return target
-	}
-
-
-/***/ },
-/* 191 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	// A "once" utility.
-	module.exports = function(fn) {
-	  var result, called = false;
-	  return function() {
-	    if (!called) {
-	      called = true;
-	      result = fn.apply(this, arguments);
-	    }
-	    return result;
-	  };
-	};
-
-
-/***/ },
-/* 192 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var
-	  urllite = __webpack_require__(193),
-	  once = __webpack_require__(191);
-
-	var warningShown = false;
-
-	var supportsXHR = once(function() {
-	  return (
-	    typeof window !== 'undefined' &&
-	    window !== null &&
-	    window.XMLHttpRequest &&
-	    'withCredentials' in new window.XMLHttpRequest()
-	  );
-	});
-
-	// This plugin creates a Microsoft `XDomainRequest` in supporting browsers when
-	// the URL being requested is on a different domain. This is necessary to
-	// support IE9, which only supports CORS via its proprietary `XDomainRequest`
-	// object. We need to check the URL because `XDomainRequest` *doesn't* work for
-	// same domain requests (unless your server sends CORS headers).
-	// `XDomainRequest` also has other limitations (no custom headers), so we try to
-	// catch those and error.
-	module.exports = {
-	  createXHR: function(req) {
-	    var a, b, k;
-
-	    if (typeof window === 'undefined' || window === null) {
-	      return;
-	    }
-
-	    a = urllite(req.url);
-	    b = urllite(window.location.href);
-
-	    // Don't do anything for same-domain requests.
-	    if (!a.host) {
-	      return;
-	    }
-	    if (a.protocol === b.protocol && a.host === b.host && a.port === b.port) {
-	      return;
-	    }
-
-	    // Show a warning if there are custom headers. We do this even in
-	    // browsers that won't use XDomainRequest so that users know there's an
-	    // issue right away, instead of if/when they test in IE9.
-	    if (!warningShown && req.headers) {
-	      for (k in req.headers) {
-	        if (req.headers.hasOwnProperty(k)) {
-	          warningShown = true;
-	          if (window && window.console && window.console.warn) {
-	            window.console.warn('Request headers are ignored in old IE when using the oldiexdomain plugin.');
-	          }
-	          break;
-	        }
-	      }
-	    }
-
-	    // Don't do anything if we can't do anything (:
-	    // Don't do anything if the browser supports proper XHR.
-	    if (window.XDomainRequest && !supportsXHR()) {
-	      // We've come this far. Might as well make an XDomainRequest.
-	      var xdr = new window.XDomainRequest();
-	      xdr.setRequestHeader = function() {}; // Ignore request headers.
-	      return xdr;
-	    }
-	  }
-	};
-
-
-/***/ },
-/* 193 */
-/***/ function(module, exports) {
-
-	(function() {
-	  var URL, URL_PATTERN, defaults, urllite,
-	    __hasProp = {}.hasOwnProperty;
-
-	  URL_PATTERN = /^(?:(?:([^:\/?\#]+:)\/+|(\/\/))(?:([a-z0-9-\._~%]+)(?::([a-z0-9-\._~%]+))?@)?(([a-z0-9-\._~%!$&'()*+,;=]+)(?::([0-9]+))?)?)?([^?\#]*?)(\?[^\#]*)?(\#.*)?$/;
-
-	  urllite = function(raw, opts) {
-	    return urllite.URL.parse(raw, opts);
-	  };
-
-	  urllite.URL = URL = (function() {
-	    function URL(props) {
-	      var k, v, _ref;
-	      for (k in defaults) {
-	        if (!__hasProp.call(defaults, k)) continue;
-	        v = defaults[k];
-	        this[k] = (_ref = props[k]) != null ? _ref : v;
-	      }
-	      this.host || (this.host = this.hostname && this.port ? "" + this.hostname + ":" + this.port : this.hostname ? this.hostname : '');
-	      this.origin || (this.origin = this.protocol ? "" + this.protocol + "//" + this.host : '');
-	      this.isAbsolutePathRelative = !this.host && this.pathname.charAt(0) === '/';
-	      this.isPathRelative = !this.host && this.pathname.charAt(0) !== '/';
-	      this.isRelative = this.isSchemeRelative || this.isAbsolutePathRelative || this.isPathRelative;
-	      this.isAbsolute = !this.isRelative;
-	    }
-
-	    URL.parse = function(raw) {
-	      var m, pathname, protocol;
-	      m = raw.toString().match(URL_PATTERN);
-	      pathname = m[8] || '';
-	      protocol = m[1];
-	      return new urllite.URL({
-	        protocol: protocol,
-	        username: m[3],
-	        password: m[4],
-	        hostname: m[6],
-	        port: m[7],
-	        pathname: protocol && pathname.charAt(0) !== '/' ? "/" + pathname : pathname,
-	        search: m[9],
-	        hash: m[10],
-	        isSchemeRelative: m[2] != null
-	      });
-	    };
-
-	    return URL;
-
-	  })();
-
-	  defaults = {
-	    protocol: '',
-	    username: '',
-	    password: '',
-	    host: '',
-	    hostname: '',
-	    port: '',
-	    pathname: '',
-	    search: '',
-	    hash: '',
-	    origin: '',
-	    isSchemeRelative: false
-	  };
-
-	  module.exports = urllite;
-
-	}).call(this);
-
-
-/***/ },
-/* 194 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(195);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(163)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./service.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./service.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 195 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(162)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "#service {\n  padding-top: 20px;\n  padding-bottom: 60px;\n  background-image: url(" + __webpack_require__(196) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n/*\n#service > header {\n  margin: 40px auto;\n}\n\n#service > header > h1 {\n  margin-top: 0px;\n}*/\n\n#service .left-block,\n#service .right-block {\n  position: relative;\n  display: inline-block;\n  width: 50%;\n  height: 100%;\n  padding: 40px;\n  vertical-align:top;\n  background-color: rgba(203, 233, 228, 0.8);\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block:hover,\n#service .right-block:hover {\n  color: white;\n  background-color: rgba(105, 186, 177, 0.9);\n}\n\n#service .left-block .subtitle,\n#service .right-block .subtitle {\n  color: gray;\n}\n\n#service .left-block:hover .subtitle,\n#service .right-block:hover .subtitle {\n  color: lightgray;\n}\n\n#service .left-block {\n  text-align: right;\n}\n\n#service .right-block {\n  text-align: left;\n}\n\n#service .left-block div,\n#service .right-block div {\n  margin: 0 auto;\n  text-align: center;\n}\n\n#service .left-block:hover svg path,\n#service .right-block:hover svg path {\n  stroke: white !important;\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block:hover path:not(:first-of-type),\n#service .right-block:hover path:not(:first-of-type) {\n  fill: white !important;\n}\n\n#service .left-block .service-image {\n  padding-top: 4px;\n}\n\n#service .service-image {\n  height: 150px;\n}\n\n#service .service-content {\n  height: 180px;\n}\n\n#service > footer {\n  margin-top: 60px;\n  text-align: right;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #service .left-block,\n  #service .right-block {\n    display: block;\n    width: 100%;\n    margin: 20px 0px;\n    padding: 20px 0px;\n    text-align: center;\n  }\n\n  #service .service-content {\n    height: 120px;\n  }\n\n  #service > footer {\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
 /* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fc14306fc2c7b95a288450c86807d6f7.png";
-
-/***/ },
-/* 197 */
-/***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -21836,13 +20536,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _bottomApp = __webpack_require__(198);
+	var _bottomApp = __webpack_require__(197);
 
 	var _bottomApp2 = _interopRequireDefault(_bottomApp);
 
-	var _Link = __webpack_require__(201);
+	var _Link = __webpack_require__(200);
 
 	var _Link2 = _interopRequireDefault(_Link);
+
+	var _Work = __webpack_require__(201);
+
+	var _Work2 = _interopRequireDefault(_Work);
 
 	var _Contact = __webpack_require__(202);
 
@@ -21855,7 +20559,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// import Work from './Work.jsx'
 
 	var BottomApp = (function (_Component) {
 	  _inherits(BottomApp, _Component);
@@ -21873,6 +20576,7 @@
 	        'section',
 	        { id: 'bottomApp' },
 	        _react2.default.createElement(_Link2.default, null),
+	        _react2.default.createElement(_Work2.default, null),
 	        _react2.default.createElement(_Contact2.default, null)
 	      );
 	    }
@@ -21884,13 +20588,13 @@
 	exports.default = BottomApp;
 
 /***/ },
-/* 198 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(199);
+	var content = __webpack_require__(198);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(163)(content, {});
@@ -21910,7 +20614,7 @@
 	}
 
 /***/ },
-/* 199 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(162)();
@@ -21918,19 +20622,19 @@
 
 
 	// module
-	exports.push([module.id, "#bottomApp {\n  color: white;\n  background-image: url(" + __webpack_require__(200) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/**\n *  Link\n */\n\n#link {\n  padding: 40px 0px;\n  background-color: rgba(105, 186, 177, 0.8);\n}\n\n#link div {\n  vertical-align: top;\n}\n\n#link .container > div:nth-child(1) {\n  text-align: center;\n}\n\n#link .container > div:nth-child(2) {\n  padding-left: 40px;\n}\n\n#link .container div h1 {\n  font-size: 1.8em;\n}\n\n#link .container ul {\n  padding: 0px;\n  font-size: 1.4em;\n  line-height: 2;\n}\n\n/**\n *  Work\n */\n\n/**\n *  Contact\n */\n#contact {\n  padding: 20px 0px;\n  background-color: rgba(58, 128, 123, 0.8);\n}\n\n#contact .info .info-title {\n  margin: 15px 0px;\n}\n\n#contact .info input {\n  width: 90%;\n  font-size: 1.5em;\n}\n\n#contact div.row:nth-of-type(2) {\n  margin-top: 60px;\n  margin-bottom: 30px;\n  text-align: right;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(2) {\n    text-align: center;\n    padding-left: 0px;\n  }\n\n  /**\n   *  Contact\n   */\n  #contact .info {\n    margin: 0 auto;\n  }\n\n  #contact .info input {\n    width: 100%;\n    font-size: 2em;\n  }\n\n  #contact div.row:nth-of-type(2) {\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
+	exports.push([module.id, "#bottomApp {\n  color: white;\n  background-image: url(" + __webpack_require__(199) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/**\n *  Link\n */\n\n#link {\n  padding: 40px 0px;\n  background-color: rgba(105, 186, 177, 0.8);\n}\n\n#link div {\n  vertical-align: top;\n}\n\n#link .container > div:nth-child(1) {\n  text-align: center;\n}\n\n#link .container > div:nth-child(1) iframe {\n  width: 620px;\n  height: 348.75px;\n}\n\n#link .container > div:nth-child(1) .left-block,\n#link .container > div:nth-child(1) .right-block {\n  position: absolute;\n  cursor: pointer;\n  opacity: 0;\n  width: 10%;\n  height: 348.75px;\n  padding: 15px;\n  background-color: rgba(0, 0, 0, 0.7);\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#link .container > div:nth-child(1) .left-block {\n  top: 0;\n  left: 0;\n}\n\n#link .container > div:nth-child(1) .right-block {\n  top: 0;\n  right: 0;\n}\n\n#link .container > div:nth-child(1):hover .left-block,\n#link .container > div:nth-child(1):hover .right-block {\n  opacity: 1;\n}\n\n#link .container > div:nth-child(2) {\n  padding-left: 40px;\n}\n\n#link div h1 {\n  margin-top: 0px;\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#link ul {\n  margin-top: 60px;\n  padding: 0px;\n  font-size: 1.4em;\n}\n\n#link li {\n  margin-top: 20px;\n}\n\n#link li a {\n  display: inline-block;\n}\n\n#link li a > .bottom-line {\n  width: 0;\n  height: 1px;\n  background-color: white;\n\n  -webkit-transition: width 0.5s ease-in-out;\n  -moz-transition: width 0.5s ease-in-out;\n  -ms-transition: width 0.5s ease-in-out;\n  -o-transition: width 0.5s ease-in-out;\n  transition: width 0.5s ease-in-out;\n}\n\n#link li:hover a > .bottom-line {\n  width: 120%;\n}\n\n\n/**\n *  Work\n */\n#work {\n  padding-top: 40px;\n  padding-bottom: 60px;\n  background-color: rgba(203, 233, 228, 0.8);\n}\n\n#work header {\n  margin: 0px 0px;\n}\n\n#work header h1 {\n  color: rgba(74, 74, 74, 1);\n}\n\n#work .learn-more {\n  text-align: right;\n}\n\n/**\n *  Contact\n */\n#contact {\n  padding: 20px 0px;\n  background-color: rgba(58, 128, 123, 0.8);\n}\n\n#contact .info .info-title {\n  margin: 15px 0px;\n}\n\n#contact .info input {\n  width: 90%;\n  font-size: 1.5em;\n}\n\n#contact div.row:nth-of-type(2) {\n  margin-top: 60px;\n  margin-bottom: 30px;\n  text-align: right;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  /**\n   *  Link\n   */\n  #link div h1 {\n    margin-top: inherit;\n  }\n\n  #link .container > div:nth-child(1) iframe {\n    width: 460px;\n    height: 258.75px;\n  }\n\n  #link .container > div:nth-child(1) .left-block,\n  #link .container > div:nth-child(1) .right-block {\n    height: 258.75px;\n  }\n\n  #link .container > div:nth-child(2) {\n    text-align: center;\n    margin-top: 40px;\n    padding-left: 0px;\n  }\n\n  #link ul {\n    margin-top: 20px;\n  }\n\n  #link li:hover a > .bottom-line {\n    width: 100%;\n  }\n\n  /**\n   *  Contact\n   */\n  #contact .info {\n    margin: 0 auto;\n  }\n\n  #contact .info input {\n    width: 100%;\n    font-size: 2em;\n  }\n\n  #contact div.row:nth-of-type(2) {\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 200 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "36fa63f6886bb287e3db70f81d1153da.png";
 
 /***/ },
-/* 201 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -21974,7 +20678,17 @@
 	          _react2.default.createElement(
 	            "div",
 	            { className: "col-8" },
-	            _react2.default.createElement("img", { src: "img/link.png" })
+	            _react2.default.createElement("div", { className: "left-block" }),
+	            _react2.default.createElement("iframe", { src: "https://www.youtube.com/embed/yKV4H95l7T0", frameBorder: "0", allowFullScreen: true }),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "right-block flex flex-vertical-center" },
+	              _react2.default.createElement(
+	                "a",
+	                { href: "https://www.youtube.com/watch?v=Ak0seLf8WMM", target: "_blank" },
+	                _react2.default.createElement("img", { src: "img/link-arrow-right.svg" })
+	              )
+	            )
 	          ),
 	          _react2.default.createElement(
 	            "div",
@@ -21995,8 +20709,13 @@
 	                  null,
 	                  _react2.default.createElement(
 	                    "a",
-	                    { href: "#" },
-	                    "台灣大洗 e 聯盟"
+	                    { href: "http://www.tww.com.tw", target: "_blank" },
+	                    _react2.default.createElement(
+	                      "span",
+	                      null,
+	                      "台灣大洗 e 聯盟"
+	                    ),
+	                    _react2.default.createElement("div", { className: "bottom-line" })
 	                  )
 	                ),
 	                _react2.default.createElement(
@@ -22004,8 +20723,13 @@
 	                  null,
 	                  _react2.default.createElement(
 	                    "a",
-	                    { href: "#" },
-	                    "潔衣家"
+	                    { href: "http://www.tww.com.tw/je/", target: "_blank" },
+	                    _react2.default.createElement(
+	                      "span",
+	                      null,
+	                      "潔衣家"
+	                    ),
+	                    _react2.default.createElement("div", { className: "bottom-line" })
 	                  )
 	                ),
 	                _react2.default.createElement(
@@ -22013,8 +20737,13 @@
 	                  null,
 	                  _react2.default.createElement(
 	                    "a",
-	                    { href: "#" },
-	                    "雲端洗衣站"
+	                    { href: "http://www.tww.com.tw/je/", target: "_blank" },
+	                    _react2.default.createElement(
+	                      "span",
+	                      null,
+	                      "雲端洗衣站"
+	                    ),
+	                    _react2.default.createElement("div", { className: "bottom-line" })
 	                  )
 	                ),
 	                _react2.default.createElement(
@@ -22022,8 +20751,13 @@
 	                  null,
 	                  _react2.default.createElement(
 	                    "a",
-	                    { href: "#" },
-	                    "精品養護中心"
+	                    { href: "http://www.tww.com.tw/tlcc/", target: "_blank" },
+	                    _react2.default.createElement(
+	                      "span",
+	                      null,
+	                      "精品養護中心"
+	                    ),
+	                    _react2.default.createElement("div", { className: "bottom-line" })
 	                  )
 	                )
 	              )
@@ -22038,6 +20772,81 @@
 	})(_react.Component);
 
 	exports.default = Link;
+
+/***/ },
+/* 201 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Work = (function (_Component) {
+	  _inherits(Work, _Component);
+
+	  function Work() {
+	    _classCallCheck(this, Work);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Work).apply(this, arguments));
+	  }
+
+	  _createClass(Work, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { id: "work" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "container" },
+	          _react2.default.createElement(
+	            "header",
+	            { className: "col-12" },
+	            _react2.default.createElement(
+	              "h1",
+	              null,
+	              "成為洗衣業務"
+	            ),
+	            _react2.default.createElement(
+	              "h1",
+	              null,
+	              "文字介紹"
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "learn-more" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "button" },
+	              "瞭解更多"
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Work;
+	})(_react.Component);
+
+	exports.default = Work;
 
 /***/ },
 /* 202 */
@@ -22177,10 +20986,7 @@
 	exports.default = Contact;
 
 /***/ },
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!

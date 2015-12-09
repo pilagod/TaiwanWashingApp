@@ -12,8 +12,10 @@ export default class Banner extends Component {
           </div>
           <div className="container">
             <div>
-              <h1>Better, Faster, Easier 更好,更快,更方便</h1>
-              <h1>台灣大洗 e 聯盟App</h1>
+              <h1>
+                <span>Better, Faster, Easier 更好,更快,更方便</span><br/>
+                <span>台灣大洗 e 聯盟App</span>
+              </h1>
             </div>
           </div>
         </div>

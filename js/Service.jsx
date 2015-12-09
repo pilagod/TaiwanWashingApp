@@ -5,7 +5,7 @@ import Style from '../css/service.css'
 export default class Service extends Component {
   render() {
     return (
-      <section id="service">
+      <div id="service">
         <div className="container">
           <header className="col-12">
             <h1>服務項目</h1>
@@ -65,7 +65,7 @@ export default class Service extends Component {
           <span className="button">加入會員</span>
           <span className="button">線上儲值</span>
         </footer>
-      </section>
+      </div>
     )
   }
 }

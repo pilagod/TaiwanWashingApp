@@ -1,9 +1,9 @@
 #detail {
+  height: 380px;
+}
+
+#detail > .container {
   overflow: hidden;
-  height: 500px;
-  background-image: url('../img/detail.png');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 /**
@@ -85,9 +85,10 @@
 #detail .detail-item {
   position: absolute;
   display: table;
-  top: 20px;
+  top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   color: white;
@@ -101,16 +102,17 @@
 
 #detail .detail-item-row {
   display: table-row;
-  height: 230px;
 }
 
 #detail .detail-item-row > div {
   display: table-cell;
+  height: 200px;
   vertical-align: middle;
 }
 
 #detail .detail-item-image {
   width: 20%;
+  padding: 20px;
   text-align: center;
   background-color: white;
 }
@@ -161,11 +163,11 @@
 }
 
 #detail .pull-left {
-  left: -120%;
+  left: -200%;
 }
 
 #detail .pull-right {
-  left: 120%;
+  left: 100%;
 }
 
 

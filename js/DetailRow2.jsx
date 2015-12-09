@@ -1,71 +1,67 @@
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
 
-export default class DetailRow2 extends Component {
+export default class DetailRow extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      status: 0 /* 1 for left, 2 for right */
+    }
+  }
 
   render() {
+    /* true for left, false for right */
+    let direction = this.props.index % 2 === 0 ? true : false;
+    let prefixDiv = direction ? <div className="prefix"></div> : null
+    let postfixDiv = direction ? null : <div className="postfix"></div>
+
     let imageSrc = 'img/detail0' + this.props.index + '.png'
-    let actionPreviousClass = classNames('detail-action-previous', {
-      'show': this.props.index !== 1
+    let imageClassNames = classNames('detail-item-image', {
+      'show-left': this.state.status === 1 && direction,
+      'show-right': this.state.status === 2 && !direction
     })
-    let actionNextClass = classNames('detail-action-next', {
-      'show': this.props.index !== this.props.length
-    })
-    let detailItemClass = classNames('detail-item', {
-      'pull-right': this.props.index !== 1
-    })
+
     return (
-      <div className={detailItemClass}>
-        <div className="detail-item-row">
-          <div className="detail-item-image">
-            <img src={imageSrc}></img>
-          </div>
+      <div className="detail-table"
+        onMouseEnter={this.detailRowOnMouseEnterHandler.bind(this, direction)}
+        onMouseLeave={this.detailRowOnMouseLeaveHandler.bind(this, direction)}>
+        <div className="detail-row">
+          {prefixDiv}
           <div className="detail-item-title">
-            <h2>
-              <span>0{this.props.index}.</span>
+            <h1>
+              <span>0{this.props.index}.</span> <br/>
               <span>{this.props.item.title}</span>
-            </h2>
+            </h1>
           </div>
           <div className="detail-item-content">
-            <p>{this.props.item.content}</p>
+            <h3>{this.props.item.content}</h3>
           </div>
-          <div className="detail-item-end"></div>
+          {postfixDiv}
         </div>
-        <div className="detail-action">
-          <span className={actionPreviousClass} onClick={this.actionPreviousOnClick.bind(this)}>
-            <span className="arrow"> ＜＜ </span>
-            <span>Previous</span>
-          </span>
-          <span className={actionNextClass} onClick={this.actionNextOnClick.bind(this)}>
-            <span>Next</span>
-            <span className="arrow"> ＞＞ </span>
-          </span>
+        <div className={imageClassNames}>
+          <img src={imageSrc}></img>
         </div>
       </div>
     )
   }
 
-  actionPreviousOnClick() {
-    let detailItems = $('.detail-item')
-    let currentItem = detailItems.get(this.props.index-1)
-    let previousItem = detailItems.get(this.props.index-2)
-
-    $(currentItem).addClass('pull-right')
-    $(previousItem).removeClass('pull-left')
+  detailRowOnMouseEnterHandler(direction) {
+    /* direction: true for left, false for right */
+    if (direction) {
+      this.setState({status: 1});
+    } else {
+      this.setState({status: 2});
+    }
   }
 
-  actionNextOnClick() {
-    let detailItems = $('.detail-item')
-    let currentItem = detailItems.get(this.props.index-1)
-    let nextItem = detailItems.get(this.props.index)
-
-    $(currentItem).addClass('pull-left')
-    $(nextItem).removeClass('pull-right')
+  detailRowOnMouseLeaveHandler(direction) {
+    /* direction: true for left, false for right */
+    this.setState({status: 0});
   }
 }
 
-DetailRow2.propTypes = {
+DetailRow.propTypes = {
   index: PropTypes.number.isRequired,
-  item: PropTypes.object.isRequired, /* { title, content } */
-  length: PropTypes.number.isRequired
+  item: PropTypes.object.isRequired
 }

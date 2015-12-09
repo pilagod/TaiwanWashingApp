@@ -22,23 +22,103 @@
   text-align: center;
 }
 
+#link .container > div:nth-child(1) iframe {
+  width: 620px;
+  height: 348.75px;
+}
+
+#link .container > div:nth-child(1) .left-block,
+#link .container > div:nth-child(1) .right-block {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  width: 10%;
+  height: 348.75px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#link .container > div:nth-child(1) .left-block {
+  top: 0;
+  left: 0;
+}
+
+#link .container > div:nth-child(1) .right-block {
+  top: 0;
+  right: 0;
+}
+
+#link .container > div:nth-child(1):hover .left-block,
+#link .container > div:nth-child(1):hover .right-block {
+  opacity: 1;
+}
+
 #link .container > div:nth-child(2) {
   padding-left: 40px;
 }
 
-#link .container div h1 {
-  font-size: 1.8em;
+#link div h1 {
+  margin-top: 0px;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-#link .container ul {
+#link ul {
+  margin-top: 60px;
   padding: 0px;
   font-size: 1.4em;
-  line-height: 2;
 }
+
+#link li {
+  margin-top: 20px;
+}
+
+#link li a {
+  display: inline-block;
+}
+
+#link li a > .bottom-line {
+  width: 0;
+  height: 1px;
+  background-color: white;
+
+  -webkit-transition: width 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out;
+  -ms-transition: width 0.5s ease-in-out;
+  -o-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+#link li:hover a > .bottom-line {
+  width: 120%;
+}
+
 
 /**
  *  Work
  */
+#work {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  background-color: rgba(203, 233, 228, 0.8);
+}
+
+#work header {
+  margin: 0px 0px;
+}
+
+#work header h1 {
+  color: rgba(74, 74, 74, 1);
+}
+
+#work .learn-more {
+  text-align: right;
+}
 
 /**
  *  Contact
@@ -77,9 +157,32 @@
   /**
    *  Link
    */
+  #link div h1 {
+    margin-top: inherit;
+  }
+
+  #link .container > div:nth-child(1) iframe {
+    width: 460px;
+    height: 258.75px;
+  }
+
+  #link .container > div:nth-child(1) .left-block,
+  #link .container > div:nth-child(1) .right-block {
+    height: 258.75px;
+  }
+
   #link .container > div:nth-child(2) {
     text-align: center;
+    margin-top: 40px;
     padding-left: 0px;
+  }
+
+  #link ul {
+    margin-top: 20px;
+  }
+
+  #link li:hover a > .bottom-line {
+    width: 100%;
   }
 
   /**

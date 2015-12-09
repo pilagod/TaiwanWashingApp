@@ -1,8 +1,8 @@
 [
-  { "name": "服務介紹", "url": "#" },
-  { "name": "服務特點", "url": "#" },
-  { "name": "服務項目", "url": "#" },
-  { "name": "加入會員", "url": "#" },
-  { "name": "服務介紹", "url": "#" },
-  { "name": "公司介紹", "url": "#" }
+  { "name": "服務介紹", "url": "#intro" },
+  { "name": "服務特點", "url": "#service" },
+  { "name": "服務項目", "url": "#service" },
+  { "name": "加入會員", "url": "http://www.tww.com.tw/JE/NewMemberAdd.aspx" },
+  { "name": "線上儲值", "url": "http://www.tww.com.tw/JE/NewMemberAdd.aspx" },
+  { "name": "公司介紹", "url": "http://www.tww.com.tw" }
 ]
