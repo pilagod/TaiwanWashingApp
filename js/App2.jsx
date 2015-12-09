@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import Navbar from './Navbar.jsx'
 import Banner from './Banner.jsx'
 import Intro from './Intro.jsx'
+import ServiceDetail2 from './ServiceDetail2.jsx'
 // import Detail2 from './Detail2.jsx'
 // import Service from './Service.jsx'
 import BottomApp from './BottomApp.jsx'
@@ -14,8 +15,7 @@ class App2 extends Component {
         <Navbar />
         <Banner />
         <Intro />
-        <Detail2 />
-        <Service />
+        <ServiceDetail2 />
         <BottomApp />
       </div>
     )
