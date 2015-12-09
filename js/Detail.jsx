@@ -25,20 +25,22 @@ export default class Detail extends Component {
     let detailListLength = this.state.detailList.length;
     let detailRows = this.state.detailList.map((item, index) => {
       return (
-        <DetailRow2 key={index} index={index+1} item={item} length={detailListLength}/>
+        <DetailRow key={index} index={index+1} item={item} length={detailListLength}/>
       )
     })
     return (
       <section id="detail">
         <div className="container">
-          <header className="col-12">
-            <h1>服務特色</h1>
-          </header>
-          <div className="detail-items">
-            {detailRows}
-          </div>
+          {detailRows}
         </div>
       </section>
     )
   }
 }
+
+// <header className="col-12">
+//   <h1>服務特色</h1>
+// </header>
+// <div className="detail-items">
+//   {detailRows}
+// </div>
