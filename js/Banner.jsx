@@ -7,6 +7,9 @@ export default class Banner extends Component {
     return (
       <section id="banner">
         <div className="full-container">
+          <div id="logo">
+            <img src="img/logo.svg"></img>
+          </div>
           <div className="image-container">
             <img src="img/banner.png"></img>
           </div>

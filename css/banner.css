@@ -13,6 +13,13 @@
   max-height: 63vw;
 }*/
 
+#logo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 160px;
+}
+
 #banner .container {
   position: absolute;
   top: 0;
@@ -49,6 +56,9 @@
 
 /* 768px - 959px */
 @media only screen and (max-width: 959px) {
+  #logo {
+    width: 120px;
+  }
   #banner .container > div {
     margin-top: 140px;
   }
@@ -56,6 +66,9 @@
 
 /* 480px - 767px */
 @media only screen and (max-width: 767px) {
+  #logo {
+    width: 80px;
+  }
   #banner .container > div {
     margin-top: 80px;
   }
@@ -71,6 +84,9 @@
 
 /* 320px - 479px */
 @media only screen and (max-width: 479px) {
+  #logo {
+    width: 40px;
+  }
   #banner .container > div {
     margin-top: 0px;
     text-align: center;

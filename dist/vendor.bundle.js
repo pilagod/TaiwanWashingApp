@@ -20261,6 +20261,11 @@
 	          { className: 'full-container' },
 	          _react2.default.createElement(
 	            'div',
+	            { id: 'logo' },
+	            _react2.default.createElement('img', { src: 'img/logo.svg' })
+	          ),
+	          _react2.default.createElement(
+	            'div',
 	            { className: 'image-container' },
 	            _react2.default.createElement('img', { src: 'img/banner.png' })
 	          ),
@@ -20345,7 +20350,7 @@
 
 
 	// module
-	exports.push([module.id, "#banner {\n  overflow: hidden;\n  max-width: 100vw;\n  width: 100vw;\n  max-height: 63vw;\n  height: 100vh;\n  color: white;\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n/*#banner img {\n  max-width: 100vw;\n  max-height: 63vw;\n}*/\n\n#banner .container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n  text-align: right;\n}\n\n#banner .container > div {\n  margin-top: 220px;\n  text-shadow: 0px 8px 5px rgba(0, 0, 0, 0.5);\n}\n\n\n#banner .bottom-banner {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  height: 60px;\n  background-color: rgba(98, 183, 173, 1);\n}\n\n#banner .bottom-banner img {\n  width: 50px;\n  height: 50px;\n  padding-top: 5px;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #banner .container > div {\n    margin-top: 140px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #banner .container > div {\n    margin-top: 80px;\n  }\n  #banner .bottom-banner {\n    height: 40px;\n  }\n  #banner .bottom-banner img {\n    width: 30px;\n    height: 30px;\n    padding-top: 5px;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  #banner .container > div {\n    margin-top: 0px;\n    text-align: center;\n  }\n\n  #banner .bottom-banner {\n    height: 30px;\n  }\n  #banner .bottom-banner img {\n    width: 25px;\n    height: 25px;\n    padding-top: 2.5px;\n  }\n}\n", ""]);
+	exports.push([module.id, "#banner {\n  overflow: hidden;\n  max-width: 100vw;\n  width: 100vw;\n  max-height: 63vw;\n  height: 100vh;\n  color: white;\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n/*#banner img {\n  max-width: 100vw;\n  max-height: 63vw;\n}*/\n\n#logo {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 160px;\n}\n\n#banner .container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n  text-align: right;\n}\n\n#banner .container > div {\n  margin-top: 220px;\n  text-shadow: 0px 8px 5px rgba(0, 0, 0, 0.5);\n}\n\n\n#banner .bottom-banner {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  height: 60px;\n  background-color: rgba(98, 183, 173, 1);\n}\n\n#banner .bottom-banner img {\n  width: 50px;\n  height: 50px;\n  padding-top: 5px;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #logo {\n    width: 120px;\n  }\n  #banner .container > div {\n    margin-top: 140px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #logo {\n    width: 80px;\n  }\n  #banner .container > div {\n    margin-top: 80px;\n  }\n  #banner .bottom-banner {\n    height: 40px;\n  }\n  #banner .bottom-banner img {\n    width: 30px;\n    height: 30px;\n    padding-top: 5px;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  #logo {\n    width: 40px;\n  }\n  #banner .container > div {\n    margin-top: 0px;\n    text-align: center;\n  }\n\n  #banner .bottom-banner {\n    height: 30px;\n  }\n  #banner .bottom-banner img {\n    width: 25px;\n    height: 25px;\n    padding-top: 2.5px;\n  }\n}\n", ""]);
 
 	// exports
 
