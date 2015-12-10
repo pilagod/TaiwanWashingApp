@@ -22,17 +22,18 @@ export default class Navbar extends Component {
       }.bind(this)
     })
 
-    let $document = $(document)
     let $navbarDiv = $('#navbar > div')
     let navbarDivOffsetTop = $navbarDiv.offset().top
 
-    window.onscroll = () => {
-      if ($document.scrollTop() >= navbarDivOffsetTop && !$navbarDiv.hasClass('fixed')) {
-        $navbarDiv.addClass('fixed')
-      } else if ($document.scrollTop() < navbarDivOffsetTop && $navbarDiv.hasClass('fixed')) {
-        $navbarDiv.removeClass('fixed')
+    setInterval(() => {
+      if (window.didScroll) {
+        if (window.scrollTop >= navbarDivOffsetTop && !$navbarDiv.hasClass('fixed')) {
+          $navbarDiv.addClass('fixed')
+        } else if (window.scrollTop < navbarDivOffsetTop && $navbarDiv.hasClass('fixed')) {
+          $navbarDiv.removeClass('fixed')
+        }
       }
-    }
+    }, 100);
   }
 
   render() {

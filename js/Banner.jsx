@@ -19,6 +19,13 @@ export default class Banner extends Component {
             </div>
           </div>
         </div>
+        <div className="full-container bottom-banner">
+          <div className="container flex flex-vertical-center">
+            <a className="flex-align-right" href="https://www.facebook.com/taiwanwashing" target="_blank">
+              <img src="img/facebook.svg" style={{opacity: 0.9}}></img>
+            </a>
+          </div>
+        </div>
       </section>
     )
   }

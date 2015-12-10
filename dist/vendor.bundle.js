@@ -19744,17 +19744,18 @@
 	        }).bind(this)
 	      });
 
-	      var $document = $(document);
 	      var $navbarDiv = $('#navbar > div');
 	      var navbarDivOffsetTop = $navbarDiv.offset().top;
 
-	      window.onscroll = function () {
-	        if ($document.scrollTop() >= navbarDivOffsetTop && !$navbarDiv.hasClass('fixed')) {
-	          $navbarDiv.addClass('fixed');
-	        } else if ($document.scrollTop() < navbarDivOffsetTop && $navbarDiv.hasClass('fixed')) {
-	          $navbarDiv.removeClass('fixed');
+	      setInterval(function () {
+	        if (window.didScroll) {
+	          if (window.scrollTop >= navbarDivOffsetTop && !$navbarDiv.hasClass('fixed')) {
+	            $navbarDiv.addClass('fixed');
+	          } else if (window.scrollTop < navbarDivOffsetTop && $navbarDiv.hasClass('fixed')) {
+	            $navbarDiv.removeClass('fixed');
+	          }
 	        }
-	      };
+	      }, 100);
 	    }
 	  }, {
 	    key: 'render',
@@ -19899,7 +19900,7 @@
 
 
 	// module
-	exports.push([module.id, "/*************************/\n/*      Navbar Css       */\n/*************************/\n\n/**\n *  Navbar\n */\n#navbar {\n  color: white;\n}\n\n#navbar > .full-container {\n  position: absolute;\n  z-index: 99;\n  cursor: pointer;\n  top: 200px;\n  left: 0;\n  width: 100px;\n  height: 120px;\n  padding-left: 15px;\n  background-color: rgba(47, 114, 110, 0.8);\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n#navbar > .full-container.fixed {\n  position: fixed !important;\n  top: 0;\n}\n\n#navbar > .full-container.animation {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#navbar > .full-container.active {\n  position: fixed;\n  top: 50%;\n  background-color: transparent;\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);\n\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n\n#navbar > .full-container.active:hover {\n  background-color: rgba(98, 183, 173, 0.8);\n}\n\n#navbar > .full-container > span {\n  width: 54px;\n}\n\n#navbar > .full-container i {\n  display: block;\n  opacity: 1;\n  width: 100%;\n  height: 2px;\n  background-color: white;\n  border-radius: 2px;\n\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#navbar > .full-container i:nth-child(2) {\n  margin: 10px 0px;\n}\n\n#navbar > .full-container.active i:nth-child(1) {\n  opacity: 1;\n  -webkit-transform: rotate(45deg) translate(9px, 9px);\n  -moz-transform: rotate(45deg) translate(9px, 9px);\n  -ms-transform: rotate(45deg) translate(9px, 9px);\n  -o-transform: rotate(45deg) translate(9px, 9px);\n  transform: rotate(45deg) translate(9px, 9px);\n}\n\n#navbar > .full-container.active i:nth-child(2) {\n  opacity: 0;\n}\n\n#navbar > .full-container.active i:nth-child(3) {\n  opacity: 1;\n  -webkit-transform: rotate(-45deg) translate(9px, -9px);\n  -moz-transform: rotate(-45deg) translate(9px, -9px);\n  -ms-transform: rotate(-45deg) translate(9px, -9px);\n  -o-transform: rotate(-45deg) translate(9px, -9px);\n  transform: rotate(-45deg) translate(9px, -9px);\n}\n\n\n/**\n *  Menu\n */\n#menu {\n  position: fixed;\n  z-index: 50;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding-top: 100px;\n  padding-left: 240px;\n  background-color: rgba(46, 113, 108, 0.9);\n\n  animation-name: show;\n  animation-duration: 0.5s;\n  animation-timing-function: ease-in-out;\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#menu ul {\n  display: inline-block;\n}\n\n#menu .link-title {\n  display: inline-block;\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform 0.5s ease-in-out;\n  -ms-transition: transform 0.5s ease-in-out;\n  -o-transition: transform 0.5s ease-in-out;\n  transition: transform 0.5s ease-in-out;\n}\n\n#menu li:hover .link-title {\n  -webkit-transform: translateX(100%);\n  -moz-transform: translateX(100%);\n  -ms-transform: translateX(100%);\n  -o-transform: translateX(100%);\n  transform: translateX(100%);\n}\n\n#menu.hide {\n  opacity: 0;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n\n/*************************/\n/*      Animations       */\n/*************************/\n\n/* show animation */\n@-webkit-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-moz-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-ms-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-o-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n/*************/\n", ""]);
+	exports.push([module.id, "/*************************/\n/*      Navbar Css       */\n/*************************/\n\n/**\n *  Navbar\n */\n#navbar {\n  color: white;\n}\n\n#navbar > .full-container {\n  position: absolute;\n  z-index: 99;\n  cursor: pointer;\n  top: 20vh;\n  left: 0;\n  width: 100px;\n  height: 120px;\n  padding-left: 15px;\n  background-color: rgba(47, 114, 110, 0.8);\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n#navbar > .full-container.fixed {\n  position: fixed;\n  top: 0;\n}\n\n#navbar > .full-container.animation {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#navbar > .full-container.active {\n  position: fixed;\n  top: 50vh;\n  background-color: transparent;\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);\n\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n\n#navbar > .full-container.active:hover {\n  background-color: rgba(98, 183, 173, 0.8);\n}\n\n#navbar > .full-container > span {\n  width: 54px;\n}\n\n#navbar > .full-container i {\n  display: block;\n  opacity: 1;\n  width: 100%;\n  height: 2px;\n  background-color: white;\n  border-radius: 2px;\n\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#navbar > .full-container i:nth-child(2) {\n  margin: 10px 0px;\n}\n\n#navbar > .full-container.active i:nth-child(1) {\n  opacity: 1;\n  -webkit-transform: rotate(45deg) translate(9px, 9px);\n  -moz-transform: rotate(45deg) translate(9px, 9px);\n  -ms-transform: rotate(45deg) translate(9px, 9px);\n  -o-transform: rotate(45deg) translate(9px, 9px);\n  transform: rotate(45deg) translate(9px, 9px);\n}\n\n#navbar > .full-container.active i:nth-child(2) {\n  opacity: 0;\n}\n\n#navbar > .full-container.active i:nth-child(3) {\n  opacity: 1;\n  -webkit-transform: rotate(-45deg) translate(9px, -9px);\n  -moz-transform: rotate(-45deg) translate(9px, -9px);\n  -ms-transform: rotate(-45deg) translate(9px, -9px);\n  -o-transform: rotate(-45deg) translate(9px, -9px);\n  transform: rotate(-45deg) translate(9px, -9px);\n}\n\n\n/**\n *  Menu\n */\n#menu {\n  position: fixed;\n  z-index: 50;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding-top: 16vh;\n  padding-left: 240px;\n  background-color: rgba(46, 113, 108, 0.9);\n\n  animation-name: show;\n  animation-duration: 0.5s;\n  animation-timing-function: ease-in-out;\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#menu ul {\n  display: inline-block;\n}\n\n#menu .link-title {\n  display: inline-block;\n  -webkit-transition: transform 0.3s ease-in-out;\n  -moz-transition: transform 0.3s ease-in-out;\n  -ms-transition: transform 0.3s ease-in-out;\n  -o-transition: transform 0.3s ease-in-out;\n  transition: transform 0.3s ease-in-out;\n}\n\n#menu li:hover .link-title {\n  -webkit-transform: translateX(50%);\n  -moz-transform: translateX(50%);\n  -ms-transform: translateX(50%);\n  -o-transform: translateX(50%);\n  transform: translateX(50%);\n}\n\n#menu.hide {\n  opacity: 0;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n\n/*************************/\n/*      Animations       */\n/*************************/\n\n/* show animation */\n@-webkit-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-moz-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-ms-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@-o-keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n\n@keyframes show {\n  0% {opacity: 0}\n  100% {opacity: 1}\n}\n/*************/\n", ""]);
 
 	// exports
 
@@ -20288,6 +20289,19 @@
 	              )
 	            )
 	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'full-container bottom-banner' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'container flex flex-vertical-center' },
+	            _react2.default.createElement(
+	              'a',
+	              { className: 'flex-align-right', href: 'https://www.facebook.com/taiwanwashing', target: '_blank' },
+	              _react2.default.createElement('img', { src: 'img/facebook.svg', style: { opacity: 0.9 } })
+	            )
+	          )
 	        )
 	      );
 	    }
@@ -20333,7 +20347,7 @@
 
 
 	// module
-	exports.push([module.id, "#banner {\n  color: white;\n  margin-bottom: -10px;\n  overflow: hidden;\n}\n\n#banner img {\n  max-width: 100vw;\n  max-height: 63vw;\n}\n\n#banner .container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n  text-align: right;\n}\n\n#banner .container > div {\n  margin-top: 220px;\n  text-shadow: 0px 8px 5px rgba(0, 0, 0, 0.5);\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #banner .container > div {\n    margin-top: 140px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
+	exports.push([module.id, "#banner {\n  overflow: hidden;\n  max-width: 100vw;\n  width: 100vw;\n  max-height: 63vw;\n  height: 100vh;\n  color: white;\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n/*#banner img {\n  max-width: 100vw;\n  max-height: 63vw;\n}*/\n\n#banner .container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n  text-align: right;\n}\n\n#banner .container > div {\n  margin-top: 220px;\n  text-shadow: 0px 8px 5px rgba(0, 0, 0, 0.5);\n}\n\n\n#banner .bottom-banner {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  height: 80px;\n  background-color: rgba(98, 183, 173, 1);\n}\n\n#banner .bottom-banner img {\n  width: 50px;\n  height: 50px;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #banner .container > div {\n    margin-top: 140px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #banner .container > div {\n    margin-top: 80px;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  #banner .container > div {\n    margin-top: 0px;\n    text-align: center;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -20383,24 +20397,7 @@
 	        { id: 'intro' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'full-container top-intro' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'container flex flex-vertical-center' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'flex-align-right' },
-	              _react2.default.createElement(
-	                'a',
-	                { href: 'https://www.facebook.com/taiwanwashing', target: '_blank' },
-	                _react2.default.createElement('img', { src: 'img/facebook.svg', style: { opacity: 0.9 } })
-	              )
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'full-container middle-intro' },
+	          { className: 'full-container' },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'container' },
@@ -20484,7 +20481,7 @@
 
 
 	// module
-	exports.push([module.id, "#intro {\n  padding-bottom: 120px;\n  color: white;\n  background-color: rgba(41, 163, 144, 0.25);\n}\n\n#intro .top-intro {\n  position: relative;\n  z-index: 1;\n  height: 80px;\n  background-color: rgba(98, 183, 173, 1);\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n#intro .top-intro img {\n  width: 50px;\n  height: 50px;\n}\n\n#intro .middle-intro {\n  padding-top: 40px;\n  padding-bottom: 40px;\n  background-color: rgba(98, 183, 173, 1);\n}\n\n#intro .content {\n  text-align: center;\n}\n\n#intro .content::after {\n  position: absolute;\n  display: block;\n  content: url(" + __webpack_require__(170) + ");\n  top: -60px;\n  right: -220px;\n\n  -webkit-transform: scale(0.75);\n  -moz-transform: scale(0.75);\n  -ms-transform: scale(0.75);\n  -o-transform: scale(0.75);\n  transform: scale(0.75);\n}\n\n#intro .download a {\n  position: relative;\n  display: inline-block;\n  width: 180px;\n  margin: 0px 10px;\n}\n\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #intro .content::after {\n    right: -220px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #intro {\n    padding-bottom: 60px;\n  }\n  #intro .middle-intro {\n    padding-bottom: 0px;\n  }\n  #intro .content::after {\n    position: relative;\n    top: 0;\n    right: 0;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
+	exports.push([module.id, "#intro {\n  padding-bottom: 120px;\n  color: white;\n  background-color: rgba(41, 163, 144, 0.25);\n}\n\n#intro > .full-container {\n  padding-top: 40px;\n  padding-bottom: 40px;\n  background-color: rgba(98, 183, 173, 1);\n}\n\n#intro .content {\n  text-align: center;\n}\n\n#intro .content::after {\n  position: absolute;\n  display: block;\n  content: url(" + __webpack_require__(170) + ");\n  top: -60px;\n  right: -220px;\n\n  -webkit-transform: scale(0.75);\n  -moz-transform: scale(0.75);\n  -ms-transform: scale(0.75);\n  -o-transform: scale(0.75);\n  transform: scale(0.75);\n}\n\n#intro .download a {\n  position: relative;\n  display: inline-block;\n  width: 180px;\n  margin: 0px 10px;\n}\n\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #intro .content::after {\n    right: -220px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #intro {\n    padding-bottom: 60px;\n  }\n  #intro .middle-intro {\n    padding-bottom: 0px;\n  }\n  #intro .content::after {\n    position: relative;\n    top: 0;\n    right: 0;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
 
 	// exports
 
@@ -20711,9 +20708,9 @@
 	                          null,
 	                          '到府收送服務範圍：',
 	                          _react2.default.createElement('br', null),
-	                          '台北市｜大安區、文山區、中山區、內湖區、萬華區',
+	                          '台北市｜大安區、文山區、中山區、萬華區',
 	                          _react2.default.createElement('br', null),
-	                          '新北市｜新店區、五股區、淡水區、中和區、樹林區、蘆洲區、新莊區',
+	                          '新北市｜新店區、五股區、中和區',
 	                          _react2.default.createElement('br', null),
 	                          '桃園市｜龜山區、八德區、平鎮區',
 	                          _react2.default.createElement('br', null)
@@ -20770,14 +20767,22 @@
 	          'footer',
 	          { className: 'container' },
 	          _react2.default.createElement(
-	            'span',
-	            { className: 'button' },
-	            '加入會員'
+	            'a',
+	            { href: 'http://www.tww.com.tw/JE/NewMemberAdd.aspx', target: '_blank' },
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'button' },
+	              '加入會員'
+	            )
 	          ),
 	          _react2.default.createElement(
-	            'span',
-	            { className: 'button' },
-	            '線上儲值'
+	            'a',
+	            { href: 'http://www.tww.com.tw/JE/NewCreditLogin.aspx', target: '_blank' },
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'button' },
+	              '線上儲值'
+	            )
 	          )
 	        )
 	      );
@@ -21765,7 +21770,7 @@
 
 
 	// module
-	exports.push([module.id, "#serviceDetail {\n  background-image: url(" + __webpack_require__(195) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n#serviceDetail header h1 {\n  color: rgba(74, 74, 74, 1);\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#service {\n  padding-top: 20px;\n  padding-bottom: 60px;\n}\n\n#service .left-block,\n#service .right-block {\n  position: relative;\n  display: inline-block;\n  width: 50%;\n  height: 100%;\n  padding: 40px;\n  color: rgba(74, 74, 74, 1);\n  vertical-align:top;\n  background-color: rgba(203, 233, 228, 0.8);\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block .subtitle,\n#service .right-block .subtitle {\n  color: gray;\n}\n\n#service .left-block:hover,\n#service .right-block:hover {\n  color: white;\n  background-color: rgba(105, 186, 177, 0.9);\n}\n\n#service .left-block:hover .subtitle,\n#service .right-block:hover .subtitle {\n  color: lightgray;\n}\n\n#service .left-block {\n  text-align: right;\n}\n\n#service .right-block {\n  text-align: left;\n}\n\n#service .left-block div,\n#service .right-block div {\n  margin: 0 auto;\n  text-align: center;\n}\n\n#service .left-block:hover svg path,\n#service .right-block:hover svg path {\n  stroke: white !important;\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block:hover path:not(:first-of-type),\n#service .right-block:hover path:not(:first-of-type) {\n  fill: white !important;\n}\n\n#service .left-block .service-image {\n  padding-top: 4px;\n}\n\n#service .service-image {\n  position: relative;\n  height: 150px;\n}\n\n#service .service-image > .service-location {\n  position: absolute;\n  bottom: 0;\n  right: 30px;\n  padding: 5px;\n  color: rgba(58, 128, 123, 1);\n  line-height: 1;\n  border: 2px solid rgba(58, 128, 123, 1);\n  border-radius: 5px;\n}\n\n#service .service-image > .service-location .service-location-content {\n  position: absolute;\n  visibility: hidden;\n  opacity: 0;\n  top: 60px;\n  left: -160px;\n  width: 320px;\n  padding: 5px 10px;\n  text-align: left;\n  line-height: 1.4;\n  color: white;\n  background-color: rgba(105, 186, 177, 0.9);\n\n  -webkit-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n}\n\n#service .service-image > .service-location:hover .service-location-content {\n  visibility: visible;\n  opacity: 1;\n}\n\n\n#service .service-image > .service-location .service-location-content::before {\n  position: absolute;\n  display: block;\n  content: '';\n  top: -20px;\n  right: 130px;\n  width: 0;\n\theight: 0;\n\tborder-left: 10px solid transparent;\n\tborder-right: 10px solid transparent;\n\tborder-bottom: 20px solid rgba(105, 186, 177, 0.9);\n}\n\n\n#service .service-content {\n  height: 180px;\n}\n\n#service > footer {\n  margin-top: 60px;\n  text-align: right;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #service .service-image > .service-location {\n    right: 0px;\n  }\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #service .left-block,\n  #service .right-block {\n    display: block;\n    width: 100%;\n    margin: 20px 0px;\n    padding: 20px 0px;\n    text-align: center;\n  }\n\n  #service .service-content {\n    height: 120px;\n  }\n\n  #service > footer {\n    text-align: center;\n  }\n\n  #service .service-image > .service-location {\n    right: 120px;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
+	exports.push([module.id, "#serviceDetail {\n  margin-top: -3px;\n  background-image: url(" + __webpack_require__(195) + ");\n  background-repeat: no-repeat;\n  background-position: 50% 50%;\n  background-size: cover;\n}\n\n#serviceDetail header h1 {\n  color: rgba(74, 74, 74, 1);\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#service {\n  padding-top: 20px;\n  padding-bottom: 60px;\n}\n\n#service .left-block,\n#service .right-block {\n  position: relative;\n  display: inline-block;\n  width: 50%;\n  height: 100%;\n  padding: 40px;\n  color: rgba(74, 74, 74, 1);\n  vertical-align:top;\n  background-color: rgba(203, 233, 228, 0.8);\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block .subtitle,\n#service .right-block .subtitle {\n  color: gray;\n}\n\n#service .left-block:hover,\n#service .right-block:hover {\n  color: white;\n  background-color: rgba(105, 186, 177, 0.9);\n}\n\n#service .left-block:hover .subtitle,\n#service .right-block:hover .subtitle {\n  color: lightgray;\n}\n\n#service .left-block {\n  text-align: right;\n}\n\n#service .right-block {\n  text-align: left;\n}\n\n#service .left-block div,\n#service .right-block div {\n  margin: 0 auto;\n  text-align: center;\n}\n\n#service .left-block:hover svg path,\n#service .right-block:hover svg path {\n  stroke: white !important;\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block:hover path:not(:first-of-type),\n#service .right-block:hover path:not(:first-of-type) {\n  fill: white !important;\n}\n\n#service .left-block .service-image {\n  padding-top: 4px;\n}\n\n#service .service-image {\n  position: relative;\n  height: 150px;\n}\n\n#service .service-image > .service-location {\n  position: absolute;\n  bottom: 0;\n  right: 30px;\n  padding: 5px;\n  color: rgba(58, 128, 123, 1);\n  line-height: 1;\n  border: 2px solid rgba(58, 128, 123, 1);\n  border-radius: 5px;\n\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#service .service-image > .service-location:hover {\n  color: white;\n  border-color: white;\n}\n\n#service .service-image > .service-location .service-location-content {\n  position: absolute;\n  visibility: hidden;\n  opacity: 0;\n  top: 60px;\n  left: -160px;\n  width: 320px;\n  padding: 5px 10px;\n  text-align: left;\n  line-height: 1.4;\n  color: white;\n  /*background-color: rgba(105, 186, 177, 0.9);*/\n  background-color: rgba(58, 128, 123, 1);\n\n  -webkit-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n}\n\n#service .service-image > .service-location:hover .service-location-content {\n  visibility: visible;\n  opacity: 1;\n}\n\n#service .service-image > .service-location .service-location-content::before {\n  position: absolute;\n  display: block;\n  content: '';\n  top: -20px;\n  right: 130px;\n  width: 0;\n\theight: 0;\n\tborder-left: 10px solid transparent;\n\tborder-right: 10px solid transparent;\n\t/*border-bottom: 20px solid rgba(105, 186, 177, 0.9);*/\n  border-bottom: 20px solid rgba(58, 128, 123, 1);\n}\n\n\n#service .service-content {\n  height: 180px;\n}\n\n#service > footer {\n  margin-top: 60px;\n  text-align: right;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #service .service-image > .service-location {\n    right: 0px;\n  }\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #service .left-block,\n  #service .right-block {\n    display: block;\n    width: 100%;\n    margin: 20px 0px;\n    padding: 20px 0px;\n    text-align: center;\n  }\n\n  #service .service-content {\n    height: 120px;\n  }\n\n  #service > footer {\n    text-align: center;\n  }\n\n  #service .service-image > .service-location {\n    right: 120px;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
 
 	// exports
 
@@ -21878,7 +21883,7 @@
 
 
 	// module
-	exports.push([module.id, "#bottomApp {\n  color: white;\n  background-image: url(" + __webpack_require__(199) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/**\n *  Link\n */\n\n#link {\n  padding: 40px 0px;\n  background-color: rgba(105, 186, 177, 0.8);\n}\n\n#link div {\n  vertical-align: top;\n}\n\n#link .container > div:nth-child(1) {\n  text-align: center;\n}\n\n#link .container > div:nth-child(1) iframe {\n  width: 620px;\n  height: 348.75px;\n}\n\n#link .container > div:nth-child(1) .left-block,\n#link .container > div:nth-child(1) .right-block {\n  position: absolute;\n  cursor: pointer;\n  opacity: 0;\n  width: 10%;\n  height: 348.75px;\n  padding: 15px;\n  background-color: rgba(0, 0, 0, 0.7);\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#link .container > div:nth-child(1) .left-block {\n  top: 0;\n  left: 0;\n}\n\n#link .container > div:nth-child(1) .right-block {\n  top: 0;\n  right: 0;\n}\n\n#link .container > div:nth-child(1):hover .left-block,\n#link .container > div:nth-child(1):hover .right-block {\n  opacity: 1;\n}\n\n#link .container > div:nth-child(2) {\n  padding-left: 40px;\n}\n\n#link div h1 {\n  margin-top: 0px;\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#link ul {\n  margin-top: 60px;\n  padding: 0px;\n  font-size: 1.4em;\n}\n\n#link li {\n  margin-top: 20px;\n}\n\n#link li a {\n  display: inline-block;\n}\n\n#link li a > .bottom-line {\n  width: 0;\n  height: 1px;\n  background-color: white;\n\n  -webkit-transition: width 0.5s ease-in-out;\n  -moz-transition: width 0.5s ease-in-out;\n  -ms-transition: width 0.5s ease-in-out;\n  -o-transition: width 0.5s ease-in-out;\n  transition: width 0.5s ease-in-out;\n}\n\n#link li:hover a > .bottom-line {\n  width: 120%;\n}\n\n\n/**\n *  Work\n */\n#work {\n  padding-top: 40px;\n  padding-bottom: 60px;\n  background-color: rgba(203, 233, 228, 0.8);\n}\n\n#work header {\n  margin: 0px 0px;\n}\n\n#work header h1 {\n  color: rgba(74, 74, 74, 1);\n}\n\n#work .learn-more {\n  text-align: right;\n}\n\n/**\n *  Contact\n */\n#contact {\n  padding: 20px 0px;\n  background-color: rgba(58, 128, 123, 0.8);\n}\n\n#contact .info .info-title {\n  margin: 15px 0px;\n}\n\n#contact .info input {\n  width: 90%;\n  font-size: 1.5em;\n}\n\n#contact div.row:nth-of-type(2) {\n  margin-top: 60px;\n  margin-bottom: 30px;\n  text-align: right;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 492px;\n    height: 276.75px;\n  }\n  #link .container > div:nth-child(1) .left-block,\n  #link .container > div:nth-child(1) .right-block {\n    height: 276.75px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  /**\n   *  Link\n   */\n  #link div h1 {\n    margin-top: inherit;\n  }\n\n  #link .container > div:nth-child(1) iframe {\n    width: 460px;\n    height: 258.75px;\n  }\n\n  #link .container > div:nth-child(1) .left-block,\n  #link .container > div:nth-child(1) .right-block {\n    height: 258.75px;\n  }\n\n  #link .container > div:nth-child(2) {\n    text-align: center;\n    margin-top: 40px;\n    padding-left: 0px;\n  }\n\n  #link ul {\n    margin-top: 20px;\n  }\n\n  #link li:hover a > .bottom-line {\n    width: 100%;\n  }\n\n  /**\n   *  Contact\n   */\n  #contact .info {\n    margin: 0 auto;\n  }\n\n  #contact .info input {\n    width: 100%;\n    font-size: 2em;\n  }\n\n  #contact div.row:nth-of-type(2) {\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
+	exports.push([module.id, "#bottomApp {\n  color: white;\n  background-image: url(" + __webpack_require__(199) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/**\n *  Link\n */\n\n#link {\n  padding: 40px 0px;\n  background-color: rgba(105, 186, 177, 0.8);\n}\n\n#link div {\n  vertical-align: top;\n}\n\n#link .container > div:nth-child(1) {\n  text-align: center;\n}\n\n#link .container > div:nth-child(1) iframe {\n  width: 620px;\n  height: 348.75px;\n}\n\n#link .container > div:nth-child(1) .next-block {\n  position: absolute;\n  cursor: pointer;\n  opacity: 0;\n  bottom: 20%;\n  right: 0;\n  padding: 15px 60px;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.6);\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#link .container > div:nth-child(1):hover .next-block {\n  opacity: 1;\n}\n\n\n#link .container > div:nth-child(2) {\n  padding-left: 40px;\n}\n\n#link div h1 {\n  margin-top: 0px;\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#link ul {\n  margin-top: 60px;\n  padding: 0px;\n  font-size: 1.4em;\n}\n\n#link li {\n  margin-top: 20px;\n}\n\n#link li a {\n  display: inline-block;\n}\n\n#link li a > .bottom-line {\n  width: 0;\n  height: 1px;\n  background-color: white;\n\n  -webkit-transition: width 0.5s ease-in-out;\n  -moz-transition: width 0.5s ease-in-out;\n  -ms-transition: width 0.5s ease-in-out;\n  -o-transition: width 0.5s ease-in-out;\n  transition: width 0.5s ease-in-out;\n}\n\n#link li:hover a > .bottom-line {\n  width: 120%;\n}\n\n\n/**\n *  Work\n */\n#work {\n  padding-top: 40px;\n  padding-bottom: 60px;\n  background-color: rgba(203, 233, 228, 0.8);\n}\n\n#work header {\n  margin: 0px 0px;\n}\n\n#work header h1 {\n  color: rgba(74, 74, 74, 1);\n}\n\n#work .learn-more {\n  text-align: right;\n}\n\n/**\n *  Contact\n */\n#contact {\n  padding: 20px 0px;\n  background-color: rgba(58, 128, 123, 0.8);\n}\n\n#contact .info .info-title {\n  margin: 15px 0px;\n}\n\n#contact .info input {\n  width: 90%;\n  font-size: 1.5em;\n}\n\n#contact div.row:nth-of-type(2) {\n  margin-top: 60px;\n  margin-bottom: 30px;\n  text-align: right;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 492px;\n    height: 276.75px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  /**\n   *  Link\n   */\n  #link div h1 {\n    margin-top: inherit;\n  }\n\n  #link .container > div:nth-child(1) iframe {\n    width: 460px;\n    height: 258.75px;\n  }\n\n  #link .container > div:nth-child(2) {\n    text-align: center;\n    margin-top: 40px;\n    padding-left: 0px;\n  }\n\n  #link ul {\n    margin-top: 20px;\n  }\n\n  #link li:hover a > .bottom-line {\n    width: 100%;\n  }\n\n  /**\n   *  Contact\n   */\n  #contact .info {\n    margin: 0 auto;\n  }\n\n  #contact .info input {\n    width: 100%;\n    font-size: 2em;\n  }\n\n  #contact div.row:nth-of-type(2) {\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
 
 	// exports
 
@@ -21893,7 +21898,7 @@
 /* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -21913,6 +21918,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var player = undefined;
+
 	var Link = (function (_Component) {
 	  _inherits(Link, _Component);
 
@@ -21923,97 +21930,125 @@
 	  }
 
 	  _createClass(Link, [{
-	    key: "render",
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      if (!player) {
+	        player = new YT.Player('youtubePlayer', {
+	          videoId: 'yKV4H95l7T0'
+	        });
+	      }
+
+	      var $youtubePlayer = $('#youtubePlayer');
+	      var youtubePlayerHeight = undefined;
+	      var youtubePlayerOffsetTop = undefined;
+
+	      setInterval(function () {
+	        if (window.didScroll) {
+	          youtubePlayerHeight = $youtubePlayer.height();
+	          youtubePlayerOffsetTop = $youtubePlayer.offset().top;
+	          if (window.scrollTop + window.innerHeight >= youtubePlayerOffsetTop && window.scrollTop <= youtubePlayerOffsetTop + youtubePlayerHeight) {
+	            player.playVideo();
+	          } else {
+	            player.stopVideo();
+	          }
+	        }
+	      }, 100);
+	    }
+	  }, {
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
-	        { id: "link" },
+	        'div',
+	        { id: 'link' },
 	        _react2.default.createElement(
-	          "div",
-	          { className: "container" },
+	          'div',
+	          { className: 'container' },
 	          _react2.default.createElement(
-	            "div",
-	            { className: "col-8" },
-	            _react2.default.createElement("div", { className: "left-block" }),
-	            _react2.default.createElement("iframe", { src: "https://www.youtube.com/embed/yKV4H95l7T0", frameBorder: "0", allowFullScreen: true }),
+	            'div',
+	            { className: 'col-8' },
+	            _react2.default.createElement('div', { id: 'youtubePlayer' }),
 	            _react2.default.createElement(
-	              "div",
-	              { className: "right-block flex flex-vertical-center" },
+	              'a',
+	              { href: 'https://www.youtube.com/watch?v=Ak0seLf8WMM', target: '_blank' },
 	              _react2.default.createElement(
-	                "a",
-	                { href: "https://www.youtube.com/watch?v=Ak0seLf8WMM", target: "_blank" },
-	                _react2.default.createElement("img", { src: "img/link-arrow-right.svg" })
+	                'div',
+	                { className: 'flex flex-vertical-center flex-align-center next-block ' },
+	                _react2.default.createElement(
+	                  'span',
+	                  null,
+	                  '點擊看更多'
+	                )
 	              )
 	            )
 	          ),
 	          _react2.default.createElement(
-	            "div",
-	            { className: "col-4" },
+	            'div',
+	            { className: 'col-4' },
 	            _react2.default.createElement(
-	              "div",
+	              'div',
 	              null,
 	              _react2.default.createElement(
-	                "h1",
+	                'h1',
 	                null,
-	                "公司連結"
+	                '公司連結'
 	              ),
 	              _react2.default.createElement(
-	                "ul",
+	                'ul',
 	                null,
 	                _react2.default.createElement(
-	                  "li",
+	                  'li',
 	                  null,
 	                  _react2.default.createElement(
-	                    "a",
-	                    { href: "http://www.tww.com.tw", target: "_blank" },
+	                    'a',
+	                    { href: 'http://www.tww.com.tw', target: '_blank' },
 	                    _react2.default.createElement(
-	                      "span",
+	                      'span',
 	                      null,
-	                      "台灣大洗 e 聯盟"
+	                      '台灣大洗 e 聯盟'
 	                    ),
-	                    _react2.default.createElement("div", { className: "bottom-line" })
+	                    _react2.default.createElement('div', { className: 'bottom-line' })
 	                  )
 	                ),
 	                _react2.default.createElement(
-	                  "li",
+	                  'li',
 	                  null,
 	                  _react2.default.createElement(
-	                    "a",
-	                    { href: "http://www.tww.com.tw/je/", target: "_blank" },
+	                    'a',
+	                    { href: 'http://www.tww.com.tw/je/', target: '_blank' },
 	                    _react2.default.createElement(
-	                      "span",
+	                      'span',
 	                      null,
-	                      "潔衣家"
+	                      '潔衣家'
 	                    ),
-	                    _react2.default.createElement("div", { className: "bottom-line" })
+	                    _react2.default.createElement('div', { className: 'bottom-line' })
 	                  )
 	                ),
 	                _react2.default.createElement(
-	                  "li",
+	                  'li',
 	                  null,
 	                  _react2.default.createElement(
-	                    "a",
-	                    { href: "http://www.tww.com.tw/je/", target: "_blank" },
+	                    'a',
+	                    { href: 'http://ews.tww.com.tw', target: '_blank' },
 	                    _react2.default.createElement(
-	                      "span",
+	                      'span',
 	                      null,
-	                      "雲端洗衣站"
+	                      '雲端洗衣站'
 	                    ),
-	                    _react2.default.createElement("div", { className: "bottom-line" })
+	                    _react2.default.createElement('div', { className: 'bottom-line' })
 	                  )
 	                ),
 	                _react2.default.createElement(
-	                  "li",
+	                  'li',
 	                  null,
 	                  _react2.default.createElement(
-	                    "a",
-	                    { href: "http://www.tww.com.tw/tlcc/", target: "_blank" },
+	                    'a',
+	                    { href: 'http://www.tww.com.tw/tlcc/', target: '_blank' },
 	                    _react2.default.createElement(
-	                      "span",
+	                      'span',
 	                      null,
-	                      "精品養護中心"
+	                      '精品養護中心'
 	                    ),
-	                    _react2.default.createElement("div", { className: "bottom-line" })
+	                    _react2.default.createElement('div', { className: 'bottom-line' })
 	                  )
 	                )
 	              )

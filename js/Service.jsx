@@ -51,8 +51,8 @@ export default class Service extends Component {
                         <div className="service-location-content">
                           <p>
                             到府收送服務範圍：<br/>
-                            台北市｜大安區、文山區、中山區、內湖區、萬華區<br/>
-                            新北市｜新店區、五股區、淡水區、中和區、樹林區、蘆洲區、新莊區<br/>
+                            台北市｜大安區、文山區、中山區、萬華區<br/>
+                            新北市｜新店區、五股區、中和區<br/>
                             桃園市｜龜山區、八德區、平鎮區<br/>
                           </p>
                         </div>
@@ -79,11 +79,14 @@ export default class Service extends Component {
                 </div>
             </div>
           </a>
-
         </div>
         <footer className="container">
-          <span className="button">加入會員</span>
-          <span className="button">線上儲值</span>
+          <a href="http://www.tww.com.tw/JE/NewMemberAdd.aspx" target="_blank">
+            <span className="button">加入會員</span>
+          </a>
+          <a href="http://www.tww.com.tw/JE/NewCreditLogin.aspx" target="_blank">
+            <span className="button">線上儲值</span>
+          </a>
         </footer>
       </div>
     )

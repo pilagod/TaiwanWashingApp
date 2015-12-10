@@ -5,16 +5,7 @@ export default class Intro extends Component {
   render() {
     return (
       <section id="intro">
-        <div className="full-container top-intro">
-          <div className="container flex flex-vertical-center">
-            <div className="flex-align-right">
-              <a href="https://www.facebook.com/taiwanwashing" target="_blank">
-                <img src="img/facebook.svg" style={{opacity: 0.9}}></img>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="full-container middle-intro">
+        <div className="full-container">
           <div className="container">
             <div className="col-8 flex flex-align-center flex-direction-column content">
               <h1>台灣大洗 e 聯盟 App</h1>
