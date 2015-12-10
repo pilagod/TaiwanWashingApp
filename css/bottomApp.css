@@ -93,20 +93,26 @@
  *  Work
  */
 #work {
-  padding-top: 40px;
+  padding-top: 5px;
   padding-bottom: 60px;
   background-color: rgba(203, 233, 228, 0.8);
 }
 
-#work header {
-  margin: 0px 0px;
-}
-
 #work header h1 {
+  margin-bottom: 0;
   color: rgba(74, 74, 74, 1);
 }
 
+#work .content {
+  color: rgba(58, 128, 123, 1);
+}
+
+#work .content > p:first-child {
+  margin-top: 0;
+}
+
 #work .learn-more {
+  margin-top: 40px;
   text-align: right;
 }
 
@@ -195,8 +201,19 @@
 
 /* 320px - 479px */
 @media only screen and (max-width: 479px) {
+  /**
+   *  Link
+   */
   #link .container > div:nth-child(1) iframe {
     width: 300px;
     height: 168.75px;
   }
+
+  /**
+   *  Work
+   */
+  #work {
+    padding-bottom: 40px;
+  }
+
 }
