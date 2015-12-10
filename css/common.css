@@ -25,6 +25,9 @@ h3 {font-size: 1.3em;}
 h4 {font-size: 1.1em;}
 h5 {font-size: 1.0em;}
 
+ul {
+  padding: 0;
+}
 
 li {
   list-style: none;
@@ -242,8 +245,7 @@ header > h1 {
   .col-3 /* 1/4 width */
   {
     display: block;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin: inherit auto;
   }
 }
 
@@ -252,6 +254,17 @@ header > h1 {
   body {
     font-size: 12px;
     min-width: 320px;
+  }
+
+  h1 {font-size: 1.5em;}
+  h2 {font-size: 1.3em;}
+  h3 {font-size: 1.2em;}
+  h4 {font-size: 1.1em;}
+  h5 {font-size: 1.0em;}
+
+  header {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .container {
@@ -265,4 +278,9 @@ header > h1 {
   .col-6 {width:300px;}
   .col-4 {width:300px;}
   .col-3 {width:300px;}
+
+  .button {
+    padding: 15px 40px;
+  }
+
 }

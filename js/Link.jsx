@@ -16,15 +16,13 @@ export default class Link extends Component {
     let youtubePlayerOffsetTop
 
     setInterval(() => {
-      if (window.didScroll) {
-        youtubePlayerHeight = $youtubePlayer.height()
-        youtubePlayerOffsetTop = $youtubePlayer.offset().top
-        if (window.scrollTop + window.innerHeight >= youtubePlayerOffsetTop &&
-            window.scrollTop <= youtubePlayerOffsetTop + youtubePlayerHeight) {
-          player.playVideo()
-        } else {
-          player.stopVideo()
-        }
+      youtubePlayerHeight = $youtubePlayer.height()
+      youtubePlayerOffsetTop = $youtubePlayer.offset().top
+      if (window.scrollTop + window.innerHeight >= youtubePlayerOffsetTop &&
+          window.scrollTop <= youtubePlayerOffsetTop + youtubePlayerHeight) {
+        player.playVideo()
+      } else {
+        player.stopVideo()
       }
     }, 100);
   }

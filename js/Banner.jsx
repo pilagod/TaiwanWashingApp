@@ -11,7 +11,7 @@ export default class Banner extends Component {
             <img src="img/banner.png"></img>
           </div>
           <div className="container">
-            <div>
+            <div className="col-12">
               <h1>
                 <span>Better, Faster, Easier 更好,更快,更方便</span><br/>
                 <span>台灣大洗 e 聯盟App</span>
@@ -21,7 +21,7 @@ export default class Banner extends Component {
         </div>
         <div className="full-container bottom-banner">
           <div className="container flex flex-vertical-center">
-            <a className="flex-align-right" href="https://www.facebook.com/taiwanwashing" target="_blank">
+            <a className="col-12 flex-align-right" href="https://www.facebook.com/taiwanwashing" target="_blank">
               <img src="img/facebook.svg" style={{opacity: 0.9}}></img>
             </a>
           </div>

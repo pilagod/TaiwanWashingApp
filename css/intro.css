@@ -50,19 +50,39 @@
 /* 480px - 767px */
 @media only screen and (max-width: 767px) {
   #intro {
+    height: 820px;
     padding-bottom: 60px;
   }
-  #intro .middle-intro {
+  #intro > .full-container {
+    padding-top: 20px;
+    padding-bottom: 0px;
+  }
+  #intro > .full-container {
     padding-bottom: 0px;
   }
   #intro .content::after {
     position: relative;
-    top: 0;
+    top: -40px;
     right: 0;
   }
 }
 
 /* 320px - 479px */
 @media only screen and (max-width: 479px) {
+  #intro {
+    height: 600px;
+  }
 
+  #intro .download a {
+    width: 120px;
+  }
+
+  #intro .content::after {
+    top: -120px;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+  }
 }

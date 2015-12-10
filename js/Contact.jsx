@@ -5,7 +5,7 @@ export default class Contact extends Component {
     return (
       <div id="contact">
         <div className="container">
-          <header>
+          <header className="col-12">
             <h1>
               <span>聯絡我們</span>
               <span className="subtitle">(* 為必填)</span>

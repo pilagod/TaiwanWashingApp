@@ -16,7 +16,7 @@
   top: 20vh;
   left: 0;
   width: 100px;
-  height: 120px;
+  height: 100px;
   padding-left: 15px;
   background-color: rgba(47, 114, 110, 0.8);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
@@ -154,16 +154,59 @@
 
 /* 768px - 959px */
 @media only screen and (max-width: 959px) {
-
+  #menu {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 0px;
+  }
 }
 
 /* 480px - 767px */
 @media only screen and (max-width: 767px) {
+  #navbar > .full-container {
+    top: 15vh;
+    width: 50px;
+    height: 50px;
+    padding-left: 8px;
+  }
+
+  #navbar > .full-container > span {
+    width: 30px;
+  }
+
+  #navbar > .full-container.active i:nth-child(1) {
+    -webkit-transform: rotate(45deg) translate(5px, 5px);
+    -moz-transform: rotate(45deg) translate(5px, 5px);
+    -ms-transform: rotate(45deg) translate(5px, 5px);
+    -o-transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #navbar > .full-container i:nth-child(2) {
+    margin: 5px 0px;
+  }
+
+  #navbar > .full-container.active i:nth-child(3) {
+    -webkit-transform: rotate(-45deg) translate(5px, -5px);
+    -moz-transform: rotate(-45deg) translate(5px, -5px);
+    -ms-transform: rotate(-45deg) translate(5px, -5px);
+    -o-transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
 
 }
 
 /* 320px - 479px */
 @media only screen and (max-width: 479px) {
+
 
 }
 
