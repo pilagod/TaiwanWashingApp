@@ -206,8 +206,12 @@
 
 /* 320px - 479px */
 @media only screen and (max-width: 479px) {
-
-
+  #navbar > .full-container {
+    top: 40vh;
+    width: 50px;
+    height: 50px;
+    padding-left: 8px;
+  }
 }
 
 /*************************/
