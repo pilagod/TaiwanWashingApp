@@ -139,6 +139,23 @@
   text-align: right;
 }
 
+/**
+ *  Footer
+ */
+
+#footer {
+  color: rgba(74, 74, 74, 1);
+}
+
+#footer .footer-logo {
+  margin-top: 20px;
+}
+
+#footer .footer-content {
+  text-align: right;
+  padding-bottom: 20px;
+}
+
 /*************************/
 /*      Responsive       */
 /*************************/
@@ -215,5 +232,4 @@
   #work {
     padding-bottom: 40px;
   }
-
 }

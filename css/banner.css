@@ -17,7 +17,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 160px;
+  width: 200px;
 }
 
 #banner .container {
@@ -57,7 +57,7 @@
 /* 768px - 959px */
 @media only screen and (max-width: 959px) {
   #logo {
-    width: 120px;
+    width: 180px;
   }
   #banner .container > div {
     margin-top: 140px;
@@ -67,7 +67,7 @@
 /* 480px - 767px */
 @media only screen and (max-width: 767px) {
   #logo {
-    width: 80px;
+    width: 120px;
   }
   #banner .container > div {
     margin-top: 80px;
@@ -85,10 +85,11 @@
 /* 320px - 479px */
 @media only screen and (max-width: 479px) {
   #logo {
-    width: 40px;
+    width: 60px;
   }
+
   #banner .container > div {
-    margin-top: 0px;
+    margin-top: 40px;
     text-align: center;
   }
 

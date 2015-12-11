@@ -98,7 +98,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(209);
+	module.exports = __webpack_require__(210);
 
 
 /***/ },
@@ -20350,7 +20350,7 @@
 
 
 	// module
-	exports.push([module.id, "#banner {\n  overflow: hidden;\n  max-width: 100vw;\n  width: 100vw;\n  max-height: 63vw;\n  height: 100vh;\n  color: white;\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n/*#banner img {\n  max-width: 100vw;\n  max-height: 63vw;\n}*/\n\n#logo {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 160px;\n}\n\n#banner .container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n  text-align: right;\n}\n\n#banner .container > div {\n  margin-top: 220px;\n  text-shadow: 0px 8px 5px rgba(0, 0, 0, 0.5);\n}\n\n\n#banner .bottom-banner {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  height: 60px;\n  background-color: rgba(98, 183, 173, 1);\n}\n\n#banner .bottom-banner img {\n  width: 50px;\n  height: 50px;\n  padding-top: 5px;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #logo {\n    width: 120px;\n  }\n  #banner .container > div {\n    margin-top: 140px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #logo {\n    width: 80px;\n  }\n  #banner .container > div {\n    margin-top: 80px;\n  }\n  #banner .bottom-banner {\n    height: 40px;\n  }\n  #banner .bottom-banner img {\n    width: 30px;\n    height: 30px;\n    padding-top: 5px;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  #logo {\n    width: 40px;\n  }\n  #banner .container > div {\n    margin-top: 0px;\n    text-align: center;\n  }\n\n  #banner .bottom-banner {\n    height: 30px;\n  }\n  #banner .bottom-banner img {\n    width: 25px;\n    height: 25px;\n    padding-top: 2.5px;\n  }\n}\n", ""]);
+	exports.push([module.id, "#banner {\n  overflow: hidden;\n  max-width: 100vw;\n  width: 100vw;\n  max-height: 63vw;\n  height: 100vh;\n  color: white;\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n/*#banner img {\n  max-width: 100vw;\n  max-height: 63vw;\n}*/\n\n#logo {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 200px;\n}\n\n#banner .container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n  text-align: right;\n}\n\n#banner .container > div {\n  margin-top: 220px;\n  text-shadow: 0px 8px 5px rgba(0, 0, 0, 0.5);\n}\n\n\n#banner .bottom-banner {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  height: 60px;\n  background-color: rgba(98, 183, 173, 1);\n}\n\n#banner .bottom-banner img {\n  width: 50px;\n  height: 50px;\n  padding-top: 5px;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #logo {\n    width: 180px;\n  }\n  #banner .container > div {\n    margin-top: 140px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #logo {\n    width: 120px;\n  }\n  #banner .container > div {\n    margin-top: 80px;\n  }\n  #banner .bottom-banner {\n    height: 40px;\n  }\n  #banner .bottom-banner img {\n    width: 30px;\n    height: 30px;\n    padding-top: 5px;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  #logo {\n    width: 60px;\n  }\n\n  #banner .container > div {\n    margin-top: 40px;\n    text-align: center;\n  }\n\n  #banner .bottom-banner {\n    height: 30px;\n  }\n  #banner .bottom-banner img {\n    width: 25px;\n    height: 25px;\n    padding-top: 2.5px;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -20744,6 +20744,18 @@
 	                _react2.default.createElement(
 	                  'div',
 	                  { className: 'service-content' },
+	                  _react2.default.createElement(
+	                    'p',
+	                    { className: 'service-location-content' },
+	                    '到府收送服務範圍：',
+	                    _react2.default.createElement('br', null),
+	                    '台北市｜大安區、文山區、中山區、萬華區',
+	                    _react2.default.createElement('br', null),
+	                    '新北市｜新店區、五股區、中和區',
+	                    _react2.default.createElement('br', null),
+	                    '桃園市｜龜山區、八德區、平鎮區',
+	                    _react2.default.createElement('br', null)
+	                  ),
 	                  _react2.default.createElement(
 	                    'p',
 	                    null,
@@ -21773,7 +21785,7 @@
 
 
 	// module
-	exports.push([module.id, "#serviceDetail {\n  margin-top: -3px;\n  background-image: url(" + __webpack_require__(195) + ");\n  background-repeat: no-repeat;\n  background-position: 50% 50%;\n  background-size: cover;\n}\n\n#serviceDetail header h1 {\n  color: rgba(74, 74, 74, 1);\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#service {\n  padding-top: 20px;\n  padding-bottom: 60px;\n}\n\n#service .left-block,\n#service .right-block {\n  position: relative;\n  display: inline-block;\n  width: 50%;\n  height: 100%;\n  padding: 40px;\n  color: rgba(74, 74, 74, 1);\n  vertical-align:top;\n  background-color: rgba(203, 233, 228, 0.8);\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block .subtitle,\n#service .right-block .subtitle {\n  color: gray;\n}\n\n#service .left-block:hover,\n#service .right-block:hover {\n  color: white;\n  background-color: rgba(105, 186, 177, 0.9);\n}\n\n#service .left-block:hover .subtitle,\n#service .right-block:hover .subtitle {\n  color: lightgray;\n}\n\n#service .left-block {\n  text-align: right;\n}\n\n#service .right-block {\n  text-align: left;\n}\n\n#service .left-block div,\n#service .right-block div {\n  margin: 0 auto;\n  text-align: center;\n}\n\n#service .left-block:hover svg path,\n#service .right-block:hover svg path {\n  stroke: white !important;\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block:hover path:not(:first-of-type),\n#service .right-block:hover path:not(:first-of-type) {\n  fill: white !important;\n}\n\n#service .left-block .service-image {\n  padding-top: 4px;\n}\n\n#service .service-image {\n  position: relative;\n  height: 150px;\n}\n\n#service .service-image > .service-location {\n  position: absolute;\n  bottom: 0;\n  right: 30px;\n  padding: 5px;\n  color: rgba(58, 128, 123, 1);\n  line-height: 1;\n  border: 2px solid rgba(58, 128, 123, 1);\n  border-radius: 5px;\n\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#service .service-image > .service-location:hover {\n  color: white;\n  border-color: white;\n}\n\n#service .service-image > .service-location .service-location-content {\n  position: absolute;\n  visibility: hidden;\n  opacity: 0;\n  top: 60px;\n  left: -160px;\n  width: 320px;\n  padding: 5px 10px;\n  text-align: left;\n  line-height: 1.4;\n  color: white;\n  /*background-color: rgba(105, 186, 177, 0.9);*/\n  background-color: rgba(58, 128, 123, 1);\n\n  -webkit-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n}\n\n#service .service-image > .service-location:hover .service-location-content {\n  visibility: visible;\n  opacity: 1;\n}\n\n#service .service-image > .service-location .service-location-content::before {\n  position: absolute;\n  display: block;\n  content: '';\n  top: -20px;\n  right: 130px;\n  width: 0;\n\theight: 0;\n\tborder-left: 10px solid transparent;\n\tborder-right: 10px solid transparent;\n\t/*border-bottom: 20px solid rgba(105, 186, 177, 0.9);*/\n  border-bottom: 20px solid rgba(58, 128, 123, 1);\n}\n\n\n#service .service-content {\n  height: 180px;\n}\n\n#service > footer {\n  margin-top: 60px;\n  text-align: right;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #service .service-image > .service-location {\n    right: 0px;\n  }\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #service {\n    padding-top: 0px;\n    padding-bottom: 40px;\n  }\n  #service .left-block,\n  #service .right-block {\n    display: block;\n    width: 100%;\n    margin: 20px 0px;\n    padding: 20px 0px;\n    text-align: center;\n  }\n\n  #service .service-content {\n    height: 120px;\n  }\n\n  #service > footer {\n    margin-top: 20px;\n    text-align: center;\n  }\n\n  #service .service-image > .service-location {\n    right: 120px;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  #service .service-image > .service-location {\n    right: 40px;\n  }\n\n  #service .service-image > .service-location .service-location-content {\n    left: -240px;\n  }\n\n  #service .service-image > .service-location .service-location-content::before {\n    right: 55px;\n  }\n\n\n}\n", ""]);
+	exports.push([module.id, "#serviceDetail {\n  margin-top: -3px;\n  background-image: url(" + __webpack_require__(195) + ");\n  background-repeat: no-repeat;\n  background-position: 50% 50%;\n  background-size: cover;\n}\n\n#serviceDetail header h1 {\n  color: rgba(74, 74, 74, 1);\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#service {\n  padding-top: 20px;\n  padding-bottom: 60px;\n}\n\n#service .left-block,\n#service .right-block {\n  position: relative;\n  display: inline-block;\n  width: 50%;\n  height: 100%;\n  padding: 40px;\n  color: rgba(74, 74, 74, 1);\n  vertical-align:top;\n  background-color: rgba(203, 233, 228, 0.8);\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block .subtitle,\n#service .right-block .subtitle {\n  color: gray;\n}\n\n#service .left-block:hover,\n#service .right-block:hover {\n  color: white;\n  background-color: rgba(105, 186, 177, 0.9);\n}\n\n#service .left-block:hover .subtitle,\n#service .right-block:hover .subtitle {\n  color: lightgray;\n}\n\n#service .left-block {\n  text-align: right;\n}\n\n#service .right-block {\n  text-align: left;\n}\n\n#service .left-block div,\n#service .right-block div {\n  margin: 0 auto;\n  text-align: center;\n}\n\n#service .left-block:hover svg path,\n#service .right-block:hover svg path {\n  stroke: white !important;\n\n  -webkit-transition: all 0.4s ease-in-out;\n  -moz-transition: all 0.4s ease-in-out;\n  -ms-transition: all 0.4s ease-in-out;\n  -o-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n#service .left-block:hover path:not(:first-of-type),\n#service .right-block:hover path:not(:first-of-type) {\n  fill: white !important;\n}\n\n#service .left-block .service-image {\n  padding-top: 4px;\n}\n\n#service .service-image {\n  position: relative;\n  height: 150px;\n}\n\n#service .service-image > .service-location {\n  position: absolute;\n  bottom: 0;\n  right: 30px;\n  padding: 5px;\n  color: rgba(58, 128, 123, 1);\n  line-height: 1;\n  border: 2px solid rgba(58, 128, 123, 1);\n  border-radius: 5px;\n\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n}\n\n#service .service-image > .service-location:hover {\n  color: white;\n  border-color: white;\n}\n\n#service .service-image > .service-location .service-location-content {\n  position: absolute;\n  visibility: hidden;\n  opacity: 0;\n  top: 60px;\n  left: -160px;\n  width: 320px;\n  padding: 5px 10px;\n  text-align: left;\n  line-height: 1.4;\n  color: white;\n  /*background-color: rgba(105, 186, 177, 0.9);*/\n  background-color: rgba(58, 128, 123, 1);\n\n  -webkit-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;\n}\n\n#service .service-image > .service-location:hover .service-location-content {\n  visibility: visible;\n  opacity: 1;\n}\n\n#service .service-image > .service-location .service-location-content::before {\n  position: absolute;\n  display: block;\n  content: '';\n  top: -20px;\n  right: 130px;\n  width: 0;\n\theight: 0;\n\tborder-left: 10px solid transparent;\n\tborder-right: 10px solid transparent;\n\t/*border-bottom: 20px solid rgba(105, 186, 177, 0.9);*/\n  border-bottom: 20px solid rgba(58, 128, 123, 1);\n}\n\n#service .service-content {\n  height: 180px;\n}\n\n#service .service-content > .service-location-content {\n  display: none;\n}\n\n#service > footer {\n  margin-top: 60px;\n  text-align: right;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 769px - 959px */\n@media only screen and (max-width: 959px) {\n  #service .service-image > .service-location {\n    right: 0px;\n  }\n\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 768px) {\n  #service {\n    padding-top: 0px;\n    padding-bottom: 40px;\n  }\n  #service .left-block,\n  #service .right-block {\n    display: block;\n    width: 100%;\n    margin: 20px 0px;\n    padding: 20px 0px;\n    text-align: center;\n  }\n\n  #service .service-content {\n    height: auto;\n  }\n\n  #service > footer {\n    margin-top: 20px;\n    text-align: center;\n  }\n\n  #service .service-image > .service-location {\n    display: none;\n    /*right: 120px;*/\n  }\n\n  #service .service-content > .service-location-content {\n    display: block;\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  #service .service-image > .service-location {\n    /*display: none;*/\n    /*right: 40px;*/\n  }\n  #service .service-image > .service-location .service-location-content {\n    /*left: -240px;*/\n  }\n  #service .service-image > .service-location .service-location-content::before {\n    /*right: 55px;*/\n  }\n}\n", ""]);
 
 	// exports
 
@@ -21816,6 +21828,10 @@
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
+	var _Footer = __webpack_require__(203);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21841,7 +21857,8 @@
 	        { id: 'bottomApp' },
 	        _react2.default.createElement(_Link2.default, null),
 	        _react2.default.createElement(_Work2.default, null),
-	        _react2.default.createElement(_Contact2.default, null)
+	        _react2.default.createElement(_Contact2.default, null),
+	        _react2.default.createElement(_Footer2.default, null)
 	      );
 	    }
 	  }]);
@@ -21886,7 +21903,7 @@
 
 
 	// module
-	exports.push([module.id, "#bottomApp {\n  color: white;\n  background-image: url(" + __webpack_require__(199) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/**\n *  Link\n */\n\n#link {\n  padding: 40px 0px;\n  background-color: rgba(105, 186, 177, 0.8);\n}\n\n#link div {\n  vertical-align: top;\n}\n\n#link .container > div:nth-child(1) {\n  text-align: center;\n}\n\n#link .container > div:nth-child(1) iframe {\n  width: 620px;\n  height: 348.75px;\n}\n\n#link .container > div:nth-child(1) .next-block {\n  position: absolute;\n  cursor: pointer;\n  opacity: 0;\n  bottom: 20%;\n  right: 0;\n  padding: 15px 60px;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.6);\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#link .container > div:nth-child(1):hover .next-block {\n  opacity: 1;\n}\n\n\n#link .container > div:nth-child(2) {\n  padding-left: 40px;\n}\n\n#link div h1 {\n  margin-top: 0px;\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#link ul {\n  margin-top: 60px;\n  padding: 0px;\n  font-size: 1.4em;\n}\n\n#link li {\n  margin-top: 20px;\n}\n\n#link li a {\n  display: inline-block;\n}\n\n#link li a > .bottom-line {\n  width: 0;\n  height: 1px;\n  background-color: white;\n\n  -webkit-transition: width 0.5s ease-in-out;\n  -moz-transition: width 0.5s ease-in-out;\n  -ms-transition: width 0.5s ease-in-out;\n  -o-transition: width 0.5s ease-in-out;\n  transition: width 0.5s ease-in-out;\n}\n\n#link li:hover a > .bottom-line {\n  width: 120%;\n}\n\n\n/**\n *  Work\n */\n#work {\n  padding-top: 5px;\n  padding-bottom: 60px;\n  background-color: rgba(203, 233, 228, 0.8);\n}\n\n#work header h1 {\n  margin-bottom: 0;\n  color: rgba(74, 74, 74, 1);\n}\n\n#work .content {\n  color: rgba(58, 128, 123, 1);\n}\n\n#work .content > p:first-child {\n  margin-top: 0;\n}\n\n#work .learn-more {\n  margin-top: 40px;\n  text-align: right;\n}\n\n/**\n *  Contact\n */\n#contact {\n  padding: 20px 0px;\n  background-color: rgba(58, 128, 123, 0.8);\n}\n\n#contact .info .info-title {\n  margin: 15px 0px;\n}\n\n#contact .info input {\n  width: 90%;\n  font-size: 1.5em;\n}\n\n#contact div.row:nth-of-type(2) {\n  margin-top: 60px;\n  margin-bottom: 30px;\n  text-align: right;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 492px;\n    height: 276.75px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  /**\n   *  Link\n   */\n  #link div h1 {\n    margin-top: inherit;\n  }\n\n  #link .container > div:nth-child(1) iframe {\n    width: 460px;\n    height: 258.75px;\n  }\n\n  #link .container > div:nth-child(2) {\n    text-align: center;\n    margin-top: 40px;\n    padding-left: 0px;\n  }\n\n  #link ul {\n    margin-top: 20px;\n  }\n\n  #link li:hover a > .bottom-line {\n    width: 100%;\n  }\n\n  /**\n   *  Contact\n   */\n  #contact .info {\n    margin: 0 auto;\n  }\n\n  #contact .info input {\n    width: 100%;\n    font-size: 2em;\n  }\n\n  #contact div.row:nth-of-type(2) {\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 300px;\n    height: 168.75px;\n  }\n\n  /**\n   *  Work\n   */\n  #work {\n    padding-bottom: 40px;\n  }\n\n}\n", ""]);
+	exports.push([module.id, "#bottomApp {\n  color: white;\n  background-image: url(" + __webpack_require__(199) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/**\n *  Link\n */\n\n#link {\n  padding: 40px 0px;\n  background-color: rgba(105, 186, 177, 0.8);\n}\n\n#link div {\n  vertical-align: top;\n}\n\n#link .container > div:nth-child(1) {\n  text-align: center;\n}\n\n#link .container > div:nth-child(1) iframe {\n  width: 620px;\n  height: 348.75px;\n}\n\n#link .container > div:nth-child(1) .next-block {\n  position: absolute;\n  cursor: pointer;\n  opacity: 0;\n  bottom: 20%;\n  right: 0;\n  padding: 15px 60px;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.6);\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#link .container > div:nth-child(1):hover .next-block {\n  opacity: 1;\n}\n\n\n#link .container > div:nth-child(2) {\n  padding-left: 40px;\n}\n\n#link div h1 {\n  margin-top: 0px;\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#link ul {\n  margin-top: 60px;\n  padding: 0px;\n  font-size: 1.4em;\n}\n\n#link li {\n  margin-top: 20px;\n}\n\n#link li a {\n  display: inline-block;\n}\n\n#link li a > .bottom-line {\n  width: 0;\n  height: 1px;\n  background-color: white;\n\n  -webkit-transition: width 0.5s ease-in-out;\n  -moz-transition: width 0.5s ease-in-out;\n  -ms-transition: width 0.5s ease-in-out;\n  -o-transition: width 0.5s ease-in-out;\n  transition: width 0.5s ease-in-out;\n}\n\n#link li:hover a > .bottom-line {\n  width: 120%;\n}\n\n\n/**\n *  Work\n */\n#work {\n  padding-top: 5px;\n  padding-bottom: 60px;\n  background-color: rgba(203, 233, 228, 0.8);\n}\n\n#work header h1 {\n  margin-bottom: 0;\n  color: rgba(74, 74, 74, 1);\n}\n\n#work .content {\n  color: rgba(58, 128, 123, 1);\n}\n\n#work .content > p:first-child {\n  margin-top: 0;\n}\n\n#work .learn-more {\n  margin-top: 40px;\n  text-align: right;\n}\n\n/**\n *  Contact\n */\n#contact {\n  padding: 20px 0px;\n  background-color: rgba(58, 128, 123, 0.8);\n}\n\n#contact .info .info-title {\n  margin: 15px 0px;\n}\n\n#contact .info input {\n  width: 90%;\n  font-size: 1.5em;\n}\n\n#contact div.row:nth-of-type(2) {\n  margin-top: 60px;\n  margin-bottom: 30px;\n  text-align: right;\n}\n\n/**\n *  Footer\n */\n\n#footer {\n  color: rgba(74, 74, 74, 1);\n}\n\n#footer .footer-logo {\n  margin-top: 20px;\n}\n\n#footer .footer-content {\n  text-align: right;\n  padding-bottom: 20px;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 492px;\n    height: 276.75px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  /**\n   *  Link\n   */\n  #link div h1 {\n    margin-top: inherit;\n  }\n\n  #link .container > div:nth-child(1) iframe {\n    width: 460px;\n    height: 258.75px;\n  }\n\n  #link .container > div:nth-child(2) {\n    text-align: center;\n    margin-top: 40px;\n    padding-left: 0px;\n  }\n\n  #link ul {\n    margin-top: 20px;\n  }\n\n  #link li:hover a > .bottom-line {\n    width: 100%;\n  }\n\n  /**\n   *  Contact\n   */\n  #contact .info {\n    margin: 0 auto;\n  }\n\n  #contact .info input {\n    width: 100%;\n    font-size: 2em;\n  }\n\n  #contact div.row:nth-of-type(2) {\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 300px;\n    height: 168.75px;\n  }\n\n  /**\n   *  Work\n   */\n  #work {\n    padding-bottom: 40px;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -22312,13 +22329,104 @@
 	exports.default = Contact;
 
 /***/ },
-/* 203 */,
+/* 203 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Footer = (function (_Component) {
+	  _inherits(Footer, _Component);
+
+	  function Footer() {
+	    _classCallCheck(this, Footer);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Footer).apply(this, arguments));
+	  }
+
+	  _createClass(Footer, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "footer",
+	        { id: "footer" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "container flex flex-vertical-center" },
+	          _react2.default.createElement(
+	            "div",
+	            { id: "logo", className: "footer-logo flex-align-left" },
+	            _react2.default.createElement("img", { src: "img/logo.svg" })
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "footer-content flex-align-right" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "footer-hiring" },
+	              _react2.default.createElement(
+	                "h5",
+	                null,
+	                "徵人資訊"
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "footer-contact-info" },
+	              _react2.default.createElement(
+	                "span",
+	                null,
+	                "地址：23145新北市新店區寶僑路235巷6弄5號8樓"
+	              ),
+	              _react2.default.createElement("br", null),
+	              _react2.default.createElement(
+	                "span",
+	                null,
+	                "電話：(02)2915-0365"
+	              ),
+	              _react2.default.createElement("br", null),
+	              _react2.default.createElement(
+	                "span",
+	                null,
+	                "傳真：(02)2915-0364"
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Footer;
+	})(_react.Component);
+
+	exports.default = Footer;
+
+/***/ },
 /* 204 */,
 /* 205 */,
 /* 206 */,
 /* 207 */,
 /* 208 */,
-/* 209 */
+/* 209 */,
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!

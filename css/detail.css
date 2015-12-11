@@ -242,6 +242,12 @@
 
 /* 320px - 479px */
 @media only screen and (max-width: 479px) {
+  #detail .container {
+    width: 100%;
+  }
+  #detail .detail-item {
+    width: 100%;
+  }
   #detail .detail-item-row > div {
     height: 100px;
   }

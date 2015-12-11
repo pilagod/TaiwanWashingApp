@@ -66,6 +66,12 @@ export default class Service extends Component {
                     </h2>
                   </div>
                   <div className="service-content">
+                    <p className="service-location-content">
+                      到府收送服務範圍：<br/>
+                      台北市｜大安區、文山區、中山區、萬華區<br/>
+                      新北市｜新店區、五股區、中和區<br/>
+                      桃園市｜龜山區、八德區、平鎮區<br/>
+                    </p>
                     <p>
                       人身穿著：<br/>
                       穿著織物類 / 床寢織物類 / <br/>

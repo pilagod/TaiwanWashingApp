@@ -11,7 +11,7 @@ export default class DetailRow2 extends Component {
     let actionNextClass = classNames('detail-action-next', {
       'show': this.props.index !== this.props.length
     })
-    let detailItemClass = classNames('detail-item', 'col-12', {
+    let detailItemClass = classNames('col-12', 'detail-item', {
       'pull-right': this.props.index !== 1
     })
     return (

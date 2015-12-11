@@ -25,7 +25,7 @@ webpackJsonp([1],{
 
 	var _Intro2 = _interopRequireDefault(_Intro);
 
-	var _ServiceDetail = __webpack_require__(203);
+	var _ServiceDetail = __webpack_require__(204);
 
 	var _ServiceDetail2 = _interopRequireDefault(_ServiceDetail);
 
@@ -74,7 +74,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 203:
+/***/ 204:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -89,7 +89,7 @@ webpackJsonp([1],{
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Detail = __webpack_require__(204);
+	var _Detail = __webpack_require__(205);
 
 	var _Detail2 = _interopRequireDefault(_Detail);
 
@@ -133,7 +133,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 204:
+/***/ 205:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -148,11 +148,11 @@ webpackJsonp([1],{
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _DetailRow = __webpack_require__(205);
+	var _DetailRow = __webpack_require__(206);
 
 	var _DetailRow2 = _interopRequireDefault(_DetailRow);
 
-	var _detail = __webpack_require__(206);
+	var _detail = __webpack_require__(207);
 
 	var _detail2 = _interopRequireDefault(_detail);
 
@@ -215,7 +215,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 205:
+/***/ 206:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -349,13 +349,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 206:
+/***/ 207:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(207);
+	var content = __webpack_require__(208);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(163)(content, {});
@@ -376,7 +376,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 207:
+/***/ 208:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(162)();
@@ -384,14 +384,14 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "#detail {\n  background-image: url(" + __webpack_require__(208) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/**\n *  Version1\n */\n.detail-table {\n  position: relative;\n  display: table;\n  width: 100%;\n  margin: 0 auto;\n}\n\n.detail-row {\n  position: relative;\n  display: table-row;\n  width: 100%;\n  color: white;\n}\n\n.detail-row > div {\n  position: relative;\n  z-index: 1;\n  display: table-cell;\n  width: 33.3%;\n  height: 260px;\n  padding: 0px 30px;\n  vertical-align: middle;\n}\n\n.detail-item-title {\n  background-color: rgba(58, 128, 123, 1);\n}\n\n.detail-item-content {\n  background-color: rgba(105, 186, 177, 1);\n}\n\n.detail-item-image {\n  position: absolute;\n  display: block;\n  z-index: 0;\n  top: 0;\n  left: 33.3%;\n  width: 33.3%;\n  height: 260px;\n  padding: 10px;\n  text-align: center;\n  background-color: white;\n\n  -webkit-transition: left 0.5s ease-in-out;\n  -moz-transition: left 0.5s ease-in-out;\n  -ms-transition: left 0.5s ease-in-out;\n  -o-transition: left 0.5s ease-in-out;\n  transition: left 0.5s ease-in-out;\n}\n\n.detail-item-image > img {\n  max-width: 100%;\n  width: auto;\n  max-height: 100%;\n  height: auto;\n}\n\n.detail-item-image.show-left {\n  left: 0%;\n}\n\n.detail-item-image.show-right {\n  left: 66.6%;\n}\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  .detail-table {\n    margin-bottom: 10px;\n  }\n  .detail-row > div {\n    width: 50%;\n  }\n  .detail-row > div.prefix,\n  .detail-row > div.postfix {\n    display: none;\n  }\n  .detail-item-image {\n    display: none;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
+	exports.push([module.id, "#detail {\n  background-image: url(" + __webpack_require__(209) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/**\n *  Version1\n */\n.detail-table {\n  position: relative;\n  display: table;\n  width: 100%;\n  margin: 0 auto;\n}\n\n.detail-row {\n  position: relative;\n  display: table-row;\n  width: 100%;\n  color: white;\n}\n\n.detail-row > div {\n  position: relative;\n  z-index: 1;\n  display: table-cell;\n  width: 33.3%;\n  height: 260px;\n  padding: 0px 30px;\n  vertical-align: middle;\n}\n\n.detail-item-title {\n  background-color: rgba(58, 128, 123, 1);\n}\n\n.detail-item-content {\n  background-color: rgba(105, 186, 177, 1);\n}\n\n.detail-item-image {\n  position: absolute;\n  display: block;\n  z-index: 0;\n  top: 0;\n  left: 33.3%;\n  width: 33.3%;\n  height: 260px;\n  padding: 10px;\n  text-align: center;\n  background-color: white;\n\n  -webkit-transition: left 0.5s ease-in-out;\n  -moz-transition: left 0.5s ease-in-out;\n  -ms-transition: left 0.5s ease-in-out;\n  -o-transition: left 0.5s ease-in-out;\n  transition: left 0.5s ease-in-out;\n}\n\n.detail-item-image > img {\n  max-width: 100%;\n  width: auto;\n  max-height: 100%;\n  height: auto;\n}\n\n.detail-item-image.show-left {\n  left: 0%;\n}\n\n.detail-item-image.show-right {\n  left: 66.6%;\n}\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  .detail-table {\n    margin-bottom: 10px;\n  }\n  .detail-row > div {\n    width: 50%;\n  }\n  .detail-row > div.prefix,\n  .detail-row > div.postfix {\n    display: none;\n  }\n  .detail-item-image {\n    display: none;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
 
-/***/ 208:
+/***/ 209:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "54c9521ab027253ee68def469d4faaf3.png";
