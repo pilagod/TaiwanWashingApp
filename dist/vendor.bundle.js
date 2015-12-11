@@ -20350,7 +20350,7 @@
 
 
 	// module
-	exports.push([module.id, "#banner {\n  overflow: hidden;\n  max-width: 100vw;\n  width: 100vw;\n  max-height: 63vw;\n  height: 100vh;\n  color: white;\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n#banner .container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n  text-align: right;\n}\n\n#banner .container > div {\n  margin-top: 220px;\n  text-shadow: 0px 8px 5px rgba(0, 0, 0, 0.5);\n}\n\n\n#banner .bottom-banner {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  height: 60px;\n  background-color: rgba(98, 183, 173, 1);\n}\n\n#banner .bottom-banner img {\n  width: 50px;\n  height: 50px;\n  padding-top: 5px;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #banner .container > div {\n    margin-top: 140px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #banner .container > div {\n    margin-top: 80px;\n  }\n  #banner .bottom-banner {\n    height: 40px;\n  }\n  #banner .bottom-banner img {\n    width: 30px;\n    height: 30px;\n    padding-top: 5px;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  #banner {\n    max-height: 100%;\n    height: 100%;\n  }\n  #banner .image-container img {\n    position: relative;\n    left: -42vw;\n    min-width: 200vw;\n  }\n  #banner .container > div {\n    margin-top: 80px;\n    text-align: center;\n  }\n\n  #banner .bottom-banner {\n    height: 30px;\n  }\n  #banner .bottom-banner img {\n    width: 25px;\n    height: 25px;\n    padding-top: 2.5px;\n  }\n}\n", ""]);
+	exports.push([module.id, "#banner {\n  overflow: hidden;\n  max-width: 100vw;\n  width: 100vw;\n  max-height: 63vw;\n  height: 100vh;\n  color: white;\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);\n}\n\n#banner .container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n  text-align: right;\n}\n\n#banner .container > div {\n  margin-top: 220px;\n  text-shadow: 0px 8px 5px rgba(0, 0, 0, 0.5);\n}\n\n#banner #logo {\n  padding-top: 5px;\n  padding-left: 3px;\n}\n\n#banner .bottom-banner {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  height: 60px;\n  background-color: rgba(98, 183, 173, 1);\n}\n\n#banner .bottom-banner img {\n  width: 50px;\n  height: 50px;\n  padding-top: 5px;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  #banner .container > div {\n    margin-top: 140px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  #banner .container > div {\n    margin-top: 80px;\n  }\n  #banner .bottom-banner {\n    height: 40px;\n  }\n  #banner .bottom-banner img {\n    width: 30px;\n    height: 30px;\n    padding-top: 5px;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  #banner {\n    max-height: 100%;\n    height: 100%;\n  }\n  #banner .image-container img {\n    position: relative;\n    left: -42vw;\n    min-width: 200vw;\n  }\n  #banner .container > div {\n    margin-top: 80px;\n    text-align: center;\n  }\n\n  #banner .bottom-banner {\n    height: 30px;\n  }\n  #banner .bottom-banner img {\n    width: 25px;\n    height: 25px;\n    padding-top: 2.5px;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -21903,7 +21903,7 @@
 
 
 	// module
-	exports.push([module.id, "#bottomApp {\n  color: white;\n  background-image: url(" + __webpack_require__(199) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/**\n *  Link\n */\n\n#link {\n  padding: 40px 0px;\n  background-color: rgba(105, 186, 177, 0.8);\n}\n\n#link div {\n  vertical-align: top;\n}\n\n#link .container > div:nth-child(1) {\n  text-align: center;\n}\n\n#link .container > div:nth-child(1) iframe {\n  width: 620px;\n  height: 348.75px;\n}\n\n#link .container > div:nth-child(1) .next-block {\n  position: absolute;\n  cursor: pointer;\n  opacity: 0;\n  bottom: 20%;\n  right: 0;\n  padding: 15px 60px;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.6);\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#link .container > div:nth-child(1):hover .next-block {\n  opacity: 1;\n}\n\n\n#link .container > div:nth-child(2) {\n  padding-left: 40px;\n}\n\n#link div h1 {\n  margin-top: 0px;\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#link ul {\n  margin-top: 60px;\n  padding: 0px;\n  font-size: 1.4em;\n}\n\n#link li {\n  margin-top: 20px;\n}\n\n#link li a {\n  display: inline-block;\n}\n\n#link li a > .bottom-line {\n  width: 0;\n  height: 1px;\n  background-color: white;\n\n  -webkit-transition: width 0.5s ease-in-out;\n  -moz-transition: width 0.5s ease-in-out;\n  -ms-transition: width 0.5s ease-in-out;\n  -o-transition: width 0.5s ease-in-out;\n  transition: width 0.5s ease-in-out;\n}\n\n#link li:hover a > .bottom-line {\n  width: 120%;\n}\n\n\n/**\n *  Work\n */\n#work {\n  padding-top: 5px;\n  padding-bottom: 60px;\n  background-color: rgba(203, 233, 228, 0.8);\n}\n\n#work header h1 {\n  margin-bottom: 0;\n  color: rgba(74, 74, 74, 1);\n}\n\n#work .content {\n  color: rgba(58, 128, 123, 1);\n}\n\n#work .content > p:first-child {\n  margin-top: 0;\n}\n\n#work .learn-more {\n  margin-top: 40px;\n  text-align: right;\n}\n\n/**\n *  Contact\n */\n#contact {\n  padding: 20px 0px;\n  background-color: rgba(58, 128, 123, 0.8);\n}\n\n#contact .info .info-title {\n  margin: 15px 0px;\n}\n\n#contact .info input {\n  width: 90%;\n  font-size: 1.5em;\n}\n\n#contact div.row:nth-of-type(2) {\n  margin-top: 60px;\n  margin-bottom: 30px;\n  text-align: right;\n}\n\n/**\n *  Footer\n */\n\n#footer {\n  color: rgba(74, 74, 74, 1);\n}\n\n#footer .footer-logo {\n  margin-top: 20px;\n}\n\n#footer .footer-content {\n  text-align: right;\n  padding-bottom: 20px;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 492px;\n    height: 276.75px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  /**\n   *  Link\n   */\n  #link div h1 {\n    margin-top: inherit;\n  }\n\n  #link .container > div:nth-child(1) iframe {\n    width: 460px;\n    height: 258.75px;\n  }\n\n  #link .container > div:nth-child(2) {\n    text-align: center;\n    margin-top: 40px;\n    padding-left: 0px;\n  }\n\n  #link ul {\n    margin-top: 20px;\n  }\n\n  #link li:hover a > .bottom-line {\n    width: 100%;\n  }\n\n  /**\n   *  Contact\n   */\n  #contact .info {\n    margin: 0 auto;\n  }\n\n  #contact .info input {\n    width: 100%;\n    font-size: 2em;\n  }\n\n  #contact div.row:nth-of-type(2) {\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 300px;\n    height: 168.75px;\n  }\n\n  /**\n   *  Work\n   */\n  #work {\n    padding-bottom: 40px;\n  }\n}\n", ""]);
+	exports.push([module.id, "#bottomApp {\n  color: white;\n  background-image: url(" + __webpack_require__(199) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/**\n *  Link\n */\n\n#link {\n  padding: 40px 0px;\n  background-color: rgba(105, 186, 177, 0.8);\n}\n\n#link div {\n  vertical-align: top;\n}\n\n#link .container > div:nth-child(1) {\n  text-align: center;\n}\n\n#link .container > div:nth-child(1) iframe {\n  width: 620px;\n  height: 348.75px;\n}\n\n#link .container > div:nth-child(1) .next-block {\n  position: absolute;\n  cursor: pointer;\n  opacity: 0;\n  bottom: 20%;\n  right: 0;\n  padding: 15px 60px;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.6);\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#link .container > div:nth-child(1):hover .next-block {\n  opacity: 1;\n}\n\n\n#link .container > div:nth-child(2) {\n  padding-left: 40px;\n}\n\n#link div h1 {\n  margin-top: 0px;\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#link ul {\n  margin-top: 60px;\n  padding: 0px;\n  font-size: 1.4em;\n}\n\n#link li {\n  margin-top: 20px;\n}\n\n#link li a {\n  display: inline-block;\n}\n\n#link li a > .bottom-line {\n  width: 0;\n  height: 1px;\n  background-color: white;\n\n  -webkit-transition: width 0.5s ease-in-out;\n  -moz-transition: width 0.5s ease-in-out;\n  -ms-transition: width 0.5s ease-in-out;\n  -o-transition: width 0.5s ease-in-out;\n  transition: width 0.5s ease-in-out;\n}\n\n#link li:hover a > .bottom-line {\n  width: 120%;\n}\n\n\n/**\n *  Work\n */\n#work {\n  padding-top: 5px;\n  padding-bottom: 60px;\n  background-color: rgba(203, 233, 228, 0.8);\n}\n\n#work header h1 {\n  margin-bottom: 0;\n  color: rgba(74, 74, 74, 1);\n}\n\n#work .content {\n  color: rgba(58, 128, 123, 1);\n}\n\n#work .content > p:first-child {\n  margin-top: 0;\n}\n\n#work .learn-more {\n  margin-top: 40px;\n  text-align: right;\n}\n\n/**\n *  Contact\n */\n#contact {\n  padding: 20px 0px;\n  background-color: rgba(58, 128, 123, 0.8);\n}\n\n#contact header {\n  margin-bottom: 0px;\n}\n\n#contact .info .info-title {\n  margin: 15px 0px;\n}\n\n#contact .info input {\n  width: 90%;\n  font-size: 1.5em;\n}\n\n#contact div.row:nth-of-type(2) {\n  margin-top: 60px;\n  margin-bottom: 30px;\n  text-align: right;\n}\n\n/**\n *  Footer\n */\n\n#footer {\n  color: rgba(74, 74, 74, 1);\n}\n\n#footer .footer-logo {\n  margin-top: 20px;\n}\n\n#footer .footer-content {\n  text-align: right;\n  padding-bottom: 20px;\n}\n\n#footer .footer-contact-info .footer-newline {\n  display: none;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 492px;\n    height: 276.75px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  /**\n   *  Link\n   */\n  #link div h1 {\n    margin-top: inherit;\n  }\n\n  #link .container > div:nth-child(1) iframe {\n    width: 460px;\n    height: 258.75px;\n  }\n\n  #link .container > div:nth-child(2) {\n    text-align: center;\n    margin-top: 40px;\n    padding-left: 0px;\n  }\n\n  #link ul {\n    margin-top: 20px;\n  }\n\n  #link li:hover a > .bottom-line {\n    width: 100%;\n  }\n\n  /**\n   *  Contact\n   */\n  #contact .info {\n    margin: 0 auto;\n  }\n\n  #contact header {\n    margin-bottom: 40px;\n  }\n\n  #contact .info input {\n    width: 100%;\n    font-size: 2em;\n  }\n\n  #contact div.row:nth-of-type(2) {\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 300px;\n    height: 168.75px;\n  }\n\n  /**\n   *  Work\n   */\n  #work {\n    padding-bottom: 40px;\n  }\n\n  #footer .footer-logo {\n    margin-top: 10px;\n  }\n\n  #footer .footer-contact-info .footer-newline {\n    display: block;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -22261,7 +22261,7 @@
 	                "div",
 	                { className: "info-title" },
 	                _react2.default.createElement(
-	                  "span",
+	                  "h3",
 	                  null,
 	                  "姓名*"
 	                )
@@ -22279,7 +22279,7 @@
 	                "div",
 	                { className: "info-title" },
 	                _react2.default.createElement(
-	                  "span",
+	                  "h3",
 	                  null,
 	                  "信箱*"
 	                )
@@ -22297,7 +22297,7 @@
 	                "div",
 	                { className: "info-title" },
 	                _react2.default.createElement(
-	                  "span",
+	                  "h3",
 	                  null,
 	                  "問題描述"
 	                )
@@ -22369,48 +22369,72 @@
 	        { id: "footer" },
 	        _react2.default.createElement(
 	          "div",
-	          { className: "container flex flex-vertical-center" },
+	          { className: "container" },
 	          _react2.default.createElement(
 	            "div",
-	            { id: "logo", className: "footer-logo flex-align-left" },
-	            _react2.default.createElement("img", { src: "img/logo.svg" })
-	          ),
-	          _react2.default.createElement(
-	            "div",
-	            { className: "footer-content flex-align-right" },
+	            { className: "col-12 flex flex-vertical-center" },
 	            _react2.default.createElement(
 	              "div",
-	              { className: "footer-hiring" },
+	              { id: "logo", className: "footer-logo flex-align-left" },
 	              _react2.default.createElement(
-	                "h5",
-	                null,
-	                "徵人資訊"
+	                "a",
+	                { href: "#banner", onClick: this.footerLogoOnClick.bind(this, '#banner') },
+	                _react2.default.createElement("img", { src: "img/logo.svg" })
 	              )
 	            ),
 	            _react2.default.createElement(
 	              "div",
-	              { className: "footer-contact-info" },
+	              { className: "footer-content flex-align-right" },
 	              _react2.default.createElement(
-	                "span",
-	                null,
-	                "地址：新北市新店區寶僑路235巷6弄5號8樓"
+	                "div",
+	                { className: "footer-hiring" },
+	                _react2.default.createElement(
+	                  "h5",
+	                  null,
+	                  "徵人資訊"
+	                )
 	              ),
-	              _react2.default.createElement("br", null),
 	              _react2.default.createElement(
-	                "span",
-	                null,
-	                "電話：(02)2915-0365"
-	              ),
-	              _react2.default.createElement("br", null),
-	              _react2.default.createElement(
-	                "span",
-	                null,
-	                "傳真：(02)2915-0364"
+	                "div",
+	                { className: "footer-contact-info" },
+	                _react2.default.createElement(
+	                  "span",
+	                  null,
+	                  "地址：新北市新店區",
+	                  _react2.default.createElement("br", { className: "footer-newline" }),
+	                  "寶僑路235巷6弄5號8樓"
+	                ),
+	                _react2.default.createElement("br", null),
+	                _react2.default.createElement(
+	                  "span",
+	                  null,
+	                  "電話：(02)2915-0365"
+	                ),
+	                _react2.default.createElement("br", null),
+	                _react2.default.createElement(
+	                  "span",
+	                  null,
+	                  "傳真：(02)2915-0364"
+	                )
 	              )
 	            )
 	          )
 	        )
 	      );
+	    }
+	  }, {
+	    key: "footerLogoOnClick",
+	    value: function footerLogoOnClick(hash, e) {
+	      e.preventDefault();
+
+	      var target = hash,
+	          $target = $(target);
+
+	      $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	      }, 900, 'swing', function () {
+	        window.location.hash = target;
+	      });
 	    }
 	  }]);
 

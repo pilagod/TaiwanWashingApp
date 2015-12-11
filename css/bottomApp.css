@@ -124,6 +124,10 @@
   background-color: rgba(58, 128, 123, 0.8);
 }
 
+#contact header {
+  margin-bottom: 0px;
+}
+
 #contact .info .info-title {
   margin: 15px 0px;
 }
@@ -154,6 +158,10 @@
 #footer .footer-content {
   text-align: right;
   padding-bottom: 20px;
+}
+
+#footer .footer-contact-info .footer-newline {
+  display: none;
 }
 
 /*************************/
@@ -206,6 +214,10 @@
     margin: 0 auto;
   }
 
+  #contact header {
+    margin-bottom: 40px;
+  }
+
   #contact .info input {
     width: 100%;
     font-size: 2em;
@@ -231,5 +243,13 @@
    */
   #work {
     padding-bottom: 40px;
+  }
+
+  #footer .footer-logo {
+    margin-top: 10px;
+  }
+
+  #footer .footer-contact-info .footer-newline {
+    display: block;
   }
 }

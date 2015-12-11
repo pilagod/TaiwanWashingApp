@@ -14,7 +14,7 @@ export default class Contact extends Component {
           <div className="row">
             <div className="col-4 info">
               <div className="info-title">
-                <span>姓名*</span>
+                <h3>姓名*</h3>
               </div>
               <div>
                 <input type="text"></input>
@@ -22,7 +22,7 @@ export default class Contact extends Component {
             </div>
             <div className="col-4 info">
               <div className="info-title">
-                <span>信箱*</span>
+                <h3>信箱*</h3>
               </div>
               <div>
                 <input type="text"></input>
@@ -30,7 +30,7 @@ export default class Contact extends Component {
             </div>
             <div className="col-4 info">
               <div className="info-title">
-                <span>問題描述</span>
+                <h3>問題描述</h3>
               </div>
               <div>
                 <input type="text"></input>
