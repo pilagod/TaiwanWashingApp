@@ -11,7 +11,7 @@
 
 #navbar > .full-container {
   position: absolute;
-  z-index: 99;
+  z-index: 999;
   cursor: pointer;
   top: 20vh;
   left: 0;
@@ -106,8 +106,8 @@
   z-index: 50;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   padding-top: 16vh;
   padding-left: 240px;
   background-color: rgba(46, 113, 108, 0.9);

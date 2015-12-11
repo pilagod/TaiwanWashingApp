@@ -8,18 +8,6 @@
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
-/*#banner img {
-  max-width: 100vw;
-  max-height: 63vw;
-}*/
-
-#logo {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 200px;
-}
-
 #banner .container {
   position: absolute;
   top: 0;
@@ -56,9 +44,6 @@
 
 /* 768px - 959px */
 @media only screen and (max-width: 959px) {
-  #logo {
-    width: 180px;
-  }
   #banner .container > div {
     margin-top: 140px;
   }
@@ -66,9 +51,6 @@
 
 /* 480px - 767px */
 @media only screen and (max-width: 767px) {
-  #logo {
-    width: 120px;
-  }
   #banner .container > div {
     margin-top: 80px;
   }
@@ -84,10 +66,16 @@
 
 /* 320px - 479px */
 @media only screen and (max-width: 479px) {
-  #logo {
-    width: 60px;
+  #banner {
+    overflow: visible;
+    max-height: 100%;
+    height: 100%;
   }
-
+  #banner .image-container img {
+    position: relative;
+    left: -42vw;
+    min-width: 200vw;
+  }
   #banner .container > div {
     margin-top: 40px;
     text-align: center;

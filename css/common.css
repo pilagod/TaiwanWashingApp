@@ -64,6 +64,14 @@ header > h1 {
 /*        General        */
 /*************************/
 
+#logo {
+  position: absolute;
+  z-index: 99;
+  top: 0px;
+  left: 0px;
+  width: 200px;
+}
+
 .subtitle {
   font-size: 0.7em;
 }
@@ -208,6 +216,10 @@ header > h1 {
     width: 768px;
   }
 
+  #logo {
+    width: 180px;
+  }
+
   /* Resize the columns */
   .col-12 {width:748px;}
   .col-9 {width:556px;}
@@ -226,6 +238,10 @@ header > h1 {
 
   .container {
     width: 480px;
+  }
+
+  #logo {
+    width: 135px;
   }
 
   /* 225px default */
@@ -269,6 +285,10 @@ header > h1 {
 
   .container {
     width: 320px;
+  }
+
+  #logo {
+    width: 90px;
   }
 
   /* Resize the columns */
