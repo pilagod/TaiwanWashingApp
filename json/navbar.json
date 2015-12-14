@@ -4,5 +4,5 @@
   { "name": "服務項目", "url": "#service" },
   { "name": "業務招募", "url": "#work" },
   { "name": "加入會員", "url": "http://www.tww.com.tw/JE/NewMemberAdd.aspx" },
-  { "name": "公司介紹", "url": "http://www.tww.com.tw" }
+  { "name": "公司介紹", "url": "#banner" }
 ]

@@ -14,13 +14,13 @@ export default class Service extends Component {
         <div className="full-container">
           <a href="http://www.tww.com.tw/je/" target="_blank">
             <div className="left-block">
-              <div className="col-4">
+              <div className="col-6">
                 <div className="service-image">
                   <Isvg src='img/service01.svg'></Isvg>
                 </div>
                 <div className="service-title">
                   <h2>
-                    <span>超商洗衣</span><br/>
+                    <span>便利商店洗衣</span><br/>
                     <span className="subtitle">24小時送洗</span>
                   </h2>
                 </div>
@@ -39,7 +39,7 @@ export default class Service extends Component {
             </div>
           </a>
 
-          <a href="http://ews.tww.com.tw" target="_blank">
+          <a>
             <div className="right-block">
                 <div className="col-4">
                   <div className="service-image">

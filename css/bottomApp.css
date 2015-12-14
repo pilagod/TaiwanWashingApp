@@ -93,7 +93,7 @@
  *  Work
  */
 #work {
-  padding-top: 5px;
+  padding-top: 60px;
   padding-bottom: 60px;
   background-color: rgba(203, 233, 228, 0.8);
 }
@@ -148,16 +148,17 @@
  */
 
 #footer {
+  padding: 20px 0px;
   color: rgba(74, 74, 74, 1);
 }
 
 #footer .footer-logo {
-  margin-top: 20px;
+  /*margin-top: 20px;*/
 }
 
 #footer .footer-content {
   text-align: right;
-  padding-bottom: 20px;
+  /*padding-bottom: 20px;*/
 }
 
 #footer .footer-contact-info .footer-newline {
@@ -242,6 +243,7 @@
    *  Work
    */
   #work {
+    padding-top: 40px;
     padding-bottom: 40px;
   }
 

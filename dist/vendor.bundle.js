@@ -20625,7 +20625,7 @@
 	              { className: 'left-block' },
 	              _react2.default.createElement(
 	                'div',
-	                { className: 'col-4' },
+	                { className: 'col-6' },
 	                _react2.default.createElement(
 	                  'div',
 	                  { className: 'service-image' },
@@ -20640,7 +20640,7 @@
 	                    _react2.default.createElement(
 	                      'span',
 	                      null,
-	                      '超商洗衣'
+	                      '便利商店洗衣'
 	                    ),
 	                    _react2.default.createElement('br', null),
 	                    _react2.default.createElement(
@@ -20675,7 +20675,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'a',
-	            { href: 'http://ews.tww.com.tw', target: '_blank' },
+	            null,
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'right-block' },
@@ -21903,7 +21903,7 @@
 
 
 	// module
-	exports.push([module.id, "#bottomApp {\n  color: white;\n  background-image: url(" + __webpack_require__(199) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/**\n *  Link\n */\n\n#link {\n  padding: 40px 0px;\n  background-color: rgba(105, 186, 177, 0.8);\n}\n\n#link div {\n  vertical-align: top;\n}\n\n#link .container > div:nth-child(1) {\n  text-align: center;\n}\n\n#link .container > div:nth-child(1) iframe {\n  width: 620px;\n  height: 348.75px;\n}\n\n#link .container > div:nth-child(1) .next-block {\n  position: absolute;\n  cursor: pointer;\n  opacity: 0;\n  bottom: 20%;\n  right: 0;\n  padding: 15px 60px;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.6);\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#link .container > div:nth-child(1):hover .next-block {\n  opacity: 1;\n}\n\n\n#link .container > div:nth-child(2) {\n  padding-left: 40px;\n}\n\n#link div h1 {\n  margin-top: 0px;\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#link ul {\n  margin-top: 60px;\n  padding: 0px;\n  font-size: 1.4em;\n}\n\n#link li {\n  margin-top: 20px;\n}\n\n#link li a {\n  display: inline-block;\n}\n\n#link li a > .bottom-line {\n  width: 0;\n  height: 1px;\n  background-color: white;\n\n  -webkit-transition: width 0.5s ease-in-out;\n  -moz-transition: width 0.5s ease-in-out;\n  -ms-transition: width 0.5s ease-in-out;\n  -o-transition: width 0.5s ease-in-out;\n  transition: width 0.5s ease-in-out;\n}\n\n#link li:hover a > .bottom-line {\n  width: 120%;\n}\n\n\n/**\n *  Work\n */\n#work {\n  padding-top: 5px;\n  padding-bottom: 60px;\n  background-color: rgba(203, 233, 228, 0.8);\n}\n\n#work header h1 {\n  margin-bottom: 0;\n  color: rgba(74, 74, 74, 1);\n}\n\n#work .content {\n  color: rgba(58, 128, 123, 1);\n}\n\n#work .content > p:first-child {\n  margin-top: 0;\n}\n\n#work .learn-more {\n  margin-top: 40px;\n  text-align: right;\n}\n\n/**\n *  Contact\n */\n#contact {\n  padding: 20px 0px;\n  background-color: rgba(58, 128, 123, 0.8);\n}\n\n#contact header {\n  margin-bottom: 0px;\n}\n\n#contact .info .info-title {\n  margin: 15px 0px;\n}\n\n#contact .info input {\n  width: 90%;\n  font-size: 1.5em;\n}\n\n#contact div.row:nth-of-type(2) {\n  margin-top: 60px;\n  margin-bottom: 30px;\n  text-align: right;\n}\n\n/**\n *  Footer\n */\n\n#footer {\n  color: rgba(74, 74, 74, 1);\n}\n\n#footer .footer-logo {\n  margin-top: 20px;\n}\n\n#footer .footer-content {\n  text-align: right;\n  padding-bottom: 20px;\n}\n\n#footer .footer-contact-info .footer-newline {\n  display: none;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 492px;\n    height: 276.75px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  /**\n   *  Link\n   */\n  #link div h1 {\n    margin-top: inherit;\n  }\n\n  #link .container > div:nth-child(1) iframe {\n    width: 460px;\n    height: 258.75px;\n  }\n\n  #link .container > div:nth-child(2) {\n    text-align: center;\n    margin-top: 40px;\n    padding-left: 0px;\n  }\n\n  #link ul {\n    margin-top: 20px;\n  }\n\n  #link li:hover a > .bottom-line {\n    width: 100%;\n  }\n\n  /**\n   *  Contact\n   */\n  #contact .info {\n    margin: 0 auto;\n  }\n\n  #contact header {\n    margin-bottom: 40px;\n  }\n\n  #contact .info input {\n    width: 100%;\n    font-size: 2em;\n  }\n\n  #contact div.row:nth-of-type(2) {\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 300px;\n    height: 168.75px;\n  }\n\n  /**\n   *  Work\n   */\n  #work {\n    padding-bottom: 40px;\n  }\n\n  #footer .footer-logo {\n    margin-top: 10px;\n  }\n\n  #footer .footer-contact-info .footer-newline {\n    display: block;\n  }\n}\n", ""]);
+	exports.push([module.id, "#bottomApp {\n  color: white;\n  background-image: url(" + __webpack_require__(199) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/**\n *  Link\n */\n\n#link {\n  padding: 40px 0px;\n  background-color: rgba(105, 186, 177, 0.8);\n}\n\n#link div {\n  vertical-align: top;\n}\n\n#link .container > div:nth-child(1) {\n  text-align: center;\n}\n\n#link .container > div:nth-child(1) iframe {\n  width: 620px;\n  height: 348.75px;\n}\n\n#link .container > div:nth-child(1) .next-block {\n  position: absolute;\n  cursor: pointer;\n  opacity: 0;\n  bottom: 20%;\n  right: 0;\n  padding: 15px 60px;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.6);\n\n  -webkit-transition: opacity 0.5s ease-in-out;\n  -moz-transition: opacity 0.5s ease-in-out;\n  -ms-transition: opacity 0.5s ease-in-out;\n  -o-transition: opacity 0.5s ease-in-out;\n  transition: opacity 0.5s ease-in-out;\n}\n\n#link .container > div:nth-child(1):hover .next-block {\n  opacity: 1;\n}\n\n\n#link .container > div:nth-child(2) {\n  padding-left: 40px;\n}\n\n#link div h1 {\n  margin-top: 0px;\n  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);\n}\n\n#link ul {\n  margin-top: 60px;\n  padding: 0px;\n  font-size: 1.4em;\n}\n\n#link li {\n  margin-top: 20px;\n}\n\n#link li a {\n  display: inline-block;\n}\n\n#link li a > .bottom-line {\n  width: 0;\n  height: 1px;\n  background-color: white;\n\n  -webkit-transition: width 0.5s ease-in-out;\n  -moz-transition: width 0.5s ease-in-out;\n  -ms-transition: width 0.5s ease-in-out;\n  -o-transition: width 0.5s ease-in-out;\n  transition: width 0.5s ease-in-out;\n}\n\n#link li:hover a > .bottom-line {\n  width: 120%;\n}\n\n\n/**\n *  Work\n */\n#work {\n  padding-top: 60px;\n  padding-bottom: 60px;\n  background-color: rgba(203, 233, 228, 0.8);\n}\n\n#work header h1 {\n  margin-bottom: 0;\n  color: rgba(74, 74, 74, 1);\n}\n\n#work .content {\n  color: rgba(58, 128, 123, 1);\n}\n\n#work .content > p:first-child {\n  margin-top: 0;\n}\n\n#work .learn-more {\n  margin-top: 40px;\n  text-align: right;\n}\n\n/**\n *  Contact\n */\n#contact {\n  padding: 20px 0px;\n  background-color: rgba(58, 128, 123, 0.8);\n}\n\n#contact header {\n  margin-bottom: 0px;\n}\n\n#contact .info .info-title {\n  margin: 15px 0px;\n}\n\n#contact .info input {\n  width: 90%;\n  font-size: 1.5em;\n}\n\n#contact div.row:nth-of-type(2) {\n  margin-top: 60px;\n  margin-bottom: 30px;\n  text-align: right;\n}\n\n/**\n *  Footer\n */\n\n#footer {\n  padding: 20px 0px;\n  color: rgba(74, 74, 74, 1);\n}\n\n#footer .footer-logo {\n  /*margin-top: 20px;*/\n}\n\n#footer .footer-content {\n  text-align: right;\n  /*padding-bottom: 20px;*/\n}\n\n#footer .footer-contact-info .footer-newline {\n  display: none;\n}\n\n/*************************/\n/*      Responsive       */\n/*************************/\n\n/* 768px - 959px */\n@media only screen and (max-width: 959px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 492px;\n    height: 276.75px;\n  }\n}\n\n/* 480px - 767px */\n@media only screen and (max-width: 767px) {\n  /**\n   *  Link\n   */\n  #link div h1 {\n    margin-top: inherit;\n  }\n\n  #link .container > div:nth-child(1) iframe {\n    width: 460px;\n    height: 258.75px;\n  }\n\n  #link .container > div:nth-child(2) {\n    text-align: center;\n    margin-top: 40px;\n    padding-left: 0px;\n  }\n\n  #link ul {\n    margin-top: 20px;\n  }\n\n  #link li:hover a > .bottom-line {\n    width: 100%;\n  }\n\n  /**\n   *  Contact\n   */\n  #contact .info {\n    margin: 0 auto;\n  }\n\n  #contact header {\n    margin-bottom: 40px;\n  }\n\n  #contact .info input {\n    width: 100%;\n    font-size: 2em;\n  }\n\n  #contact div.row:nth-of-type(2) {\n    text-align: center;\n  }\n}\n\n/* 320px - 479px */\n@media only screen and (max-width: 479px) {\n  /**\n   *  Link\n   */\n  #link .container > div:nth-child(1) iframe {\n    width: 300px;\n    height: 168.75px;\n  }\n\n  /**\n   *  Work\n   */\n  #work {\n    padding-top: 40px;\n    padding-bottom: 40px;\n  }\n\n  #footer .footer-logo {\n    margin-top: 10px;\n  }\n\n  #footer .footer-contact-info .footer-newline {\n    display: block;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -21963,12 +21963,18 @@
 	      var youtubePlayerOffsetTop = undefined;
 
 	      setInterval(function () {
-	        youtubePlayerHeight = $youtubePlayer.height();
-	        youtubePlayerOffsetTop = $youtubePlayer.offset().top;
-	        if (window.scrollTop + window.innerHeight >= youtubePlayerOffsetTop && window.scrollTop <= youtubePlayerOffsetTop + youtubePlayerHeight) {
-	          player.playVideo();
-	        } else {
-	          player.stopVideo();
+	        if (player) {
+	          youtubePlayerHeight = $youtubePlayer.height();
+	          youtubePlayerOffsetTop = $youtubePlayer.offset().top;
+	          if (window.scrollTop + window.innerHeight >= youtubePlayerOffsetTop && window.scrollTop <= youtubePlayerOffsetTop + youtubePlayerHeight) {
+	            if (player.playVideo) {
+	              player.playVideo();
+	            }
+	          } else {
+	            if (player.stopVideo) {
+	              player.stopVideo();
+	            }
+	          }
 	        }
 	      }, 100);
 	    }
@@ -22018,7 +22024,7 @@
 	                  null,
 	                  _react2.default.createElement(
 	                    'a',
-	                    { href: 'http://www.tww.com.tw', target: '_blank' },
+	                    { href: '#', target: '_blank', onClick: this.hrefOnClick.bind(this, '#banner') },
 	                    _react2.default.createElement(
 	                      'span',
 	                      null,
@@ -22075,6 +22081,20 @@
 	        )
 	      );
 	    }
+	  }, {
+	    key: 'hrefOnClick',
+	    value: function hrefOnClick(hash, e) {
+	      e.preventDefault();
+
+	      var target = hash,
+	          $target = $(target);
+
+	      $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	      }, 900, 'swing', function () {
+	        window.location.hash = target;
+	      });
+	    }
 	  }]);
 
 	  return Link;
@@ -22125,6 +22145,23 @@
 	          "div",
 	          { className: "container" },
 	          _react2.default.createElement(
+	            "div",
+	            { className: "col-12 content" },
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              "想要自己當老闆嗎？想要自由的工作時間嗎？",
+	              _react2.default.createElement("br", null),
+	              "想要增加額外的收入嗎？",
+	              _react2.default.createElement("br", null),
+	              "只要透過手機APP到府收衣,週週有錢領！",
+	              _react2.default.createElement("br", null),
+	              "不管你想增加零用錢還是私房錢，加入我們就對了！",
+	              _react2.default.createElement("br", null),
+	              "免費加入，立即申請"
+	            )
+	          ),
+	          _react2.default.createElement(
 	            "header",
 	            { className: "col-12" },
 	            _react2.default.createElement(
@@ -22139,16 +22176,6 @@
 	            _react2.default.createElement(
 	              "p",
 	              null,
-	              "想要自己當老闆嗎？想要自由的工作時間嗎？",
-	              _react2.default.createElement("br", null),
-	              "想要增加額外的收入嗎？",
-	              _react2.default.createElement("br", null),
-	              "只要透過手機APP到府收衣,週週有錢領！",
-	              _react2.default.createElement("br", null),
-	              "不管你想增加零用錢還是私房錢，加入我們就對了！",
-	              _react2.default.createElement("br", null),
-	              "免費加入，立即申請",
-	              _react2.default.createElement("br", null),
 	              "賺大錢：",
 	              _react2.default.createElement("br", null),
 	              "想要賺更多錢嗎？不限交通工具,不管是走路, 騎腳踏車,騎機車 或是開車,",
@@ -22173,12 +22200,16 @@
 	            )
 	          ),
 	          _react2.default.createElement(
-	            "div",
-	            { className: "learn-more" },
+	            "a",
+	            { href: "http://goo.gl/forms/dRSjsmJv5u", target: "_blank" },
 	            _react2.default.createElement(
-	              "span",
-	              { className: "button" },
-	              "瞭解更多"
+	              "div",
+	              { className: "learn-more" },
+	              _react2.default.createElement(
+	                "span",
+	                { className: "button" },
+	                "索取資料"
+	              )
 	            )
 	          )
 	        )
@@ -22269,7 +22300,7 @@
 	              _react2.default.createElement(
 	                "div",
 	                null,
-	                _react2.default.createElement("input", { type: "text" })
+	                _react2.default.createElement("input", { id: "txtName", type: "text" })
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -22287,7 +22318,7 @@
 	              _react2.default.createElement(
 	                "div",
 	                null,
-	                _react2.default.createElement("input", { type: "text" })
+	                _react2.default.createElement("input", { id: "txtEmail", type: "text" })
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -22299,13 +22330,13 @@
 	                _react2.default.createElement(
 	                  "h3",
 	                  null,
-	                  "問題描述"
+	                  "問題描述*"
 	                )
 	              ),
 	              _react2.default.createElement(
 	                "div",
 	                null,
-	                _react2.default.createElement("input", { type: "text" })
+	                _react2.default.createElement("input", { id: "txtDescription", type: "text" })
 	              )
 	            )
 	          ),
@@ -22314,12 +22345,52 @@
 	            { className: "row" },
 	            _react2.default.createElement(
 	              "span",
-	              { className: "button" },
+	              { className: "button", onClick: this.sendOnClick },
 	              "送出問題"
 	            )
 	          )
 	        )
 	      );
+	    }
+	  }, {
+	    key: "sendOnClick",
+	    value: function sendOnClick() {
+	      var txtName = document.getElementById('txtName');
+	      var txtEmail = document.getElementById('txtEmail');
+	      var txtDescription = document.getElementById('txtDescription');
+	      var name = txtName.value.trim();
+	      var email = txtEmail.value.trim();
+	      var description = txtDescription.value.trim();
+
+	      console.log(name, email, description);
+
+	      // name: entry.1423215103
+	      // email: entry.490045987
+	      // description: entry.498460976
+
+	      if (name === '' || email === '' || description === '') {
+	        alert('請確實填寫所有資訊');
+	      } else {
+	        $.ajax({
+	          url: "https://docs.google.com/forms/d/1ZujQw3xtfYXD_4rR7rRlt8gKHzRsRUGDyy_GfUwDdCc/formResponse",
+	          data: {
+	            "entry.1423215103": name,
+	            "entry.490045987": email,
+	            "entry.498460976": description
+	          },
+	          type: "POST",
+	          dataType: "jsonp",
+	          statusCode: {
+	            200: function _() {
+	              alert('問題成功發送，謝謝您的回饋！');
+	            }
+	          }
+	        });
+
+	        txtName.value = '';
+	        txtEmail.value = '';
+	        txtDescription.value = '';
+	      }
 	    }
 	  }]);
 
@@ -22385,15 +22456,6 @@
 	            _react2.default.createElement(
 	              "div",
 	              { className: "footer-content flex-align-right" },
-	              _react2.default.createElement(
-	                "div",
-	                { className: "footer-hiring" },
-	                _react2.default.createElement(
-	                  "h5",
-	                  null,
-	                  "徵人資訊"
-	                )
-	              ),
 	              _react2.default.createElement(
 	                "div",
 	                { className: "footer-contact-info" },

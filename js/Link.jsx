@@ -16,13 +16,19 @@ export default class Link extends Component {
     let youtubePlayerOffsetTop
 
     setInterval(() => {
-      youtubePlayerHeight = $youtubePlayer.height()
-      youtubePlayerOffsetTop = $youtubePlayer.offset().top
-      if (window.scrollTop + window.innerHeight >= youtubePlayerOffsetTop &&
-          window.scrollTop <= youtubePlayerOffsetTop + youtubePlayerHeight) {
-        player.playVideo()
-      } else {
-        player.stopVideo()
+      if (player) {
+        youtubePlayerHeight = $youtubePlayer.height()
+        youtubePlayerOffsetTop = $youtubePlayer.offset().top
+        if (window.scrollTop + window.innerHeight >= youtubePlayerOffsetTop &&
+            window.scrollTop <= youtubePlayerOffsetTop + youtubePlayerHeight) {
+          if (player.playVideo) {
+            player.playVideo()
+          }
+        } else {
+          if (player.stopVideo){
+            player.stopVideo()
+          }
+        }
       }
     }, 100);
   }
@@ -44,7 +50,7 @@ export default class Link extends Component {
               <h1>公司連結</h1>
               <ul>
                 <li>
-                  <a href="http://www.tww.com.tw" target="_blank">
+                  <a href="#" target="_blank" onClick={this.hrefOnClick.bind(this, '#banner')}>
                     <span>台灣大洗 e 聯盟</span>
                     <div className="bottom-line"></div>
                   </a>
@@ -73,5 +79,18 @@ export default class Link extends Component {
         </div>
       </div>
     )
+  }
+
+  hrefOnClick(hash, e) {
+    e.preventDefault();
+
+    var target = hash,
+        $target = $(target);
+
+    $('html, body').stop().animate({
+        'scrollTop': $target.offset().top
+    }, 900, 'swing', function () {
+        window.location.hash = target;
+    });
   }
 }

@@ -12,9 +12,6 @@ export default class Footer extends Component {
               </a>
             </div>
             <div className="footer-content flex-align-right">
-              <div className="footer-hiring">
-                <h5>徵人資訊</h5>
-              </div>
               <div className="footer-contact-info">
                 <span>地址：新北市新店區<br className="footer-newline"/>寶僑路235巷6弄5號8樓</span><br/>
                 <span>電話：(02)2915-0365</span><br/>
