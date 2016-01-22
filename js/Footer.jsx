@@ -15,6 +15,7 @@ export default class Footer extends Component {
               <div className="footer-contact-info">
                 <span>地址：新北市新店區<br className="footer-newline"/>寶僑路235巷6弄5號8樓</span><br/>
                 <span>電話：(02)2915-0365</span><br/>
+                <span>客服電話：(02)2915-3639</span><br/>
                 <span>傳真：(02)2915-0364</span>
               </div>
             </div>

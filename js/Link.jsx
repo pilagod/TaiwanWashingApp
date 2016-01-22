@@ -1,32 +1,27 @@
 import React, { Component } from 'react'
 
-let player
-
 export default class Link extends Component {
 
   componentDidMount() {
-    if (!player) {
-      player = new YT.Player('youtubePlayer', {
-        videoId: 'yKV4H95l7T0'
-      })
-    }
-
-    let $youtubePlayer = $('#youtubePlayer')
+    let $youtubePlayer
     let youtubePlayerHeight
     let youtubePlayerOffsetTop
 
     setInterval(() => {
-      if (player) {
+      if (window.player) {
+        if (!$youtubePlayer) {
+          $youtubePlayer = $('#youtubePlayer')
+        }
         youtubePlayerHeight = $youtubePlayer.height()
         youtubePlayerOffsetTop = $youtubePlayer.offset().top
         if (window.scrollTop + window.innerHeight >= youtubePlayerOffsetTop &&
             window.scrollTop <= youtubePlayerOffsetTop + youtubePlayerHeight) {
-          if (player.playVideo) {
-            player.playVideo()
+          if (window.player.playVideo) {
+            window.player.playVideo()
           }
         } else {
-          if (player.stopVideo){
-            player.stopVideo()
+          if (window.player.stopVideo) {
+            window.player.stopVideo()
           }
         }
       }

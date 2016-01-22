@@ -103,13 +103,21 @@
  */
 #menu {
   position: fixed;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
   z-index: 50;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding-top: 16vh;
+  /*padding-top: 8vh;*/
   padding-left: 240px;
+  vertical-align: middle;
   background-color: rgba(46, 113, 108, 0.9);
 
   animation-name: show;
@@ -155,15 +163,8 @@
 /* 768px - 959px */
 @media only screen and (max-width: 959px) {
   #menu {
-    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox;      /* TWEENER - IE 10 */
-    display: -webkit-flex;     /* NEW - Chrome */
-    display: flex;
     -webkit-justify-content: center;
     justify-content: center;
-    -webkit-align-items: center;
-    align-items: center;
     padding: 0px;
   }
 }

@@ -92,7 +92,7 @@
 #service .service-image > .service-location {
   position: absolute;
   bottom: 0;
-  right: 30px;
+  right: 100px;
   padding: 5px;
   color: rgba(58, 128, 123, 1);
   line-height: 1;
@@ -171,9 +171,8 @@
 /* 769px - 959px */
 @media only screen and (max-width: 959px) {
   #service .service-image > .service-location {
-    right: 0px;
+    right: 60px;
   }
-
 }
 
 /* 480px - 767px */

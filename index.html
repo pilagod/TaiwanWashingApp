@@ -19,7 +19,7 @@
 
     <!-- <footer id="footer"></footer> -->
   </body>
-  <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
+
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <!-- <script type="text/javascript" src="dist/vendor.bundle.js"></script>
   <script type="text/javascript" src="dist/app1-bundle.js"></script> -->
@@ -29,6 +29,19 @@
     var scrollTop = 0;
     window.onscroll = function () {
       scrollTop = $(document).scrollTop();
+    }
+  </script>
+  <script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubePlayerAPIReady() {
+      player = new YT.Player('youtubePlayer', {
+        videoId: 'yKV4H95l7T0'
+      });
     }
   </script>
 </html>

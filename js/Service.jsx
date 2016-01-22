@@ -20,7 +20,7 @@ export default class Service extends Component {
                 </div>
                 <div className="service-title">
                   <h2>
-                    <span>便利商店洗衣</span><br/>
+                    <span>潔衣家<br/>（便利商店洗衣）</span><br/>
                     <span className="subtitle">24小時送洗</span>
                   </h2>
                 </div>
@@ -41,7 +41,7 @@ export default class Service extends Component {
 
           <a>
             <div className="right-block">
-                <div className="col-4">
+                <div className="col-6">
                   <div className="service-image">
                     <Isvg src='img/service02.svg'></Isvg>
                     <div className="service-location">
@@ -61,7 +61,7 @@ export default class Service extends Component {
                   </div>
                   <div className="service-title">
                     <h2>
-                      <span>到府收送</span><br/>
+                      <span>到府收送<br/></span><br/>
                       <span className="subtitle">09:00a.m. - 09:00p.m.</span>
                     </h2>
                   </div>
