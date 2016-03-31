@@ -98,7 +98,7 @@
   background-color: rgba(203, 233, 228, 0.8);
 }
 
-#work header h1 {
+#work header h2 {
   margin-bottom: 0;
   color: rgba(74, 74, 74, 1);
 }
@@ -245,6 +245,10 @@
   #work {
     padding-top: 40px;
     padding-bottom: 40px;
+  }
+
+  #workImg {
+    display: none;
   }
 
   #footer .footer-logo {
